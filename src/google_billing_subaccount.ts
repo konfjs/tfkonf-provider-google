@@ -7,7 +7,7 @@ export interface GoogleBillingSubaccountArgs {
 }
 
 export class google_billing_subaccount extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBillingSubaccountArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBillingSubaccountArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_billing_subaccount", resourceName);
   }

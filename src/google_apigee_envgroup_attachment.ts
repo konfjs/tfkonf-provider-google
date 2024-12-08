@@ -12,7 +12,7 @@ export interface GoogleApigeeEnvgroupAttachmentArgs {
 }
 
 export class google_apigee_envgroup_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleApigeeEnvgroupAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleApigeeEnvgroupAttachmentArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_apigee_envgroup_attachment", resourceName);
   }

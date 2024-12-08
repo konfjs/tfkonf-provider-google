@@ -8,7 +8,7 @@ export interface DataGoogleComputeSnapshotArgs {
 }
 
 export class data_google_compute_snapshot extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeSnapshotArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeSnapshotArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_snapshot", resourceName);
   }

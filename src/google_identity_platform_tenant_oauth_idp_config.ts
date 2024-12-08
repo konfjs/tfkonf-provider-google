@@ -18,7 +18,7 @@ export interface GoogleIdentityPlatformTenantOauthIdpConfigArgs {
 }
 
 export class google_identity_platform_tenant_oauth_idp_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIdentityPlatformTenantOauthIdpConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIdentityPlatformTenantOauthIdpConfigArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_identity_platform_tenant_oauth_idp_config", resourceName);
   }

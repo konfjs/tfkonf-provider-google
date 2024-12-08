@@ -14,7 +14,7 @@ export interface GoogleSecureSourceManagerInstanceIamMemberArgs {
 }
 
 export class google_secure_source_manager_instance_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSecureSourceManagerInstanceIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSecureSourceManagerInstanceIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_secure_source_manager_instance_iam_member", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataGoogleNotebooksRuntimeIamPolicyArgs {
 }
 
 export class data_google_notebooks_runtime_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleNotebooksRuntimeIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleNotebooksRuntimeIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_notebooks_runtime_iam_policy", resourceName);
   }

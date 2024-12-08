@@ -14,7 +14,7 @@ export interface GoogleTagsTagKeyIamBindingArgs {
 }
 
 export class google_tags_tag_key_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleTagsTagKeyIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleTagsTagKeyIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_tags_tag_key_iam_binding", resourceName);
   }

@@ -56,7 +56,7 @@ export interface GoogleLoggingMetricArgs {
 }
 
 export class google_logging_metric extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleLoggingMetricArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleLoggingMetricArgs) {
     const meta = {bucket_options:{isBlock:true,explicit_buckets:{isBlock:true},exponential_buckets:{isBlock:true},linear_buckets:{isBlock:true}},metric_descriptor:{isBlock:true,labels:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_logging_metric", resourceName);
   }

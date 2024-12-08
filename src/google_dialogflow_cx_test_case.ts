@@ -74,7 +74,7 @@ export interface GoogleDialogflowCxTestCaseArgs {
 }
 
 export class google_dialogflow_cx_test_case extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDialogflowCxTestCaseArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDialogflowCxTestCaseArgs) {
     const meta = {test_case_conversation_turns:{isBlock:true,user_input:{isBlock:true,input:{isBlock:true,dtmf:{isBlock:true},event:{isBlock:true},text:{isBlock:true}}},virtual_agent_output:{isBlock:true,current_page:{isBlock:true},text_responses:{isBlock:true},triggered_intent:{isBlock:true}}},test_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dialogflow_cx_test_case", resourceName);
   }

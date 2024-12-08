@@ -26,7 +26,7 @@ export interface GoogleBigtableGcPolicyArgs {
 }
 
 export class google_bigtable_gc_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigtableGcPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigtableGcPolicyArgs) {
     const meta = {max_age:{isBlock:true},max_version:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_bigtable_gc_policy", resourceName);
   }

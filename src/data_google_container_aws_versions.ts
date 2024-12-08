@@ -6,7 +6,7 @@ export interface DataGoogleContainerAwsVersionsArgs {
 }
 
 export class data_google_container_aws_versions extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleContainerAwsVersionsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleContainerAwsVersionsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_container_aws_versions", resourceName);
   }

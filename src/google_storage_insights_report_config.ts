@@ -55,7 +55,7 @@ export interface GoogleStorageInsightsReportConfigArgs {
 }
 
 export class google_storage_insights_report_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleStorageInsightsReportConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleStorageInsightsReportConfigArgs) {
     const meta = {csv_options:{isBlock:true},frequency_options:{isBlock:true,end_date:{isBlock:true},start_date:{isBlock:true}},object_metadata_report_options:{isBlock:true,storage_destination_options:{isBlock:true},storage_filters:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_storage_insights_report_config", resourceName);
   }

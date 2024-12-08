@@ -17,7 +17,7 @@ export interface GoogleNetworkSecuritySecurityProfileGroupArgs {
 }
 
 export class google_network_security_security_profile_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkSecuritySecurityProfileGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkSecuritySecurityProfileGroupArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_network_security_security_profile_group", resourceName);
   }

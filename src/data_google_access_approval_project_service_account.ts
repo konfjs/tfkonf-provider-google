@@ -5,7 +5,7 @@ export interface DataGoogleAccessApprovalProjectServiceAccountArgs {
 }
 
 export class data_google_access_approval_project_service_account extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleAccessApprovalProjectServiceAccountArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleAccessApprovalProjectServiceAccountArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_access_approval_project_service_account", resourceName);
   }

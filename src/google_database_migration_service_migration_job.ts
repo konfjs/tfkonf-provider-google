@@ -52,7 +52,7 @@ export interface GoogleDatabaseMigrationServiceMigrationJobArgs {
 }
 
 export class google_database_migration_service_migration_job extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDatabaseMigrationServiceMigrationJobArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDatabaseMigrationServiceMigrationJobArgs) {
     const meta = {dump_flags:{isBlock:true,dump_flags:{isBlock:true}},performance_config:{isBlock:true},reverse_ssh_connectivity:{isBlock:true},static_ip_connectivity:{isBlock:true},timeouts:{isBlock:true},vpc_peering_connectivity:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_database_migration_service_migration_job", resourceName);
   }

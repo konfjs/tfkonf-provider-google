@@ -6,7 +6,7 @@ export interface GoogleGkeBackupRestorePlanIamPolicyArgs {
 }
 
 export class google_gke_backup_restore_plan_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleGkeBackupRestorePlanIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleGkeBackupRestorePlanIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_gke_backup_restore_plan_iam_policy", resourceName);
   }

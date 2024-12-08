@@ -15,7 +15,7 @@ export interface GoogleDataplexTaskIamBindingArgs {
 }
 
 export class google_dataplex_task_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataplexTaskIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataplexTaskIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataplex_task_iam_binding", resourceName);
   }

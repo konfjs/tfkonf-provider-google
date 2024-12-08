@@ -25,7 +25,7 @@ export interface GoogleVertexAiFeatureGroupArgs {
 }
 
 export class google_vertex_ai_feature_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleVertexAiFeatureGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleVertexAiFeatureGroupArgs) {
     const meta = {big_query:{isBlock:true,big_query_source:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_vertex_ai_feature_group", resourceName);
   }

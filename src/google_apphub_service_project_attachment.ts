@@ -12,7 +12,7 @@ export interface GoogleApphubServiceProjectAttachmentArgs {
 }
 
 export class google_apphub_service_project_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleApphubServiceProjectAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleApphubServiceProjectAttachmentArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_apphub_service_project_attachment", resourceName);
   }

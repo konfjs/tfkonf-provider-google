@@ -15,7 +15,7 @@ export interface GoogleDiscoveryEngineTargetSiteArgs {
 }
 
 export class google_discovery_engine_target_site extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDiscoveryEngineTargetSiteArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDiscoveryEngineTargetSiteArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_discovery_engine_target_site", resourceName);
   }

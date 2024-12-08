@@ -5,7 +5,7 @@ export interface DataGoogleComputeInstanceGroupArgs {
 }
 
 export class data_google_compute_instance_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeInstanceGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeInstanceGroupArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_instance_group", resourceName);
   }

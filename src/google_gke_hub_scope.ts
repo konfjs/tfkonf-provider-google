@@ -14,7 +14,7 @@ export interface GoogleGkeHubScopeArgs {
 }
 
 export class google_gke_hub_scope extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleGkeHubScopeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleGkeHubScopeArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_gke_hub_scope", resourceName);
   }

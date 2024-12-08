@@ -24,7 +24,7 @@ export interface GoogleNetappStoragePoolArgs {
 }
 
 export class google_netapp_storage_pool extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetappStoragePoolArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetappStoragePoolArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_netapp_storage_pool", resourceName);
   }

@@ -40,7 +40,7 @@ export interface GoogleMemorystoreInstanceArgs {
 }
 
 export class google_memorystore_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleMemorystoreInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleMemorystoreInstanceArgs) {
     const meta = {desired_psc_auto_connections:{isBlock:true},persistence_config:{isBlock:true,aof_config:{isBlock:true},rdb_config:{isBlock:true}},timeouts:{isBlock:true},zone_distribution_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_memorystore_instance", resourceName);
   }

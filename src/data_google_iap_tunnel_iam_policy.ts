@@ -4,7 +4,7 @@ export interface DataGoogleIapTunnelIamPolicyArgs {
 }
 
 export class data_google_iap_tunnel_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleIapTunnelIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleIapTunnelIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_iap_tunnel_iam_policy", resourceName);
   }

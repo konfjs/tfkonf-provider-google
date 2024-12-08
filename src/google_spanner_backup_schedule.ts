@@ -32,7 +32,7 @@ export interface GoogleSpannerBackupScheduleArgs {
 }
 
 export class google_spanner_backup_schedule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSpannerBackupScheduleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSpannerBackupScheduleArgs) {
     const meta = {full_backup_spec:{isBlock:true},incremental_backup_spec:{isBlock:true},spec:{isBlock:true,cron_spec:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_spanner_backup_schedule", resourceName);
   }

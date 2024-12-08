@@ -14,7 +14,7 @@ export interface GoogleServiceAccountIamBindingArgs {
 }
 
 export class google_service_account_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleServiceAccountIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleServiceAccountIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_service_account_iam_binding", resourceName);
   }

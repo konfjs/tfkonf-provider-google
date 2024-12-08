@@ -5,7 +5,7 @@ export interface DataGooglePrivatecaCaPoolIamPolicyArgs {
 }
 
 export class data_google_privateca_ca_pool_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGooglePrivatecaCaPoolIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGooglePrivatecaCaPoolIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_privateca_ca_pool_iam_policy", resourceName);
   }

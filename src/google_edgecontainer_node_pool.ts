@@ -26,7 +26,7 @@ export interface GoogleEdgecontainerNodePoolArgs {
 }
 
 export class google_edgecontainer_node_pool extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleEdgecontainerNodePoolArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleEdgecontainerNodePoolArgs) {
     const meta = {local_disk_encryption:{isBlock:true},node_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_edgecontainer_node_pool", resourceName);
   }

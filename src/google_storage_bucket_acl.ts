@@ -7,7 +7,7 @@ export interface GoogleStorageBucketAclArgs {
 }
 
 export class google_storage_bucket_acl extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleStorageBucketAclArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleStorageBucketAclArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_storage_bucket_acl", resourceName);
   }

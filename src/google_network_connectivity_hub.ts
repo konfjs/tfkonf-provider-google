@@ -13,7 +13,7 @@ export interface GoogleNetworkConnectivityHubArgs {
 }
 
 export class google_network_connectivity_hub extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkConnectivityHubArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkConnectivityHubArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_network_connectivity_hub", resourceName);
   }

@@ -7,7 +7,7 @@ export interface DataGoogleFilestoreInstanceArgs {
 }
 
 export class data_google_filestore_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleFilestoreInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleFilestoreInstanceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_filestore_instance", resourceName);
   }

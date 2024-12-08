@@ -75,7 +75,7 @@ export interface GoogleDialogflowCxAgentArgs {
 }
 
 export class google_dialogflow_cx_agent extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDialogflowCxAgentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDialogflowCxAgentArgs) {
     const meta = {advanced_settings:{isBlock:true,audio_export_gcs_destination:{isBlock:true},dtmf_settings:{isBlock:true},logging_settings:{isBlock:true},speech_settings:{isBlock:true}},git_integration_settings:{isBlock:true,github_settings:{isBlock:true}},speech_to_text_settings:{isBlock:true},text_to_speech_settings:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dialogflow_cx_agent", resourceName);
   }

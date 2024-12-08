@@ -15,7 +15,7 @@ export interface GoogleStorageManagedFolderIamMemberArgs {
 }
 
 export class google_storage_managed_folder_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleStorageManagedFolderIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleStorageManagedFolderIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_storage_managed_folder_iam_member", resourceName);
   }

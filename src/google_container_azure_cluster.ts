@@ -86,7 +86,7 @@ export interface GoogleContainerAzureClusterArgs {
 }
 
 export class google_container_azure_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleContainerAzureClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleContainerAzureClusterArgs) {
     const meta = {authorization:{isBlock:true,admin_groups:{isBlock:true},admin_users:{isBlock:true}},azure_services_authentication:{isBlock:true},control_plane:{isBlock:true,database_encryption:{isBlock:true},main_volume:{isBlock:true},proxy_config:{isBlock:true},replica_placements:{isBlock:true},root_volume:{isBlock:true},ssh_config:{isBlock:true}},fleet:{isBlock:true},networking:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_container_azure_cluster", resourceName);
   }

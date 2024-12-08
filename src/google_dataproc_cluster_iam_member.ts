@@ -14,7 +14,7 @@ export interface GoogleDataprocClusterIamMemberArgs {
 }
 
 export class google_dataproc_cluster_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataprocClusterIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataprocClusterIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataproc_cluster_iam_member", resourceName);
   }

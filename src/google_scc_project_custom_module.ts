@@ -50,7 +50,7 @@ export interface GoogleSccProjectCustomModuleArgs {
 }
 
 export class google_scc_project_custom_module extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSccProjectCustomModuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSccProjectCustomModuleArgs) {
     const meta = {custom_config:{isBlock:true,custom_output:{isBlock:true,properties:{isBlock:true,value_expression:{isBlock:true}}},predicate:{isBlock:true},resource_selector:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_scc_project_custom_module", resourceName);
   }

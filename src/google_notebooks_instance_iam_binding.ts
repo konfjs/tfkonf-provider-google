@@ -14,7 +14,7 @@ export interface GoogleNotebooksInstanceIamBindingArgs {
 }
 
 export class google_notebooks_instance_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNotebooksInstanceIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNotebooksInstanceIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_notebooks_instance_iam_binding", resourceName);
   }

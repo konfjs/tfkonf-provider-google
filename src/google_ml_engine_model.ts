@@ -22,7 +22,7 @@ export interface GoogleMlEngineModelArgs {
 }
 
 export class google_ml_engine_model extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleMlEngineModelArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleMlEngineModelArgs) {
     const meta = {default_version:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_ml_engine_model", resourceName);
   }

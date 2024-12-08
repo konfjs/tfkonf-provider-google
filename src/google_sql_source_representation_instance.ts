@@ -20,7 +20,7 @@ export interface GoogleSqlSourceRepresentationInstanceArgs {
 }
 
 export class google_sql_source_representation_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSqlSourceRepresentationInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSqlSourceRepresentationInstanceArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_sql_source_representation_instance", resourceName);
   }

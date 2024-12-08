@@ -14,7 +14,7 @@ export interface GoogleArtifactRegistryRepositoryIamBindingArgs {
 }
 
 export class google_artifact_registry_repository_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleArtifactRegistryRepositoryIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleArtifactRegistryRepositoryIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_artifact_registry_repository_iam_binding", resourceName);
   }

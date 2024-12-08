@@ -8,7 +8,7 @@ export interface DataGoogleDnsRecordSetArgs {
 }
 
 export class data_google_dns_record_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleDnsRecordSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleDnsRecordSetArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_dns_record_set", resourceName);
   }

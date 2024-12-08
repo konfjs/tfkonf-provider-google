@@ -60,7 +60,7 @@ export interface GoogleAlloydbInstanceArgs {
 }
 
 export class google_alloydb_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleAlloydbInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleAlloydbInstanceArgs) {
     const meta = {client_connection_config:{isBlock:true,ssl_config:{isBlock:true}},machine_config:{isBlock:true},network_config:{isBlock:true,authorized_external_networks:{isBlock:true}},psc_instance_config:{isBlock:true},query_insights_config:{isBlock:true},read_pool_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_alloydb_instance", resourceName);
   }

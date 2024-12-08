@@ -6,7 +6,7 @@ export interface GoogleSourcerepoRepositoryIamPolicyArgs {
 }
 
 export class google_sourcerepo_repository_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSourcerepoRepositoryIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSourcerepoRepositoryIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_sourcerepo_repository_iam_policy", resourceName);
   }

@@ -15,7 +15,7 @@ export interface GoogleDialogflowIntentArgs {
 }
 
 export class google_dialogflow_intent extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDialogflowIntentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDialogflowIntentArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dialogflow_intent", resourceName);
   }

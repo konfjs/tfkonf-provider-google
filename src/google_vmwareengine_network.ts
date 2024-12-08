@@ -15,7 +15,7 @@ export interface GoogleVmwareengineNetworkArgs {
 }
 
 export class google_vmwareengine_network extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleVmwareengineNetworkArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleVmwareengineNetworkArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_vmwareengine_network", resourceName);
   }

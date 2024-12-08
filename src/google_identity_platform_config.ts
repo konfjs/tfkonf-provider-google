@@ -115,7 +115,7 @@ export interface GoogleIdentityPlatformConfigArgs {
 }
 
 export class google_identity_platform_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIdentityPlatformConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIdentityPlatformConfigArgs) {
     const meta = {blocking_functions:{isBlock:true,forward_inbound_credentials:{isBlock:true},triggers:{isBlock:true}},client:{isBlock:true,permissions:{isBlock:true}},mfa:{isBlock:true,provider_configs:{isBlock:true,totp_provider_config:{isBlock:true}}},monitoring:{isBlock:true,request_logging:{isBlock:true}},multi_tenant:{isBlock:true},quota:{isBlock:true,sign_up_quota_config:{isBlock:true}},sign_in:{isBlock:true,anonymous:{isBlock:true},email:{isBlock:true},phone_number:{isBlock:true}},sms_region_config:{isBlock:true,allow_by_default:{isBlock:true},allowlist_only:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_identity_platform_config", resourceName);
   }

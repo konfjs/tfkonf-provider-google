@@ -14,7 +14,7 @@ export interface GoogleContainerAnalysisNoteIamMemberArgs {
 }
 
 export class google_container_analysis_note_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleContainerAnalysisNoteIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleContainerAnalysisNoteIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_container_analysis_note_iam_member", resourceName);
   }

@@ -167,7 +167,7 @@ export interface GoogleComputeBackendServiceArgs {
 }
 
 export class google_compute_backend_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeBackendServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeBackendServiceArgs) {
     const meta = {backend:{isBlock:true},cdn_policy:{isBlock:true,bypass_cache_on_request_headers:{isBlock:true},cache_key_policy:{isBlock:true},negative_caching_policy:{isBlock:true}},circuit_breakers:{isBlock:true},consistent_hash:{isBlock:true,http_cookie:{isBlock:true,ttl:{isBlock:true}}},iap:{isBlock:true},locality_lb_policies:{isBlock:true,custom_policy:{isBlock:true},policy:{isBlock:true}},log_config:{isBlock:true},outlier_detection:{isBlock:true,base_ejection_time:{isBlock:true},interval:{isBlock:true}},security_settings:{isBlock:true,aws_v4_authentication:{isBlock:true}},strong_session_affinity_cookie:{isBlock:true,ttl:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_backend_service", resourceName);
   }

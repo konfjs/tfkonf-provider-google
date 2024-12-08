@@ -6,7 +6,7 @@ export interface DataGoogleIapClientArgs {
 }
 
 export class data_google_iap_client extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleIapClientArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleIapClientArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_iap_client", resourceName);
   }

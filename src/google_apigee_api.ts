@@ -15,7 +15,7 @@ export interface GoogleApigeeApiArgs {
 }
 
 export class google_apigee_api extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleApigeeApiArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleApigeeApiArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_apigee_api", resourceName);
   }

@@ -74,7 +74,7 @@ export interface GoogleWorkbenchInstanceArgs {
 }
 
 export class google_workbench_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleWorkbenchInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleWorkbenchInstanceArgs) {
     const meta = {gce_setup:{isBlock:true,accelerator_configs:{isBlock:true},boot_disk:{isBlock:true},container_image:{isBlock:true},data_disks:{isBlock:true},network_interfaces:{isBlock:true,access_configs:{isBlock:true}},service_accounts:{isBlock:true},shielded_instance_config:{isBlock:true},vm_image:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_workbench_instance", resourceName);
   }

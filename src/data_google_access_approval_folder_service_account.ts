@@ -5,7 +5,7 @@ export interface DataGoogleAccessApprovalFolderServiceAccountArgs {
 }
 
 export class data_google_access_approval_folder_service_account extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleAccessApprovalFolderServiceAccountArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleAccessApprovalFolderServiceAccountArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_access_approval_folder_service_account", resourceName);
   }

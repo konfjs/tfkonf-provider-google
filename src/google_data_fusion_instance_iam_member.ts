@@ -14,7 +14,7 @@ export interface GoogleDataFusionInstanceIamMemberArgs {
 }
 
 export class google_data_fusion_instance_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataFusionInstanceIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataFusionInstanceIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_data_fusion_instance_iam_member", resourceName);
   }

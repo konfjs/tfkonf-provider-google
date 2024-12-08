@@ -67,7 +67,7 @@ export interface GoogleOrgPolicyPolicyArgs {
 }
 
 export class google_org_policy_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleOrgPolicyPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleOrgPolicyPolicyArgs) {
     const meta = {dry_run_spec:{isBlock:true,rules:{isBlock:true,condition:{isBlock:true},values:{isBlock:true}}},spec:{isBlock:true,rules:{isBlock:true,condition:{isBlock:true},values:{isBlock:true}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_org_policy_policy", resourceName);
   }

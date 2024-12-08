@@ -14,7 +14,7 @@ export interface GoogleDialogflowCxVersionArgs {
 }
 
 export class google_dialogflow_cx_version extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDialogflowCxVersionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDialogflowCxVersionArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dialogflow_cx_version", resourceName);
   }

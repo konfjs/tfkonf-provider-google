@@ -83,7 +83,7 @@ export interface GoogleComputeRegionHealthCheckArgs {
 }
 
 export class google_compute_region_health_check extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeRegionHealthCheckArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeRegionHealthCheckArgs) {
     const meta = {grpc_health_check:{isBlock:true},http2_health_check:{isBlock:true},http_health_check:{isBlock:true},https_health_check:{isBlock:true},log_config:{isBlock:true},ssl_health_check:{isBlock:true},tcp_health_check:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_region_health_check", resourceName);
   }

@@ -68,7 +68,7 @@ export interface GoogleDiscoveryEngineDataStoreArgs {
 }
 
 export class google_discovery_engine_data_store extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDiscoveryEngineDataStoreArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDiscoveryEngineDataStoreArgs) {
     const meta = {document_processing_config:{isBlock:true,chunking_config:{isBlock:true,layout_based_chunking_config:{isBlock:true}},default_parsing_config:{isBlock:true,digital_parsing_config:{isBlock:true},layout_parsing_config:{isBlock:true},ocr_parsing_config:{isBlock:true}},parsing_config_overrides:{isBlock:true,digital_parsing_config:{isBlock:true},layout_parsing_config:{isBlock:true},ocr_parsing_config:{isBlock:true}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_discovery_engine_data_store", resourceName);
   }

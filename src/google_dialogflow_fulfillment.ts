@@ -26,7 +26,7 @@ export interface GoogleDialogflowFulfillmentArgs {
 }
 
 export class google_dialogflow_fulfillment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDialogflowFulfillmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDialogflowFulfillmentArgs) {
     const meta = {features:{isBlock:true},generic_web_service:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dialogflow_fulfillment", resourceName);
   }

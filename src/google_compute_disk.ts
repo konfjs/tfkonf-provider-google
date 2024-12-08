@@ -51,7 +51,7 @@ export interface GoogleComputeDiskArgs {
 }
 
 export class google_compute_disk extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeDiskArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeDiskArgs) {
     const meta = {async_primary_disk:{isBlock:true},disk_encryption_key:{isBlock:true},guest_os_features:{isBlock:true},source_image_encryption_key:{isBlock:true},source_snapshot_encryption_key:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_disk", resourceName);
   }

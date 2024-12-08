@@ -4,7 +4,7 @@ export interface DataGoogleSqlTiersArgs {
 }
 
 export class data_google_sql_tiers extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleSqlTiersArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleSqlTiersArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_sql_tiers", resourceName);
   }

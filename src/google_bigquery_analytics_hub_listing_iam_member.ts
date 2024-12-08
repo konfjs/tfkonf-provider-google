@@ -15,7 +15,7 @@ export interface GoogleBigqueryAnalyticsHubListingIamMemberArgs {
 }
 
 export class google_bigquery_analytics_hub_listing_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigqueryAnalyticsHubListingIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigqueryAnalyticsHubListingIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_bigquery_analytics_hub_listing_iam_member", resourceName);
   }

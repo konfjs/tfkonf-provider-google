@@ -16,7 +16,7 @@ export interface GoogleCertificateManagerDnsAuthorizationArgs {
 }
 
 export class google_certificate_manager_dns_authorization extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCertificateManagerDnsAuthorizationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCertificateManagerDnsAuthorizationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_certificate_manager_dns_authorization", resourceName);
   }

@@ -7,7 +7,7 @@ export interface DataGoogleLoggingLogViewIamPolicyArgs {
 }
 
 export class data_google_logging_log_view_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleLoggingLogViewIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleLoggingLogViewIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_logging_log_view_iam_policy", resourceName);
   }

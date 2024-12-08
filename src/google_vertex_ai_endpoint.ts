@@ -42,7 +42,7 @@ export interface GoogleVertexAiEndpointArgs {
 }
 
 export class google_vertex_ai_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleVertexAiEndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleVertexAiEndpointArgs) {
     const meta = {encryption_spec:{isBlock:true},predict_request_response_logging_config:{isBlock:true,bigquery_destination:{isBlock:true}},private_service_connect_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_vertex_ai_endpoint", resourceName);
   }

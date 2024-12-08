@@ -5,7 +5,7 @@ export interface DataGoogleDnsKeysArgs {
 }
 
 export class data_google_dns_keys extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleDnsKeysArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleDnsKeysArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_dns_keys", resourceName);
   }

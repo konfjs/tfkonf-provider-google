@@ -61,7 +61,7 @@ export interface GoogleMigrationCenterPreferenceSetArgs {
 }
 
 export class google_migration_center_preference_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleMigrationCenterPreferenceSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleMigrationCenterPreferenceSetArgs) {
     const meta = {timeouts:{isBlock:true},virtual_machine_preferences:{isBlock:true,compute_engine_preferences:{isBlock:true,machine_preferences:{isBlock:true,allowed_machine_series:{isBlock:true}}},region_preferences:{isBlock:true},sole_tenancy_preferences:{isBlock:true,node_types:{isBlock:true}},vmware_engine_preferences:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "google_migration_center_preference_set", resourceName);
   }

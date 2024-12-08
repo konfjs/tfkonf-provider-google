@@ -34,7 +34,7 @@ export interface GoogleCloudAssetOrganizationFeedArgs {
 }
 
 export class google_cloud_asset_organization_feed extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudAssetOrganizationFeedArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudAssetOrganizationFeedArgs) {
     const meta = {condition:{isBlock:true},feed_output_config:{isBlock:true,pubsub_destination:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloud_asset_organization_feed", resourceName);
   }

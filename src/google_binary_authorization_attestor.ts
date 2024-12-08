@@ -30,7 +30,7 @@ export interface GoogleBinaryAuthorizationAttestorArgs {
 }
 
 export class google_binary_authorization_attestor extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBinaryAuthorizationAttestorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBinaryAuthorizationAttestorArgs) {
     const meta = {attestation_authority_note:{isBlock:true,public_keys:{isBlock:true,pkix_public_key:{isBlock:true}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_binary_authorization_attestor", resourceName);
   }

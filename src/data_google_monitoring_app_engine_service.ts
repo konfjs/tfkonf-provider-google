@@ -6,7 +6,7 @@ export interface DataGoogleMonitoringAppEngineServiceArgs {
 }
 
 export class data_google_monitoring_app_engine_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleMonitoringAppEngineServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleMonitoringAppEngineServiceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_monitoring_app_engine_service", resourceName);
   }

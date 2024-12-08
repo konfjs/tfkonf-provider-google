@@ -14,7 +14,7 @@ export interface GoogleComputeAttachedDiskArgs {
 }
 
 export class google_compute_attached_disk extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeAttachedDiskArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeAttachedDiskArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_attached_disk", resourceName);
   }

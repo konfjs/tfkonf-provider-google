@@ -14,7 +14,7 @@ export interface GoogleBigtableInstanceIamBindingArgs {
 }
 
 export class google_bigtable_instance_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigtableInstanceIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigtableInstanceIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_bigtable_instance_iam_binding", resourceName);
   }

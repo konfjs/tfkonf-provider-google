@@ -9,7 +9,7 @@ export interface GoogleProjectIamCustomRoleArgs {
 }
 
 export class google_project_iam_custom_role extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleProjectIamCustomRoleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleProjectIamCustomRoleArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_project_iam_custom_role", resourceName);
   }

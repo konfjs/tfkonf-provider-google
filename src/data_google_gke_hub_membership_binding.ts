@@ -8,7 +8,7 @@ export interface DataGoogleGkeHubMembershipBindingArgs {
 }
 
 export class data_google_gke_hub_membership_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleGkeHubMembershipBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleGkeHubMembershipBindingArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_gke_hub_membership_binding", resourceName);
   }

@@ -12,7 +12,7 @@ export interface GoogleComputeProjectCloudArmorTierArgs {
 }
 
 export class google_compute_project_cloud_armor_tier extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeProjectCloudArmorTierArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeProjectCloudArmorTierArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_project_cloud_armor_tier", resourceName);
   }

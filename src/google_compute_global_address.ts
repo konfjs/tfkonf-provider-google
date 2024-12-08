@@ -18,7 +18,7 @@ export interface GoogleComputeGlobalAddressArgs {
 }
 
 export class google_compute_global_address extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeGlobalAddressArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeGlobalAddressArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_global_address", resourceName);
   }

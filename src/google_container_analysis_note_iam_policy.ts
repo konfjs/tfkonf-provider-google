@@ -6,7 +6,7 @@ export interface GoogleContainerAnalysisNoteIamPolicyArgs {
 }
 
 export class google_container_analysis_note_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleContainerAnalysisNoteIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleContainerAnalysisNoteIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_container_analysis_note_iam_policy", resourceName);
   }

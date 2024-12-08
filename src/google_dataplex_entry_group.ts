@@ -16,7 +16,7 @@ export interface GoogleDataplexEntryGroupArgs {
 }
 
 export class google_dataplex_entry_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataplexEntryGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataplexEntryGroupArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataplex_entry_group", resourceName);
   }

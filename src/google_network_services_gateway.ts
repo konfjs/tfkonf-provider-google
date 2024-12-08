@@ -25,7 +25,7 @@ export interface GoogleNetworkServicesGatewayArgs {
 }
 
 export class google_network_services_gateway extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkServicesGatewayArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkServicesGatewayArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_network_services_gateway", resourceName);
   }

@@ -11,7 +11,7 @@ export interface DataGoogleComputeNetworkPeeringArgs {
 }
 
 export class data_google_compute_network_peering extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeNetworkPeeringArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeNetworkPeeringArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "google_compute_network_peering", resourceName);
   }

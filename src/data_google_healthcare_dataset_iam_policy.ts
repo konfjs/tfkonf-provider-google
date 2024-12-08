@@ -5,7 +5,7 @@ export interface DataGoogleHealthcareDatasetIamPolicyArgs {
 }
 
 export class data_google_healthcare_dataset_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleHealthcareDatasetIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleHealthcareDatasetIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_healthcare_dataset_iam_policy", resourceName);
   }

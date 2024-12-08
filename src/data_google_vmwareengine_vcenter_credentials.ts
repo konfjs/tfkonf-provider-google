@@ -5,7 +5,7 @@ export interface DataGoogleVmwareengineVcenterCredentialsArgs {
 }
 
 export class data_google_vmwareengine_vcenter_credentials extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleVmwareengineVcenterCredentialsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleVmwareengineVcenterCredentialsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_vmwareengine_vcenter_credentials", resourceName);
   }

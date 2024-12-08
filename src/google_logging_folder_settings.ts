@@ -12,7 +12,7 @@ export interface GoogleLoggingFolderSettingsArgs {
 }
 
 export class google_logging_folder_settings extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleLoggingFolderSettingsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleLoggingFolderSettingsArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_logging_folder_settings", resourceName);
   }

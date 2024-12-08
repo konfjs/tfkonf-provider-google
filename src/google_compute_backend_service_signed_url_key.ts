@@ -13,7 +13,7 @@ export interface GoogleComputeBackendServiceSignedUrlKeyArgs {
 }
 
 export class google_compute_backend_service_signed_url_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeBackendServiceSignedUrlKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeBackendServiceSignedUrlKeyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_backend_service_signed_url_key", resourceName);
   }

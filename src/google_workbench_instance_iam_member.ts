@@ -14,7 +14,7 @@ export interface GoogleWorkbenchInstanceIamMemberArgs {
 }
 
 export class google_workbench_instance_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleWorkbenchInstanceIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleWorkbenchInstanceIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_workbench_instance_iam_member", resourceName);
   }

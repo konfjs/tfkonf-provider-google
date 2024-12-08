@@ -33,7 +33,7 @@ export interface GoogleNetworkSecuritySecurityProfileArgs {
 }
 
 export class google_network_security_security_profile extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkSecuritySecurityProfileArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkSecuritySecurityProfileArgs) {
     const meta = {threat_prevention_profile:{isBlock:true,severity_overrides:{isBlock:true},threat_overrides:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_network_security_security_profile", resourceName);
   }

@@ -12,7 +12,7 @@ export interface GoogleAccessContextManagerServicePerimeterResourceArgs {
 }
 
 export class google_access_context_manager_service_perimeter_resource extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleAccessContextManagerServicePerimeterResourceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleAccessContextManagerServicePerimeterResourceArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_access_context_manager_service_perimeter_resource", resourceName);
   }

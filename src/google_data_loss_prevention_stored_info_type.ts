@@ -64,7 +64,7 @@ export interface GoogleDataLossPreventionStoredInfoTypeArgs {
 }
 
 export class google_data_loss_prevention_stored_info_type extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataLossPreventionStoredInfoTypeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataLossPreventionStoredInfoTypeArgs) {
     const meta = {dictionary:{isBlock:true,cloud_storage_path:{isBlock:true},word_list:{isBlock:true}},large_custom_dictionary:{isBlock:true,big_query_field:{isBlock:true,field:{isBlock:true},table:{isBlock:true}},cloud_storage_file_set:{isBlock:true},output_path:{isBlock:true}},regex:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_data_loss_prevention_stored_info_type", resourceName);
   }

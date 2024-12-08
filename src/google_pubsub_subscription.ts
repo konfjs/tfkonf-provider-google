@@ -79,7 +79,7 @@ export interface GooglePubsubSubscriptionArgs {
 }
 
 export class google_pubsub_subscription extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GooglePubsubSubscriptionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GooglePubsubSubscriptionArgs) {
     const meta = {bigquery_config:{isBlock:true},cloud_storage_config:{isBlock:true,avro_config:{isBlock:true}},dead_letter_policy:{isBlock:true},expiration_policy:{isBlock:true},push_config:{isBlock:true,no_wrapper:{isBlock:true},oidc_token:{isBlock:true}},retry_policy:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_pubsub_subscription", resourceName);
   }

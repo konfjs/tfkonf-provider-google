@@ -14,7 +14,7 @@ export interface GoogleApigeeEndpointAttachmentArgs {
 }
 
 export class google_apigee_endpoint_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleApigeeEndpointAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleApigeeEndpointAttachmentArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_apigee_endpoint_attachment", resourceName);
   }

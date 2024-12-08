@@ -14,7 +14,7 @@ export interface GoogleEndpointsServiceIamMemberArgs {
 }
 
 export class google_endpoints_service_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleEndpointsServiceIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleEndpointsServiceIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_endpoints_service_iam_member", resourceName);
   }

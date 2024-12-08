@@ -14,7 +14,7 @@ export interface GoogleKmsKeyRingImportJobArgs {
 }
 
 export class google_kms_key_ring_import_job extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleKmsKeyRingImportJobArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleKmsKeyRingImportJobArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_kms_key_ring_import_job", resourceName);
   }

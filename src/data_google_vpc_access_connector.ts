@@ -7,7 +7,7 @@ export interface DataGoogleVpcAccessConnectorArgs {
 }
 
 export class data_google_vpc_access_connector extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleVpcAccessConnectorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleVpcAccessConnectorArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_vpc_access_connector", resourceName);
   }

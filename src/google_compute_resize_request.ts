@@ -21,7 +21,7 @@ export interface GoogleComputeResizeRequestArgs {
 }
 
 export class google_compute_resize_request extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeResizeRequestArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeResizeRequestArgs) {
     const meta = {requested_run_duration:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_resize_request", resourceName);
   }

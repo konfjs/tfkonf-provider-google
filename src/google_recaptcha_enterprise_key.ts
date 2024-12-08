@@ -44,7 +44,7 @@ export interface GoogleRecaptchaEnterpriseKeyArgs {
 }
 
 export class google_recaptcha_enterprise_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleRecaptchaEnterpriseKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleRecaptchaEnterpriseKeyArgs) {
     const meta = {android_settings:{isBlock:true},ios_settings:{isBlock:true},testing_options:{isBlock:true},timeouts:{isBlock:true},waf_settings:{isBlock:true},web_settings:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_recaptcha_enterprise_key", resourceName);
   }

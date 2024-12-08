@@ -14,7 +14,7 @@ export interface GoogleDataFusionInstanceIamBindingArgs {
 }
 
 export class google_data_fusion_instance_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataFusionInstanceIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataFusionInstanceIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_data_fusion_instance_iam_binding", resourceName);
   }

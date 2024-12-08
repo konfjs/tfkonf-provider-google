@@ -93,7 +93,7 @@ export interface GoogleMonitoringUptimeCheckConfigArgs {
 }
 
 export class google_monitoring_uptime_check_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleMonitoringUptimeCheckConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleMonitoringUptimeCheckConfigArgs) {
     const meta = {content_matchers:{isBlock:true,json_path_matcher:{isBlock:true}},http_check:{isBlock:true,accepted_response_status_codes:{isBlock:true},auth_info:{isBlock:true},ping_config:{isBlock:true},service_agent_authentication:{isBlock:true}},monitored_resource:{isBlock:true},resource_group:{isBlock:true},synthetic_monitor:{isBlock:true,cloud_function_v2:{isBlock:true}},tcp_check:{isBlock:true,ping_config:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_monitoring_uptime_check_config", resourceName);
   }

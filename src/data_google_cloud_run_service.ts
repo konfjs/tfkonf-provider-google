@@ -7,7 +7,7 @@ export interface DataGoogleCloudRunServiceArgs {
 }
 
 export class data_google_cloud_run_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleCloudRunServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleCloudRunServiceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_cloud_run_service", resourceName);
   }

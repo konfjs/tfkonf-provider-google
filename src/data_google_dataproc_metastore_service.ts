@@ -7,7 +7,7 @@ export interface DataGoogleDataprocMetastoreServiceArgs {
 }
 
 export class data_google_dataproc_metastore_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleDataprocMetastoreServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleDataprocMetastoreServiceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_dataproc_metastore_service", resourceName);
   }

@@ -7,7 +7,7 @@ export interface DataGoogleOracleDatabaseDbNodesArgs {
 }
 
 export class data_google_oracle_database_db_nodes extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleOracleDatabaseDbNodesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleOracleDatabaseDbNodesArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_oracle_database_db_nodes", resourceName);
   }

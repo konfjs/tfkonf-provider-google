@@ -41,7 +41,7 @@ export interface GoogleOrganizationPolicyArgs {
 }
 
 export class google_organization_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleOrganizationPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleOrganizationPolicyArgs) {
     const meta = {boolean_policy:{isBlock:true},list_policy:{isBlock:true,allow:{isBlock:true},deny:{isBlock:true}},restore_policy:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_organization_policy", resourceName);
   }

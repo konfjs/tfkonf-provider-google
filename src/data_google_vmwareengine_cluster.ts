@@ -6,7 +6,7 @@ export interface DataGoogleVmwareengineClusterArgs {
 }
 
 export class data_google_vmwareengine_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleVmwareengineClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleVmwareengineClusterArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_vmwareengine_cluster", resourceName);
   }

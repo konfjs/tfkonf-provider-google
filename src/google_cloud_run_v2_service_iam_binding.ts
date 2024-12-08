@@ -14,7 +14,7 @@ export interface GoogleCloudRunV2ServiceIamBindingArgs {
 }
 
 export class google_cloud_run_v2_service_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudRunV2ServiceIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudRunV2ServiceIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloud_run_v2_service_iam_binding", resourceName);
   }

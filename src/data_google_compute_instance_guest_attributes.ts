@@ -7,7 +7,7 @@ export interface DataGoogleComputeInstanceGuestAttributesArgs {
 }
 
 export class data_google_compute_instance_guest_attributes extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeInstanceGuestAttributesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeInstanceGuestAttributesArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_instance_guest_attributes", resourceName);
   }

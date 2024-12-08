@@ -6,7 +6,7 @@ export interface DataGoogleLoggingProjectCmekSettingsArgs {
 }
 
 export class data_google_logging_project_cmek_settings extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleLoggingProjectCmekSettingsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleLoggingProjectCmekSettingsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_logging_project_cmek_settings", resourceName);
   }

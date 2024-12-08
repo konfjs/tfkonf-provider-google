@@ -175,7 +175,7 @@ export interface GoogleBigqueryTableArgs {
 }
 
 export class google_bigquery_table extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigqueryTableArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigqueryTableArgs) {
     const meta = {biglake_configuration:{isBlock:true},encryption_configuration:{isBlock:true},external_data_configuration:{isBlock:true,avro_options:{isBlock:true},bigtable_options:{isBlock:true,column_family:{isBlock:true,column:{isBlock:true}}},csv_options:{isBlock:true},google_sheets_options:{isBlock:true},hive_partitioning_options:{isBlock:true},json_options:{isBlock:true},parquet_options:{isBlock:true}},materialized_view:{isBlock:true},range_partitioning:{isBlock:true,range:{isBlock:true}},table_constraints:{isBlock:true,foreign_keys:{isBlock:true,column_references:{isBlock:true},referenced_table:{isBlock:true}},primary_key:{isBlock:true}},table_replication_info:{isBlock:true},time_partitioning:{isBlock:true},view:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_bigquery_table", resourceName);
   }

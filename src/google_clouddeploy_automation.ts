@@ -47,7 +47,7 @@ export interface GoogleClouddeployAutomationArgs {
 }
 
 export class google_clouddeploy_automation extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleClouddeployAutomationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleClouddeployAutomationArgs) {
     const meta = {rules:{isBlock:true,advance_rollout_rule:{isBlock:true},promote_release_rule:{isBlock:true}},selector:{isBlock:true,targets:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_clouddeploy_automation", resourceName);
   }

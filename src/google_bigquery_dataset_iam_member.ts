@@ -14,7 +14,7 @@ export interface GoogleBigqueryDatasetIamMemberArgs {
 }
 
 export class google_bigquery_dataset_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigqueryDatasetIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigqueryDatasetIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_bigquery_dataset_iam_member", resourceName);
   }

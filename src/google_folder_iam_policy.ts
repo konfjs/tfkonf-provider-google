@@ -6,7 +6,7 @@ export interface GoogleFolderIamPolicyArgs {
 }
 
 export class google_folder_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleFolderIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleFolderIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_folder_iam_policy", resourceName);
   }

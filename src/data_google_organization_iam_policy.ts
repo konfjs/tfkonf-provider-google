@@ -5,7 +5,7 @@ export interface DataGoogleOrganizationIamPolicyArgs {
 }
 
 export class data_google_organization_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleOrganizationIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleOrganizationIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_organization_iam_policy", resourceName);
   }

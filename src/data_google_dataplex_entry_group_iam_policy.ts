@@ -5,7 +5,7 @@ export interface DataGoogleDataplexEntryGroupIamPolicyArgs {
 }
 
 export class data_google_dataplex_entry_group_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleDataplexEntryGroupIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleDataplexEntryGroupIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_dataplex_entry_group_iam_policy", resourceName);
   }

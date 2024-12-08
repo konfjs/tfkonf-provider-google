@@ -19,7 +19,7 @@ export interface GoogleLoggingBillingAccountBucketConfigArgs {
 }
 
 export class google_logging_billing_account_bucket_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleLoggingBillingAccountBucketConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleLoggingBillingAccountBucketConfigArgs) {
     const meta = {cmek_settings:{isBlock:true},index_configs:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_logging_billing_account_bucket_config", resourceName);
   }

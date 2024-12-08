@@ -17,7 +17,7 @@ export interface GoogleComputeInstanceSettingsArgs {
 }
 
 export class google_compute_instance_settings extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeInstanceSettingsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeInstanceSettingsArgs) {
     const meta = {metadata:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_instance_settings", resourceName);
   }

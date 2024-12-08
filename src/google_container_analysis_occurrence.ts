@@ -25,7 +25,7 @@ export interface GoogleContainerAnalysisOccurrenceArgs {
 }
 
 export class google_container_analysis_occurrence extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleContainerAnalysisOccurrenceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleContainerAnalysisOccurrenceArgs) {
     const meta = {attestation:{isBlock:true,signatures:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_container_analysis_occurrence", resourceName);
   }

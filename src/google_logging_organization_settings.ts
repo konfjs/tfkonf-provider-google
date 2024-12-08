@@ -12,7 +12,7 @@ export interface GoogleLoggingOrganizationSettingsArgs {
 }
 
 export class google_logging_organization_settings extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleLoggingOrganizationSettingsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleLoggingOrganizationSettingsArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_logging_organization_settings", resourceName);
   }

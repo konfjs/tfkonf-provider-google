@@ -52,7 +52,7 @@ export interface GoogleGkeonpremVmwareNodePoolArgs {
 }
 
 export class google_gkeonprem_vmware_node_pool extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleGkeonpremVmwareNodePoolArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleGkeonpremVmwareNodePoolArgs) {
     const meta = {config:{isBlock:true,taints:{isBlock:true},vsphere_config:{isBlock:true,tags:{isBlock:true}}},node_pool_autoscaling:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_gkeonprem_vmware_node_pool", resourceName);
   }

@@ -42,7 +42,7 @@ export interface GoogleVertexAiIndexEndpointDeployedIndexArgs {
 }
 
 export class google_vertex_ai_index_endpoint_deployed_index extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleVertexAiIndexEndpointDeployedIndexArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleVertexAiIndexEndpointDeployedIndexArgs) {
     const meta = {automatic_resources:{isBlock:true},dedicated_resources:{isBlock:true,machine_spec:{isBlock:true}},deployed_index_auth_config:{isBlock:true,auth_provider:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_vertex_ai_index_endpoint_deployed_index", resourceName);
   }

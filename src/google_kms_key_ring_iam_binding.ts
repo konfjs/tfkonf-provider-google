@@ -14,7 +14,7 @@ export interface GoogleKmsKeyRingIamBindingArgs {
 }
 
 export class google_kms_key_ring_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleKmsKeyRingIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleKmsKeyRingIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_kms_key_ring_iam_binding", resourceName);
   }

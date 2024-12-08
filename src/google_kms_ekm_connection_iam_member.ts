@@ -14,7 +14,7 @@ export interface GoogleKmsEkmConnectionIamMemberArgs {
 }
 
 export class google_kms_ekm_connection_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleKmsEkmConnectionIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleKmsEkmConnectionIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_kms_ekm_connection_iam_member", resourceName);
   }

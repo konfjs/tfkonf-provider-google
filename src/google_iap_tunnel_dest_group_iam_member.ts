@@ -14,7 +14,7 @@ export interface GoogleIapTunnelDestGroupIamMemberArgs {
 }
 
 export class google_iap_tunnel_dest_group_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIapTunnelDestGroupIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIapTunnelDestGroupIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_iap_tunnel_dest_group_iam_member", resourceName);
   }

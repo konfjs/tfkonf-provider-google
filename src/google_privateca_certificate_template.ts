@@ -99,7 +99,7 @@ export interface GooglePrivatecaCertificateTemplateArgs {
 }
 
 export class google_privateca_certificate_template extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GooglePrivatecaCertificateTemplateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GooglePrivatecaCertificateTemplateArgs) {
     const meta = {identity_constraints:{isBlock:true,cel_expression:{isBlock:true}},passthrough_extensions:{isBlock:true,additional_extensions:{isBlock:true}},predefined_values:{isBlock:true,additional_extensions:{isBlock:true,object_id:{isBlock:true}},ca_options:{isBlock:true},key_usage:{isBlock:true,base_key_usage:{isBlock:true},extended_key_usage:{isBlock:true},unknown_extended_key_usages:{isBlock:true}},policy_ids:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_privateca_certificate_template", resourceName);
   }

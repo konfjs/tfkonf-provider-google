@@ -14,7 +14,7 @@ export interface GoogleClouddeployTargetIamBindingArgs {
 }
 
 export class google_clouddeploy_target_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleClouddeployTargetIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleClouddeployTargetIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_clouddeploy_target_iam_binding", resourceName);
   }

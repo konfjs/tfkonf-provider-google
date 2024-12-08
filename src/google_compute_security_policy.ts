@@ -146,7 +146,7 @@ export interface GoogleComputeSecurityPolicyArgs {
 }
 
 export class google_compute_security_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeSecurityPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeSecurityPolicyArgs) {
     const meta = {adaptive_protection_config:{isBlock:true,layer_7_ddos_defense_config:{isBlock:true}},advanced_options_config:{isBlock:true,json_custom_config:{isBlock:true}},recaptcha_options_config:{isBlock:true},rule:{isBlock:true,header_action:{isBlock:true,request_headers_to_adds:{isBlock:true}},match:{isBlock:true,config:{isBlock:true},expr:{isBlock:true},expr_options:{isBlock:true,recaptcha_options:{isBlock:true}}},preconfigured_waf_config:{isBlock:true,exclusion:{isBlock:true,request_cookie:{isBlock:true},request_header:{isBlock:true},request_query_param:{isBlock:true},request_uri:{isBlock:true}}},rate_limit_options:{isBlock:true,ban_threshold:{isBlock:true},exceed_redirect_options:{isBlock:true},rate_limit_threshold:{isBlock:true}},redirect_options:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_security_policy", resourceName);
   }

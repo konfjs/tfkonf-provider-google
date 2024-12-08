@@ -63,7 +63,7 @@ export interface GoogleNotebooksInstanceArgs {
 }
 
 export class google_notebooks_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNotebooksInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNotebooksInstanceArgs) {
     const meta = {accelerator_config:{isBlock:true},container_image:{isBlock:true},reservation_affinity:{isBlock:true},shielded_instance_config:{isBlock:true},timeouts:{isBlock:true},vm_image:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_notebooks_instance", resourceName);
   }

@@ -4,7 +4,7 @@ export interface DataGoogleComputeNodeTypesArgs {
 }
 
 export class data_google_compute_node_types extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeNodeTypesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeNodeTypesArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_node_types", resourceName);
   }

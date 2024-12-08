@@ -12,7 +12,7 @@ export interface GoogleFirebaserulesReleaseArgs {
 }
 
 export class google_firebaserules_release extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleFirebaserulesReleaseArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleFirebaserulesReleaseArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_firebaserules_release", resourceName);
   }

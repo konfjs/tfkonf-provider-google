@@ -16,7 +16,7 @@ export interface GoogleDocumentAiWarehouseLocationArgs {
 }
 
 export class google_document_ai_warehouse_location extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDocumentAiWarehouseLocationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDocumentAiWarehouseLocationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_document_ai_warehouse_location", resourceName);
   }

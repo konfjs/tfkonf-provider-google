@@ -35,7 +35,7 @@ export interface GoogleBlockchainNodeEngineBlockchainNodesArgs {
 }
 
 export class google_blockchain_node_engine_blockchain_nodes extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBlockchainNodeEngineBlockchainNodesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBlockchainNodeEngineBlockchainNodesArgs) {
     const meta = {ethereum_details:{isBlock:true,geth_details:{isBlock:true},validator_config:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_blockchain_node_engine_blockchain_nodes", resourceName);
   }

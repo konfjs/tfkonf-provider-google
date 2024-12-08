@@ -78,7 +78,7 @@ export interface GoogleDataprocBatchArgs {
 }
 
 export class google_dataproc_batch extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataprocBatchArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataprocBatchArgs) {
     const meta = {environment_config:{isBlock:true,execution_config:{isBlock:true},peripherals_config:{isBlock:true,spark_history_server_config:{isBlock:true}}},pyspark_batch:{isBlock:true},runtime_config:{isBlock:true},spark_batch:{isBlock:true},spark_r_batch:{isBlock:true},spark_sql_batch:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataproc_batch", resourceName);
   }

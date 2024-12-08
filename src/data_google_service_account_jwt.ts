@@ -8,7 +8,7 @@ export interface DataGoogleServiceAccountJwtArgs {
 }
 
 export class data_google_service_account_jwt extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleServiceAccountJwtArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleServiceAccountJwtArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_service_account_jwt", resourceName);
   }

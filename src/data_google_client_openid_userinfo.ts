@@ -4,7 +4,7 @@ export interface DataGoogleClientOpenidUserinfoArgs {
 }
 
 export class data_google_client_openid_userinfo extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleClientOpenidUserinfoArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleClientOpenidUserinfoArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_client_openid_userinfo", resourceName);
   }

@@ -173,7 +173,7 @@ export interface GoogleGkeHubFeatureArgs {
 }
 
 export class google_gke_hub_feature extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleGkeHubFeatureArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleGkeHubFeatureArgs) {
     const meta = {fleet_default_member_config:{isBlock:true,configmanagement:{isBlock:true,config_sync:{isBlock:true,git:{isBlock:true},oci:{isBlock:true}}},mesh:{isBlock:true},policycontroller:{isBlock:true,policy_controller_hub_config:{isBlock:true,deployment_configs:{isBlock:true,container_resources:{isBlock:true,limits:{isBlock:true},requests:{isBlock:true}},pod_toleration:{isBlock:true}},monitoring:{isBlock:true},policy_content:{isBlock:true,bundles:{isBlock:true},template_library:{isBlock:true}}}}},spec:{isBlock:true,clusterupgrade:{isBlock:true,gke_upgrade_overrides:{isBlock:true,post_conditions:{isBlock:true},upgrade:{isBlock:true}},post_conditions:{isBlock:true}},fleetobservability:{isBlock:true,logging_config:{isBlock:true,default_config:{isBlock:true},fleet_scope_logs_config:{isBlock:true}}},multiclusteringress:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_gke_hub_feature", resourceName);
   }

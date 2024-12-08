@@ -27,7 +27,7 @@ export interface GoogleApigeeKeystoresAliasesKeyCertFileArgs {
 }
 
 export class google_apigee_keystores_aliases_key_cert_file extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleApigeeKeystoresAliasesKeyCertFileArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleApigeeKeystoresAliasesKeyCertFileArgs) {
     const meta = {certs_info:{isBlock:true,cert_info:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_apigee_keystores_aliases_key_cert_file", resourceName);
   }

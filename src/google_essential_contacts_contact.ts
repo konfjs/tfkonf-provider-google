@@ -15,7 +15,7 @@ export interface GoogleEssentialContactsContactArgs {
 }
 
 export class google_essential_contacts_contact extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleEssentialContactsContactArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleEssentialContactsContactArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_essential_contacts_contact", resourceName);
   }

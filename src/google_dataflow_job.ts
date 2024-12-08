@@ -27,7 +27,7 @@ export interface GoogleDataflowJobArgs {
 }
 
 export class google_dataflow_job extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataflowJobArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataflowJobArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataflow_job", resourceName);
   }

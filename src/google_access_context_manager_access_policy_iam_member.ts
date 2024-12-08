@@ -14,7 +14,7 @@ export interface GoogleAccessContextManagerAccessPolicyIamMemberArgs {
 }
 
 export class google_access_context_manager_access_policy_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleAccessContextManagerAccessPolicyIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleAccessContextManagerAccessPolicyIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_access_context_manager_access_policy_iam_member", resourceName);
   }

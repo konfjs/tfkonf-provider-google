@@ -18,7 +18,7 @@ export interface GoogleSecurityposturePostureDeploymentArgs {
 }
 
 export class google_securityposture_posture_deployment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSecurityposturePostureDeploymentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSecurityposturePostureDeploymentArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_securityposture_posture_deployment", resourceName);
   }

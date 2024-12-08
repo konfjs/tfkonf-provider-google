@@ -12,7 +12,7 @@ export interface GoogleTagsTagBindingArgs {
 }
 
 export class google_tags_tag_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleTagsTagBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleTagsTagBindingArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_tags_tag_binding", resourceName);
   }

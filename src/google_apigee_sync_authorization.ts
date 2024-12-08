@@ -13,7 +13,7 @@ export interface GoogleApigeeSyncAuthorizationArgs {
 }
 
 export class google_apigee_sync_authorization extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleApigeeSyncAuthorizationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleApigeeSyncAuthorizationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_apigee_sync_authorization", resourceName);
   }

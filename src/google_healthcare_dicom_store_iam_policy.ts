@@ -6,7 +6,7 @@ export interface GoogleHealthcareDicomStoreIamPolicyArgs {
 }
 
 export class google_healthcare_dicom_store_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleHealthcareDicomStoreIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleHealthcareDicomStoreIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_healthcare_dicom_store_iam_policy", resourceName);
   }

@@ -18,7 +18,7 @@ export interface GoogleActiveDirectoryDomainTrustArgs {
 }
 
 export class google_active_directory_domain_trust extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleActiveDirectoryDomainTrustArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleActiveDirectoryDomainTrustArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_active_directory_domain_trust", resourceName);
   }

@@ -7,7 +7,7 @@ export interface DataGooglePrivilegedAccessManagerEntitlementArgs {
 }
 
 export class data_google_privileged_access_manager_entitlement extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGooglePrivilegedAccessManagerEntitlementArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGooglePrivilegedAccessManagerEntitlementArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_privileged_access_manager_entitlement", resourceName);
   }

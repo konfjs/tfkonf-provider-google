@@ -118,7 +118,7 @@ export interface GoogleStorageTransferJobArgs {
 }
 
 export class google_storage_transfer_job extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleStorageTransferJobArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleStorageTransferJobArgs) {
     const meta = {event_stream:{isBlock:true},notification_config:{isBlock:true},schedule:{isBlock:true,schedule_end_date:{isBlock:true},schedule_start_date:{isBlock:true},start_time_of_day:{isBlock:true}},transfer_spec:{isBlock:true,aws_s3_data_source:{isBlock:true,aws_access_key:{isBlock:true}},azure_blob_storage_data_source:{isBlock:true,azure_credentials:{isBlock:true}},gcs_data_sink:{isBlock:true},gcs_data_source:{isBlock:true},http_data_source:{isBlock:true},object_conditions:{isBlock:true},posix_data_sink:{isBlock:true},posix_data_source:{isBlock:true},transfer_options:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "google_storage_transfer_job", resourceName);
   }

@@ -14,7 +14,7 @@ export interface GoogleDataCatalogEntryGroupIamBindingArgs {
 }
 
 export class google_data_catalog_entry_group_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataCatalogEntryGroupIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataCatalogEntryGroupIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_data_catalog_entry_group_iam_binding", resourceName);
   }

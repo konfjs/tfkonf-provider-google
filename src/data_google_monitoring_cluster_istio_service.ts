@@ -9,7 +9,7 @@ export interface DataGoogleMonitoringClusterIstioServiceArgs {
 }
 
 export class data_google_monitoring_cluster_istio_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleMonitoringClusterIstioServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleMonitoringClusterIstioServiceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_monitoring_cluster_istio_service", resourceName);
   }

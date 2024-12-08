@@ -26,7 +26,7 @@ export interface GoogleVmwareengineNetworkPolicyArgs {
 }
 
 export class google_vmwareengine_network_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleVmwareengineNetworkPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleVmwareengineNetworkPolicyArgs) {
     const meta = {external_ip:{isBlock:true},internet_access:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_vmwareengine_network_policy", resourceName);
   }

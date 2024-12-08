@@ -71,7 +71,7 @@ export interface GoogleBigqueryConnectionArgs {
 }
 
 export class google_bigquery_connection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigqueryConnectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigqueryConnectionArgs) {
     const meta = {aws:{isBlock:true,access_role:{isBlock:true}},azure:{isBlock:true},cloud_resource:{isBlock:true},cloud_spanner:{isBlock:true},cloud_sql:{isBlock:true,credential:{isBlock:true}},spark:{isBlock:true,metastore_service_config:{isBlock:true},spark_history_server_config:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_bigquery_connection", resourceName);
   }

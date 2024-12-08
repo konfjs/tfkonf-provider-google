@@ -66,7 +66,7 @@ export interface GoogleBillingBudgetArgs {
 }
 
 export class google_billing_budget extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBillingBudgetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBillingBudgetArgs) {
     const meta = {all_updates_rule:{isBlock:true},amount:{isBlock:true,specified_amount:{isBlock:true}},budget_filter:{isBlock:true,custom_period:{isBlock:true,end_date:{isBlock:true},start_date:{isBlock:true}}},threshold_rules:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_billing_budget", resourceName);
   }

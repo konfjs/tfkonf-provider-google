@@ -29,7 +29,7 @@ export interface GoogleFirestoreFieldArgs {
 }
 
 export class google_firestore_field extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleFirestoreFieldArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleFirestoreFieldArgs) {
     const meta = {index_config:{isBlock:true,indexes:{isBlock:true}},timeouts:{isBlock:true},ttl_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_firestore_field", resourceName);
   }

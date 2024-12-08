@@ -14,7 +14,7 @@ export interface GoogleHealthcareDatasetIamBindingArgs {
 }
 
 export class google_healthcare_dataset_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleHealthcareDatasetIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleHealthcareDatasetIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_healthcare_dataset_iam_binding", resourceName);
   }

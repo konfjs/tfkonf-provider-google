@@ -29,7 +29,7 @@ export interface GoogleBigtableInstanceArgs {
 }
 
 export class google_bigtable_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigtableInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigtableInstanceArgs) {
     const meta = {cluster:{isBlock:true,autoscaling_config:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_bigtable_instance", resourceName);
   }

@@ -19,7 +19,7 @@ export interface GoogleHealthcareWorkspaceArgs {
 }
 
 export class google_healthcare_workspace extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleHealthcareWorkspaceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleHealthcareWorkspaceArgs) {
     const meta = {settings:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_healthcare_workspace", resourceName);
   }

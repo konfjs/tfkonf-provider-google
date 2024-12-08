@@ -16,7 +16,7 @@ export interface GoogleIdentityPlatformTenantDefaultSupportedIdpConfigArgs {
 }
 
 export class google_identity_platform_tenant_default_supported_idp_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIdentityPlatformTenantDefaultSupportedIdpConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIdentityPlatformTenantDefaultSupportedIdpConfigArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_identity_platform_tenant_default_supported_idp_config", resourceName);
   }

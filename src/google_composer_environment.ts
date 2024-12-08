@@ -142,7 +142,7 @@ export interface GoogleComposerEnvironmentArgs {
 }
 
 export class google_composer_environment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComposerEnvironmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComposerEnvironmentArgs) {
     const meta = {config:{isBlock:true,data_retention_config:{isBlock:true,task_logs_retention_config:{isBlock:true}},database_config:{isBlock:true},encryption_config:{isBlock:true},maintenance_window:{isBlock:true},master_authorized_networks_config:{isBlock:true,cidr_blocks:{isBlock:true}},node_config:{isBlock:true,ip_allocation_policy:{isBlock:true}},private_environment_config:{isBlock:true},recovery_config:{isBlock:true,scheduled_snapshots_config:{isBlock:true}},software_config:{isBlock:true,cloud_data_lineage_integration:{isBlock:true}},web_server_config:{isBlock:true},web_server_network_access_control:{isBlock:true,allowed_ip_range:{isBlock:true}},workloads_config:{isBlock:true,scheduler:{isBlock:true},triggerer:{isBlock:true},web_server:{isBlock:true},worker:{isBlock:true}}},storage_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_composer_environment", resourceName);
   }

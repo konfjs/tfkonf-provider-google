@@ -5,7 +5,7 @@ export interface DataGoogleOrganizationArgs {
 }
 
 export class data_google_organization extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleOrganizationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleOrganizationArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_organization", resourceName);
   }

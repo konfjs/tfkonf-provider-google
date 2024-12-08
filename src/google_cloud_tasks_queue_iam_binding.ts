@@ -14,7 +14,7 @@ export interface GoogleCloudTasksQueueIamBindingArgs {
 }
 
 export class google_cloud_tasks_queue_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudTasksQueueIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudTasksQueueIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloud_tasks_queue_iam_binding", resourceName);
   }

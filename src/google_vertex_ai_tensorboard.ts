@@ -19,7 +19,7 @@ export interface GoogleVertexAiTensorboardArgs {
 }
 
 export class google_vertex_ai_tensorboard extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleVertexAiTensorboardArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleVertexAiTensorboardArgs) {
     const meta = {encryption_spec:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_vertex_ai_tensorboard", resourceName);
   }

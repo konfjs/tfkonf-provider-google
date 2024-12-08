@@ -22,7 +22,7 @@ export interface GoogleTpuNodeArgs {
 }
 
 export class google_tpu_node extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleTpuNodeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleTpuNodeArgs) {
     const meta = {scheduling_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_tpu_node", resourceName);
   }

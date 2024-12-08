@@ -6,7 +6,7 @@ export interface DataGoogleComputeImageArgs {
 }
 
 export class data_google_compute_image extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeImageArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeImageArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_image", resourceName);
   }

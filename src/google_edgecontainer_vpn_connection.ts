@@ -23,7 +23,7 @@ export interface GoogleEdgecontainerVpnConnectionArgs {
 }
 
 export class google_edgecontainer_vpn_connection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleEdgecontainerVpnConnectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleEdgecontainerVpnConnectionArgs) {
     const meta = {timeouts:{isBlock:true},vpc_project:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_edgecontainer_vpn_connection", resourceName);
   }

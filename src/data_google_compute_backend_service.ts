@@ -6,7 +6,7 @@ export interface DataGoogleComputeBackendServiceArgs {
 }
 
 export class data_google_compute_backend_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeBackendServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeBackendServiceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_backend_service", resourceName);
   }

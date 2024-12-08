@@ -18,7 +18,7 @@ export interface GoogleAppEngineApplicationUrlDispatchRulesArgs {
 }
 
 export class google_app_engine_application_url_dispatch_rules extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleAppEngineApplicationUrlDispatchRulesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleAppEngineApplicationUrlDispatchRulesArgs) {
     const meta = {dispatch_rules:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_app_engine_application_url_dispatch_rules", resourceName);
   }

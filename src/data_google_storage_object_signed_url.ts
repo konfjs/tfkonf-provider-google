@@ -12,7 +12,7 @@ export interface DataGoogleStorageObjectSignedUrlArgs {
 }
 
 export class data_google_storage_object_signed_url extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleStorageObjectSignedUrlArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleStorageObjectSignedUrlArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_storage_object_signed_url", resourceName);
   }

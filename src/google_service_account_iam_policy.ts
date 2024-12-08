@@ -6,7 +6,7 @@ export interface GoogleServiceAccountIamPolicyArgs {
 }
 
 export class google_service_account_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleServiceAccountIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleServiceAccountIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_service_account_iam_policy", resourceName);
   }

@@ -14,7 +14,7 @@ export interface GoogleGkeHubMembershipIamBindingArgs {
 }
 
 export class google_gke_hub_membership_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleGkeHubMembershipIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleGkeHubMembershipIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_gke_hub_membership_iam_binding", resourceName);
   }

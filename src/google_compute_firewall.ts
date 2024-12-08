@@ -38,7 +38,7 @@ export interface GoogleComputeFirewallArgs {
 }
 
 export class google_compute_firewall extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeFirewallArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeFirewallArgs) {
     const meta = {allow:{isBlock:true},deny:{isBlock:true},log_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_firewall", resourceName);
   }

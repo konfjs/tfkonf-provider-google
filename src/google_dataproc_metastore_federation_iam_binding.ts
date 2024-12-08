@@ -14,7 +14,7 @@ export interface GoogleDataprocMetastoreFederationIamBindingArgs {
 }
 
 export class google_dataproc_metastore_federation_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataprocMetastoreFederationIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataprocMetastoreFederationIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataproc_metastore_federation_iam_binding", resourceName);
   }

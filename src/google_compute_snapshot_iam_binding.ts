@@ -14,7 +14,7 @@ export interface GoogleComputeSnapshotIamBindingArgs {
 }
 
 export class google_compute_snapshot_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeSnapshotIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeSnapshotIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_snapshot_iam_binding", resourceName);
   }

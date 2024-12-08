@@ -16,7 +16,7 @@ export interface GoogleVertexAiFeatureGroupFeatureArgs {
 }
 
 export class google_vertex_ai_feature_group_feature extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleVertexAiFeatureGroupFeatureArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleVertexAiFeatureGroupFeatureArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_vertex_ai_feature_group_feature", resourceName);
   }

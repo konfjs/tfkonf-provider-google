@@ -15,7 +15,7 @@ export interface GoogleSccV2OrganizationSourceIamBindingArgs {
 }
 
 export class google_scc_v2_organization_source_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSccV2OrganizationSourceIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSccV2OrganizationSourceIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_scc_v2_organization_source_iam_binding", resourceName);
   }

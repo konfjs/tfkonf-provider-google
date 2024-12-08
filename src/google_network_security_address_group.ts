@@ -19,7 +19,7 @@ export interface GoogleNetworkSecurityAddressGroupArgs {
 }
 
 export class google_network_security_address_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkSecurityAddressGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkSecurityAddressGroupArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_network_security_address_group", resourceName);
   }

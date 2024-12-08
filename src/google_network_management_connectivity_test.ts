@@ -35,7 +35,7 @@ export interface GoogleNetworkManagementConnectivityTestArgs {
 }
 
 export class google_network_management_connectivity_test extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkManagementConnectivityTestArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkManagementConnectivityTestArgs) {
     const meta = {destination:{isBlock:true},source:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_network_management_connectivity_test", resourceName);
   }

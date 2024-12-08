@@ -39,7 +39,7 @@ export interface GoogleDialogflowCxIntentArgs {
 }
 
 export class google_dialogflow_cx_intent extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDialogflowCxIntentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDialogflowCxIntentArgs) {
     const meta = {parameters:{isBlock:true},timeouts:{isBlock:true},training_phrases:{isBlock:true,parts:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "google_dialogflow_cx_intent", resourceName);
   }

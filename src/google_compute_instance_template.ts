@@ -152,7 +152,7 @@ export interface GoogleComputeInstanceTemplateArgs {
 }
 
 export class google_compute_instance_template extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeInstanceTemplateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeInstanceTemplateArgs) {
     const meta = {advanced_machine_features:{isBlock:true},confidential_instance_config:{isBlock:true},disk:{isBlock:true,disk_encryption_key:{isBlock:true},source_image_encryption_key:{isBlock:true},source_snapshot_encryption_key:{isBlock:true}},guest_accelerator:{isBlock:true},network_interface:{isBlock:true,access_config:{isBlock:true},alias_ip_range:{isBlock:true},ipv6_access_config:{isBlock:true}},network_performance_config:{isBlock:true},reservation_affinity:{isBlock:true,specific_reservation:{isBlock:true}},scheduling:{isBlock:true,local_ssd_recovery_timeout:{isBlock:true},max_run_duration:{isBlock:true},node_affinities:{isBlock:true},on_instance_stop_action:{isBlock:true}},service_account:{isBlock:true},shielded_instance_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_instance_template", resourceName);
   }

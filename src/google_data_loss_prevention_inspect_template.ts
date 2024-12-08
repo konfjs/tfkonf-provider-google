@@ -203,7 +203,7 @@ export interface GoogleDataLossPreventionInspectTemplateArgs {
 }
 
 export class google_data_loss_prevention_inspect_template extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataLossPreventionInspectTemplateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataLossPreventionInspectTemplateArgs) {
     const meta = {inspect_config:{isBlock:true,custom_info_types:{isBlock:true,dictionary:{isBlock:true,cloud_storage_path:{isBlock:true},word_list:{isBlock:true}},info_type:{isBlock:true,sensitivity_score:{isBlock:true}},regex:{isBlock:true},sensitivity_score:{isBlock:true},stored_type:{isBlock:true},surrogate_type:{isBlock:true}},info_types:{isBlock:true,sensitivity_score:{isBlock:true}},limits:{isBlock:true,max_findings_per_info_type:{isBlock:true,info_type:{isBlock:true,sensitivity_score:{isBlock:true}}}},rule_set:{isBlock:true,info_types:{isBlock:true,sensitivity_score:{isBlock:true}},rules:{isBlock:true,exclusion_rule:{isBlock:true,dictionary:{isBlock:true,cloud_storage_path:{isBlock:true},word_list:{isBlock:true}},exclude_by_hotword:{isBlock:true,hotword_regex:{isBlock:true},proximity:{isBlock:true}},exclude_info_types:{isBlock:true,info_types:{isBlock:true,sensitivity_score:{isBlock:true}}},regex:{isBlock:true}},hotword_rule:{isBlock:true,hotword_regex:{isBlock:true},likelihood_adjustment:{isBlock:true},proximity:{isBlock:true}}}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_data_loss_prevention_inspect_template", resourceName);
   }

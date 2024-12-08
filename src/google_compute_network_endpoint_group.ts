@@ -16,7 +16,7 @@ export interface GoogleComputeNetworkEndpointGroupArgs {
 }
 
 export class google_compute_network_endpoint_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeNetworkEndpointGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeNetworkEndpointGroupArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_network_endpoint_group", resourceName);
   }

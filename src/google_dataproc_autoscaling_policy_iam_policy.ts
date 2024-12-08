@@ -6,7 +6,7 @@ export interface GoogleDataprocAutoscalingPolicyIamPolicyArgs {
 }
 
 export class google_dataproc_autoscaling_policy_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataprocAutoscalingPolicyIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataprocAutoscalingPolicyIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_dataproc_autoscaling_policy_iam_policy", resourceName);
   }

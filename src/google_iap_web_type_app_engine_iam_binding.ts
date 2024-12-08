@@ -14,7 +14,7 @@ export interface GoogleIapWebTypeAppEngineIamBindingArgs {
 }
 
 export class google_iap_web_type_app_engine_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIapWebTypeAppEngineIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIapWebTypeAppEngineIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_iap_web_type_app_engine_iam_binding", resourceName);
   }

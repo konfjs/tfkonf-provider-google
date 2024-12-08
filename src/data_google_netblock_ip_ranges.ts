@@ -5,7 +5,7 @@ export interface DataGoogleNetblockIpRangesArgs {
 }
 
 export class data_google_netblock_ip_ranges extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleNetblockIpRangesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleNetblockIpRangesArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_netblock_ip_ranges", resourceName);
   }

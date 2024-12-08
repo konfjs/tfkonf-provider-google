@@ -16,7 +16,7 @@ export interface GoogleMigrationCenterGroupArgs {
 }
 
 export class google_migration_center_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleMigrationCenterGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleMigrationCenterGroupArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_migration_center_group", resourceName);
   }

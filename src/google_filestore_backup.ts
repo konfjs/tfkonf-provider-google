@@ -17,7 +17,7 @@ export interface GoogleFilestoreBackupArgs {
 }
 
 export class google_filestore_backup extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleFilestoreBackupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleFilestoreBackupArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_filestore_backup", resourceName);
   }

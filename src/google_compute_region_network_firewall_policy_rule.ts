@@ -52,7 +52,7 @@ export interface GoogleComputeRegionNetworkFirewallPolicyRuleArgs {
 }
 
 export class google_compute_region_network_firewall_policy_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeRegionNetworkFirewallPolicyRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeRegionNetworkFirewallPolicyRuleArgs) {
     const meta = {match:{isBlock:true,layer4_configs:{isBlock:true},src_secure_tags:{isBlock:true}},target_secure_tags:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_region_network_firewall_policy_rule", resourceName);
   }

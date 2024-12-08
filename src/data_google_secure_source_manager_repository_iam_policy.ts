@@ -5,7 +5,7 @@ export interface DataGoogleSecureSourceManagerRepositoryIamPolicyArgs {
 }
 
 export class data_google_secure_source_manager_repository_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleSecureSourceManagerRepositoryIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleSecureSourceManagerRepositoryIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_secure_source_manager_repository_iam_policy", resourceName);
   }

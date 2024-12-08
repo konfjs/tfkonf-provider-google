@@ -255,7 +255,7 @@ export interface GoogleCloudbuildTriggerArgs {
 }
 
 export class google_cloudbuild_trigger extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudbuildTriggerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudbuildTriggerArgs) {
     const meta = {approval_config:{isBlock:true},bitbucket_server_trigger_config:{isBlock:true,pull_request:{isBlock:true},push:{isBlock:true}},build:{isBlock:true,artifacts:{isBlock:true,maven_artifacts:{isBlock:true},npm_packages:{isBlock:true},objects:{isBlock:true},python_packages:{isBlock:true}},available_secrets:{isBlock:true,secret_manager:{isBlock:true}},options:{isBlock:true,volumes:{isBlock:true}},secret:{isBlock:true},source:{isBlock:true,repo_source:{isBlock:true},storage_source:{isBlock:true}},step:{isBlock:true,volumes:{isBlock:true}}},git_file_source:{isBlock:true},github:{isBlock:true,pull_request:{isBlock:true},push:{isBlock:true}},pubsub_config:{isBlock:true},repository_event_config:{isBlock:true,pull_request:{isBlock:true},push:{isBlock:true}},source_to_build:{isBlock:true},timeouts:{isBlock:true},trigger_template:{isBlock:true},webhook_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloudbuild_trigger", resourceName);
   }

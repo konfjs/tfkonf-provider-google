@@ -100,7 +100,7 @@ export interface GoogleCloudbuildv2ConnectionArgs {
 }
 
 export class google_cloudbuildv2_connection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudbuildv2ConnectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudbuildv2ConnectionArgs) {
     const meta = {bitbucket_cloud_config:{isBlock:true,authorizer_credential:{isBlock:true},read_authorizer_credential:{isBlock:true}},bitbucket_data_center_config:{isBlock:true,authorizer_credential:{isBlock:true},read_authorizer_credential:{isBlock:true},service_directory_config:{isBlock:true}},github_config:{isBlock:true,authorizer_credential:{isBlock:true}},github_enterprise_config:{isBlock:true,service_directory_config:{isBlock:true}},gitlab_config:{isBlock:true,authorizer_credential:{isBlock:true},read_authorizer_credential:{isBlock:true},service_directory_config:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloudbuildv2_connection", resourceName);
   }

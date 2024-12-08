@@ -15,7 +15,7 @@ export interface GoogleServiceNetworkingVpcServiceControlsArgs {
 }
 
 export class google_service_networking_vpc_service_controls extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleServiceNetworkingVpcServiceControlsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleServiceNetworkingVpcServiceControlsArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_service_networking_vpc_service_controls", resourceName);
   }

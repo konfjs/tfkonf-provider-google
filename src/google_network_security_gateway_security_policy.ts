@@ -15,7 +15,7 @@ export interface GoogleNetworkSecurityGatewaySecurityPolicyArgs {
 }
 
 export class google_network_security_gateway_security_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkSecurityGatewaySecurityPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkSecurityGatewaySecurityPolicyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_network_security_gateway_security_policy", resourceName);
   }

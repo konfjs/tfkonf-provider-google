@@ -8,7 +8,7 @@ export interface DataGoogleComputeRouterNatArgs {
 }
 
 export class data_google_compute_router_nat extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeRouterNatArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeRouterNatArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_router_nat", resourceName);
   }

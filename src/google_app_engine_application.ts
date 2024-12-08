@@ -23,7 +23,7 @@ export interface GoogleAppEngineApplicationArgs {
 }
 
 export class google_app_engine_application extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleAppEngineApplicationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleAppEngineApplicationArgs) {
     const meta = {feature_settings:{isBlock:true},iap:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_app_engine_application", resourceName);
   }

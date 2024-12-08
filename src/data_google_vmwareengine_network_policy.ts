@@ -7,7 +7,7 @@ export interface DataGoogleVmwareengineNetworkPolicyArgs {
 }
 
 export class data_google_vmwareengine_network_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleVmwareengineNetworkPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleVmwareengineNetworkPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_vmwareengine_network_policy", resourceName);
   }

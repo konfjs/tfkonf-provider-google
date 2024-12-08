@@ -7,7 +7,7 @@ export interface GoogleProjectIamMemberRemoveArgs {
 }
 
 export class google_project_iam_member_remove extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleProjectIamMemberRemoveArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleProjectIamMemberRemoveArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_project_iam_member_remove", resourceName);
   }

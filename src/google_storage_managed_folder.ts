@@ -14,7 +14,7 @@ export interface GoogleStorageManagedFolderArgs {
 }
 
 export class google_storage_managed_folder extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleStorageManagedFolderArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleStorageManagedFolderArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_storage_managed_folder", resourceName);
   }

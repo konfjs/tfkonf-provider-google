@@ -6,7 +6,7 @@ export interface DataGoogleComputeHealthCheckArgs {
 }
 
 export class data_google_compute_health_check extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeHealthCheckArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeHealthCheckArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_health_check", resourceName);
   }

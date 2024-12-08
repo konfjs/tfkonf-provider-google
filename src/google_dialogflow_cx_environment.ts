@@ -19,7 +19,7 @@ export interface GoogleDialogflowCxEnvironmentArgs {
 }
 
 export class google_dialogflow_cx_environment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDialogflowCxEnvironmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDialogflowCxEnvironmentArgs) {
     const meta = {timeouts:{isBlock:true},version_configs:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dialogflow_cx_environment", resourceName);
   }

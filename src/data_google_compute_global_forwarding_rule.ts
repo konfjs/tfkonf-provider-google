@@ -6,7 +6,7 @@ export interface DataGoogleComputeGlobalForwardingRuleArgs {
 }
 
 export class data_google_compute_global_forwarding_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeGlobalForwardingRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeGlobalForwardingRuleArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_global_forwarding_rule", resourceName);
   }

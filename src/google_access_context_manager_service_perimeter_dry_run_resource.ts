@@ -12,7 +12,7 @@ export interface GoogleAccessContextManagerServicePerimeterDryRunResourceArgs {
 }
 
 export class google_access_context_manager_service_perimeter_dry_run_resource extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleAccessContextManagerServicePerimeterDryRunResourceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleAccessContextManagerServicePerimeterDryRunResourceArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_access_context_manager_service_perimeter_dry_run_resource", resourceName);
   }

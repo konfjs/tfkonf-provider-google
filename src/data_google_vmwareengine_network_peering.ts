@@ -6,7 +6,7 @@ export interface DataGoogleVmwareengineNetworkPeeringArgs {
 }
 
 export class data_google_vmwareengine_network_peering extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleVmwareengineNetworkPeeringArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleVmwareengineNetworkPeeringArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_vmwareengine_network_peering", resourceName);
   }

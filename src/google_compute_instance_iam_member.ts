@@ -14,7 +14,7 @@ export interface GoogleComputeInstanceIamMemberArgs {
 }
 
 export class google_compute_instance_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeInstanceIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeInstanceIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_instance_iam_member", resourceName);
   }

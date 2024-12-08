@@ -64,7 +64,7 @@ export interface GoogleComputeRegionAutoscalerArgs {
 }
 
 export class google_compute_region_autoscaler extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeRegionAutoscalerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeRegionAutoscalerArgs) {
     const meta = {autoscaling_policy:{isBlock:true,cpu_utilization:{isBlock:true},load_balancing_utilization:{isBlock:true},metric:{isBlock:true},scale_in_control:{isBlock:true,max_scaled_in_replicas:{isBlock:true}},scaling_schedules:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_region_autoscaler", resourceName);
   }

@@ -16,7 +16,7 @@ export interface GoogleFilestoreSnapshotArgs {
 }
 
 export class google_filestore_snapshot extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleFilestoreSnapshotArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleFilestoreSnapshotArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_filestore_snapshot", resourceName);
   }

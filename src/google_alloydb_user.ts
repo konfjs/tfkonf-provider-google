@@ -16,7 +16,7 @@ export interface GoogleAlloydbUserArgs {
 }
 
 export class google_alloydb_user extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleAlloydbUserArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleAlloydbUserArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_alloydb_user", resourceName);
   }

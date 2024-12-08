@@ -6,7 +6,7 @@ export interface GoogleHealthcareFhirStoreIamPolicyArgs {
 }
 
 export class google_healthcare_fhir_store_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleHealthcareFhirStoreIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleHealthcareFhirStoreIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_healthcare_fhir_store_iam_policy", resourceName);
   }

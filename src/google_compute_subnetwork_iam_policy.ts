@@ -6,7 +6,7 @@ export interface GoogleComputeSubnetworkIamPolicyArgs {
 }
 
 export class google_compute_subnetwork_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeSubnetworkIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeSubnetworkIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_compute_subnetwork_iam_policy", resourceName);
   }

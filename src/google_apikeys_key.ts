@@ -48,7 +48,7 @@ export interface GoogleApikeysKeyArgs {
 }
 
 export class google_apikeys_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleApikeysKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleApikeysKeyArgs) {
     const meta = {restrictions:{isBlock:true,android_key_restrictions:{isBlock:true,allowed_applications:{isBlock:true}},api_targets:{isBlock:true},browser_key_restrictions:{isBlock:true},ios_key_restrictions:{isBlock:true},server_key_restrictions:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_apikeys_key", resourceName);
   }

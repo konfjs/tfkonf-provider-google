@@ -7,7 +7,7 @@ export interface DataGoogleComputeRegionSslCertificateArgs {
 }
 
 export class data_google_compute_region_ssl_certificate extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeRegionSslCertificateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeRegionSslCertificateArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_region_ssl_certificate", resourceName);
   }

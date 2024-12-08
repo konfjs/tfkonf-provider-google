@@ -26,7 +26,7 @@ export interface GoogleNetworkConnectivityInternalRangeArgs {
 }
 
 export class google_network_connectivity_internal_range extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkConnectivityInternalRangeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkConnectivityInternalRangeArgs) {
     const meta = {migration:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_network_connectivity_internal_range", resourceName);
   }

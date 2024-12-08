@@ -12,7 +12,7 @@ export interface GoogleFirebaseAppCheckPlayIntegrityConfigArgs {
 }
 
 export class google_firebase_app_check_play_integrity_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleFirebaseAppCheckPlayIntegrityConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleFirebaseAppCheckPlayIntegrityConfigArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_firebase_app_check_play_integrity_config", resourceName);
   }

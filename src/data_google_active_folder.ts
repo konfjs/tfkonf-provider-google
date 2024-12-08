@@ -7,7 +7,7 @@ export interface DataGoogleActiveFolderArgs {
 }
 
 export class data_google_active_folder extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleActiveFolderArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleActiveFolderArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_active_folder", resourceName);
   }

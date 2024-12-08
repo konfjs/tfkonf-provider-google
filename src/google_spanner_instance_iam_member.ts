@@ -14,7 +14,7 @@ export interface GoogleSpannerInstanceIamMemberArgs {
 }
 
 export class google_spanner_instance_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSpannerInstanceIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSpannerInstanceIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_spanner_instance_iam_member", resourceName);
   }

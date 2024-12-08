@@ -10,7 +10,7 @@ export interface GoogleStorageNotificationArgs {
 }
 
 export class google_storage_notification extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleStorageNotificationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleStorageNotificationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_storage_notification", resourceName);
   }

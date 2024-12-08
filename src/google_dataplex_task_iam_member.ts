@@ -15,7 +15,7 @@ export interface GoogleDataplexTaskIamMemberArgs {
 }
 
 export class google_dataplex_task_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataplexTaskIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataplexTaskIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataplex_task_iam_member", resourceName);
   }

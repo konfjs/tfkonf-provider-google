@@ -18,7 +18,7 @@ export interface GoogleVpcAccessConnectorArgs {
 }
 
 export class google_vpc_access_connector extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleVpcAccessConnectorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleVpcAccessConnectorArgs) {
     const meta = {subnet:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_vpc_access_connector", resourceName);
   }

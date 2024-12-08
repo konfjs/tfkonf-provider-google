@@ -16,7 +16,7 @@ export interface GoogleVertexAiFeaturestoreEntitytypeFeatureArgs {
 }
 
 export class google_vertex_ai_featurestore_entitytype_feature extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleVertexAiFeaturestoreEntitytypeFeatureArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleVertexAiFeaturestoreEntitytypeFeatureArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_vertex_ai_featurestore_entitytype_feature", resourceName);
   }

@@ -35,7 +35,7 @@ export interface GoogleIamDenyPolicyArgs {
 }
 
 export class google_iam_deny_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIamDenyPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIamDenyPolicyArgs) {
     const meta = {rules:{isBlock:true,deny_rule:{isBlock:true,denial_condition:{isBlock:true}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_iam_deny_policy", resourceName);
   }

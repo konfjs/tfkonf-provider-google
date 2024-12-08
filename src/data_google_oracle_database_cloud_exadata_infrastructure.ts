@@ -7,7 +7,7 @@ export interface DataGoogleOracleDatabaseCloudExadataInfrastructureArgs {
 }
 
 export class data_google_oracle_database_cloud_exadata_infrastructure extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleOracleDatabaseCloudExadataInfrastructureArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleOracleDatabaseCloudExadataInfrastructureArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_oracle_database_cloud_exadata_infrastructure", resourceName);
   }

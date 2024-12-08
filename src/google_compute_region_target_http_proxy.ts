@@ -15,7 +15,7 @@ export interface GoogleComputeRegionTargetHttpProxyArgs {
 }
 
 export class google_compute_region_target_http_proxy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeRegionTargetHttpProxyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeRegionTargetHttpProxyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_region_target_http_proxy", resourceName);
   }

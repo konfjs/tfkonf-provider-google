@@ -38,7 +38,7 @@ export interface GoogleVertexAiFeatureOnlineStoreArgs {
 }
 
 export class google_vertex_ai_feature_online_store extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleVertexAiFeatureOnlineStoreArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleVertexAiFeatureOnlineStoreArgs) {
     const meta = {bigtable:{isBlock:true,auto_scaling:{isBlock:true}},dedicated_serving_endpoint:{isBlock:true,private_service_connect_config:{isBlock:true}},optimized:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_vertex_ai_feature_online_store", resourceName);
   }

@@ -18,7 +18,7 @@ export interface GoogleBigqueryCapacityCommitmentArgs {
 }
 
 export class google_bigquery_capacity_commitment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigqueryCapacityCommitmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigqueryCapacityCommitmentArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_bigquery_capacity_commitment", resourceName);
   }

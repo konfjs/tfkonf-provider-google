@@ -17,7 +17,7 @@ export interface GoogleCloudIdsEndpointArgs {
 }
 
 export class google_cloud_ids_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudIdsEndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudIdsEndpointArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloud_ids_endpoint", resourceName);
   }

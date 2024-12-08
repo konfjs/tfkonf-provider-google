@@ -21,7 +21,7 @@ export interface GoogleGkeHubScopeRbacRoleBindingArgs {
 }
 
 export class google_gke_hub_scope_rbac_role_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleGkeHubScopeRbacRoleBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleGkeHubScopeRbacRoleBindingArgs) {
     const meta = {role:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_gke_hub_scope_rbac_role_binding", resourceName);
   }

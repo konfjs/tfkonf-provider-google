@@ -47,7 +47,7 @@ export interface GoogleComputeReservationArgs {
 }
 
 export class google_compute_reservation extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeReservationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeReservationArgs) {
     const meta = {share_settings:{isBlock:true,project_map:{isBlock:true}},specific_reservation:{isBlock:true,instance_properties:{isBlock:true,guest_accelerators:{isBlock:true},local_ssds:{isBlock:true}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_reservation", resourceName);
   }

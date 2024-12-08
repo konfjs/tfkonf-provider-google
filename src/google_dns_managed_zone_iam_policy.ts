@@ -6,7 +6,7 @@ export interface GoogleDnsManagedZoneIamPolicyArgs {
 }
 
 export class google_dns_managed_zone_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDnsManagedZoneIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDnsManagedZoneIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_dns_managed_zone_iam_policy", resourceName);
   }

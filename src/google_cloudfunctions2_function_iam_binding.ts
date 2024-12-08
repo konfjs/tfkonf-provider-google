@@ -14,7 +14,7 @@ export interface GoogleCloudfunctions2FunctionIamBindingArgs {
 }
 
 export class google_cloudfunctions2_function_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudfunctions2FunctionIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudfunctions2FunctionIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloudfunctions2_function_iam_binding", resourceName);
   }

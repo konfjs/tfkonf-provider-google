@@ -17,7 +17,7 @@ export interface GoogleDataplexAspectTypeArgs {
 }
 
 export class google_dataplex_aspect_type extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataplexAspectTypeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataplexAspectTypeArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataplex_aspect_type", resourceName);
   }

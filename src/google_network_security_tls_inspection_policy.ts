@@ -20,7 +20,7 @@ export interface GoogleNetworkSecurityTlsInspectionPolicyArgs {
 }
 
 export class google_network_security_tls_inspection_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkSecurityTlsInspectionPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkSecurityTlsInspectionPolicyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_network_security_tls_inspection_policy", resourceName);
   }

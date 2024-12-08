@@ -5,7 +5,7 @@ export interface DataGoogleCloudRunV2JobIamPolicyArgs {
 }
 
 export class data_google_cloud_run_v2_job_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleCloudRunV2JobIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleCloudRunV2JobIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_cloud_run_v2_job_iam_policy", resourceName);
   }

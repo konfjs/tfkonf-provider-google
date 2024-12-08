@@ -15,7 +15,7 @@ export interface GoogleComputeNetworkPeeringRoutesConfigArgs {
 }
 
 export class google_compute_network_peering_routes_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeNetworkPeeringRoutesConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeNetworkPeeringRoutesConfigArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_network_peering_routes_config", resourceName);
   }

@@ -7,7 +7,7 @@ export interface DataGoogleArtifactRegistryRepositoryArgs {
 }
 
 export class data_google_artifact_registry_repository extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleArtifactRegistryRepositoryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleArtifactRegistryRepositoryArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_artifact_registry_repository", resourceName);
   }

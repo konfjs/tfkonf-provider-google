@@ -15,7 +15,7 @@ export interface GoogleBigqueryTableIamMemberArgs {
 }
 
 export class google_bigquery_table_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigqueryTableIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigqueryTableIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_bigquery_table_iam_member", resourceName);
   }

@@ -12,7 +12,7 @@ export interface GoogleBiglakeCatalogArgs {
 }
 
 export class google_biglake_catalog extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBiglakeCatalogArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBiglakeCatalogArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_biglake_catalog", resourceName);
   }

@@ -25,7 +25,7 @@ export interface GoogleLoggingFolderSinkArgs {
 }
 
 export class google_logging_folder_sink extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleLoggingFolderSinkArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleLoggingFolderSinkArgs) {
     const meta = {bigquery_options:{isBlock:true},exclusions:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_logging_folder_sink", resourceName);
   }

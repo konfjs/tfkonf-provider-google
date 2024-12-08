@@ -8,7 +8,7 @@ export interface DataGoogleMonitoringMeshIstioServiceArgs {
 }
 
 export class data_google_monitoring_mesh_istio_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleMonitoringMeshIstioServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleMonitoringMeshIstioServiceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_monitoring_mesh_istio_service", resourceName);
   }

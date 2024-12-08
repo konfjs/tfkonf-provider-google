@@ -21,7 +21,7 @@ export interface GoogleBigqueryDatapolicyDataPolicyArgs {
 }
 
 export class google_bigquery_datapolicy_data_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigqueryDatapolicyDataPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigqueryDatapolicyDataPolicyArgs) {
     const meta = {data_masking_policy:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_bigquery_datapolicy_data_policy", resourceName);
   }

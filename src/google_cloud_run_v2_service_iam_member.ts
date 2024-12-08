@@ -14,7 +14,7 @@ export interface GoogleCloudRunV2ServiceIamMemberArgs {
 }
 
 export class google_cloud_run_v2_service_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudRunV2ServiceIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudRunV2ServiceIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloud_run_v2_service_iam_member", resourceName);
   }

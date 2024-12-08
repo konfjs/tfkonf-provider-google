@@ -24,7 +24,7 @@ export interface GoogleLoggingProjectSinkArgs {
 }
 
 export class google_logging_project_sink extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleLoggingProjectSinkArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleLoggingProjectSinkArgs) {
     const meta = {bigquery_options:{isBlock:true},exclusions:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_logging_project_sink", resourceName);
   }

@@ -37,7 +37,7 @@ export interface GoogleDeploymentManagerDeploymentArgs {
 }
 
 export class google_deployment_manager_deployment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDeploymentManagerDeploymentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDeploymentManagerDeploymentArgs) {
     const meta = {labels:{isBlock:true},target:{isBlock:true,config:{isBlock:true},imports:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_deployment_manager_deployment", resourceName);
   }

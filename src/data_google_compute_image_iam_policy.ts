@@ -5,7 +5,7 @@ export interface DataGoogleComputeImageIamPolicyArgs {
 }
 
 export class data_google_compute_image_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeImageIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeImageIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_image_iam_policy", resourceName);
   }

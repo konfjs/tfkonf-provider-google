@@ -36,7 +36,7 @@ export interface GooglePubsubLiteTopicArgs {
 }
 
 export class google_pubsub_lite_topic extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GooglePubsubLiteTopicArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GooglePubsubLiteTopicArgs) {
     const meta = {partition_config:{isBlock:true,capacity:{isBlock:true}},reservation_config:{isBlock:true},retention_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_pubsub_lite_topic", resourceName);
   }

@@ -26,7 +26,7 @@ export interface GoogleCloudRunDomainMappingArgs {
 }
 
 export class google_cloud_run_domain_mapping extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudRunDomainMappingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudRunDomainMappingArgs) {
     const meta = {metadata:{isBlock:true},spec:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloud_run_domain_mapping", resourceName);
   }

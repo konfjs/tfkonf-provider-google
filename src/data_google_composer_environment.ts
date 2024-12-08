@@ -7,7 +7,7 @@ export interface DataGoogleComposerEnvironmentArgs {
 }
 
 export class data_google_composer_environment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComposerEnvironmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComposerEnvironmentArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_composer_environment", resourceName);
   }

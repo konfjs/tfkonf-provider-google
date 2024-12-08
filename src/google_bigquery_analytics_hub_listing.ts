@@ -49,7 +49,7 @@ export interface GoogleBigqueryAnalyticsHubListingArgs {
 }
 
 export class google_bigquery_analytics_hub_listing extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigqueryAnalyticsHubListingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigqueryAnalyticsHubListingArgs) {
     const meta = {bigquery_dataset:{isBlock:true,selected_resources:{isBlock:true}},data_provider:{isBlock:true},publisher:{isBlock:true},restricted_export_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_bigquery_analytics_hub_listing", resourceName);
   }

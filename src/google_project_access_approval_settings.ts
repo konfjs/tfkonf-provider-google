@@ -20,7 +20,7 @@ export interface GoogleProjectAccessApprovalSettingsArgs {
 }
 
 export class google_project_access_approval_settings extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleProjectAccessApprovalSettingsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleProjectAccessApprovalSettingsArgs) {
     const meta = {enrolled_services:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_project_access_approval_settings", resourceName);
   }

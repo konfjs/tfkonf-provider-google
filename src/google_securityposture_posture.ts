@@ -149,7 +149,7 @@ export interface GoogleSecurityposturePostureArgs {
 }
 
 export class google_securityposture_posture extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSecurityposturePostureArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSecurityposturePostureArgs) {
     const meta = {policy_sets:{isBlock:true,policies:{isBlock:true,compliance_standards:{isBlock:true},constraint:{isBlock:true,org_policy_constraint:{isBlock:true,policy_rules:{isBlock:true,condition:{isBlock:true},values:{isBlock:true}}},org_policy_constraint_custom:{isBlock:true,custom_constraint:{isBlock:true},policy_rules:{isBlock:true,condition:{isBlock:true},values:{isBlock:true}}},security_health_analytics_custom_module:{isBlock:true,config:{isBlock:true,custom_output:{isBlock:true,properties:{isBlock:true,value_expression:{isBlock:true}}},predicate:{isBlock:true},resource_selector:{isBlock:true}}},security_health_analytics_module:{isBlock:true}}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_securityposture_posture", resourceName);
   }

@@ -22,7 +22,7 @@ export interface GoogleApigeeDeveloperArgs {
 }
 
 export class google_apigee_developer extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleApigeeDeveloperArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleApigeeDeveloperArgs) {
     const meta = {attributes:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_apigee_developer", resourceName);
   }

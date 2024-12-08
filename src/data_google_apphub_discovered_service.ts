@@ -7,7 +7,7 @@ export interface DataGoogleApphubDiscoveredServiceArgs {
 }
 
 export class data_google_apphub_discovered_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleApphubDiscoveredServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleApphubDiscoveredServiceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_apphub_discovered_service", resourceName);
   }

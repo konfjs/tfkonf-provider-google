@@ -4,7 +4,7 @@ export interface DataGoogleMonitoringUptimeCheckIpsArgs {
 }
 
 export class data_google_monitoring_uptime_check_ips extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleMonitoringUptimeCheckIpsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleMonitoringUptimeCheckIpsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_monitoring_uptime_check_ips", resourceName);
   }

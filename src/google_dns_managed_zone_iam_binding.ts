@@ -14,7 +14,7 @@ export interface GoogleDnsManagedZoneIamBindingArgs {
 }
 
 export class google_dns_managed_zone_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDnsManagedZoneIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDnsManagedZoneIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dns_managed_zone_iam_binding", resourceName);
   }

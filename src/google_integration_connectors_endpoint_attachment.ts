@@ -17,7 +17,7 @@ export interface GoogleIntegrationConnectorsEndpointAttachmentArgs {
 }
 
 export class google_integration_connectors_endpoint_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIntegrationConnectorsEndpointAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIntegrationConnectorsEndpointAttachmentArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_integration_connectors_endpoint_attachment", resourceName);
   }

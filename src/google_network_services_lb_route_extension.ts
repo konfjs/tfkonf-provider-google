@@ -37,7 +37,7 @@ export interface GoogleNetworkServicesLbRouteExtensionArgs {
 }
 
 export class google_network_services_lb_route_extension extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkServicesLbRouteExtensionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkServicesLbRouteExtensionArgs) {
     const meta = {extension_chains:{isBlock:true,extensions:{isBlock:true},match_condition:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_network_services_lb_route_extension", resourceName);
   }

@@ -21,7 +21,7 @@ export interface GoogleDataplexLakeArgs {
 }
 
 export class google_dataplex_lake extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataplexLakeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataplexLakeArgs) {
     const meta = {metastore:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataplex_lake", resourceName);
   }

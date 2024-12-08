@@ -10,7 +10,7 @@ export interface GoogleServiceAccountKeyArgs {
 }
 
 export class google_service_account_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleServiceAccountKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleServiceAccountKeyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_service_account_key", resourceName);
   }

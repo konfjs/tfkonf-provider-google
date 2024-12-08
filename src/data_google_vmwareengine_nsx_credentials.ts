@@ -5,7 +5,7 @@ export interface DataGoogleVmwareengineNsxCredentialsArgs {
 }
 
 export class data_google_vmwareengine_nsx_credentials extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleVmwareengineNsxCredentialsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleVmwareengineNsxCredentialsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_vmwareengine_nsx_credentials", resourceName);
   }

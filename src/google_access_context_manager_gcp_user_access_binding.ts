@@ -14,7 +14,7 @@ export interface GoogleAccessContextManagerGcpUserAccessBindingArgs {
 }
 
 export class google_access_context_manager_gcp_user_access_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleAccessContextManagerGcpUserAccessBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleAccessContextManagerGcpUserAccessBindingArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_access_context_manager_gcp_user_access_binding", resourceName);
   }

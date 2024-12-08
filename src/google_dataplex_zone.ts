@@ -44,7 +44,7 @@ export interface GoogleDataplexZoneArgs {
 }
 
 export class google_dataplex_zone extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataplexZoneArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataplexZoneArgs) {
     const meta = {discovery_spec:{isBlock:true,csv_options:{isBlock:true},json_options:{isBlock:true}},resource_spec:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataplex_zone", resourceName);
   }

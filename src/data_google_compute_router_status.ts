@@ -6,7 +6,7 @@ export interface DataGoogleComputeRouterStatusArgs {
 }
 
 export class data_google_compute_router_status extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeRouterStatusArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeRouterStatusArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_router_status", resourceName);
   }

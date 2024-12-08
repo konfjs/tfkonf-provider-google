@@ -17,7 +17,7 @@ export interface GoogleSccV2FolderSccBigQueryExportArgs {
 }
 
 export class google_scc_v2_folder_scc_big_query_export extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSccV2FolderSccBigQueryExportArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSccV2FolderSccBigQueryExportArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_scc_v2_folder_scc_big_query_export", resourceName);
   }

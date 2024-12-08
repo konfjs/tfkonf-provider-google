@@ -53,7 +53,7 @@ export interface GoogleContainerAzureNodePoolArgs {
 }
 
 export class google_container_azure_node_pool extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleContainerAzureNodePoolArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleContainerAzureNodePoolArgs) {
     const meta = {autoscaling:{isBlock:true},config:{isBlock:true,proxy_config:{isBlock:true},root_volume:{isBlock:true},ssh_config:{isBlock:true}},management:{isBlock:true},max_pods_constraint:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_container_azure_node_pool", resourceName);
   }

@@ -35,7 +35,7 @@ export interface GoogleApigeeTargetServerArgs {
 }
 
 export class google_apigee_target_server extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleApigeeTargetServerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleApigeeTargetServerArgs) {
     const meta = {s_sl_info:{isBlock:true,common_name:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_apigee_target_server", resourceName);
   }

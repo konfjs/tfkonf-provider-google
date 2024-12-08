@@ -14,7 +14,7 @@ export interface GoogleIapWebBackendServiceIamMemberArgs {
 }
 
 export class google_iap_web_backend_service_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIapWebBackendServiceIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIapWebBackendServiceIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_iap_web_backend_service_iam_member", resourceName);
   }

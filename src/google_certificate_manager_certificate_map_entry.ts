@@ -18,7 +18,7 @@ export interface GoogleCertificateManagerCertificateMapEntryArgs {
 }
 
 export class google_certificate_manager_certificate_map_entry extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCertificateManagerCertificateMapEntryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCertificateManagerCertificateMapEntryArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_certificate_manager_certificate_map_entry", resourceName);
   }

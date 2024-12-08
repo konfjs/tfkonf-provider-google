@@ -7,7 +7,7 @@ export interface DataGoogleVmwareenginePrivateCloudArgs {
 }
 
 export class data_google_vmwareengine_private_cloud extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleVmwareenginePrivateCloudArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleVmwareenginePrivateCloudArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_vmwareengine_private_cloud", resourceName);
   }

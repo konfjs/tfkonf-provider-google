@@ -27,7 +27,7 @@ export interface GoogleComputeRegionCommitmentArgs {
 }
 
 export class google_compute_region_commitment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeRegionCommitmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeRegionCommitmentArgs) {
     const meta = {license_resource:{isBlock:true},resources:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_region_commitment", resourceName);
   }

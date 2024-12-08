@@ -14,7 +14,7 @@ export interface GoogleFolderIamMemberArgs {
 }
 
 export class google_folder_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleFolderIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleFolderIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_folder_iam_member", resourceName);
   }

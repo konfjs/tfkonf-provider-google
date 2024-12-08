@@ -15,7 +15,7 @@ export interface GoogleServiceNetworkingPeeredDnsDomainArgs {
 }
 
 export class google_service_networking_peered_dns_domain extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleServiceNetworkingPeeredDnsDomainArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleServiceNetworkingPeeredDnsDomainArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_service_networking_peered_dns_domain", resourceName);
   }

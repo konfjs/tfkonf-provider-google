@@ -13,7 +13,7 @@ export interface GoogleFirebaseAppCheckServiceConfigArgs {
 }
 
 export class google_firebase_app_check_service_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleFirebaseAppCheckServiceConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleFirebaseAppCheckServiceConfigArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_firebase_app_check_service_config", resourceName);
   }

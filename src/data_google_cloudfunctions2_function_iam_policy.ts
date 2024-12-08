@@ -5,7 +5,7 @@ export interface DataGoogleCloudfunctions2FunctionIamPolicyArgs {
 }
 
 export class data_google_cloudfunctions2_function_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleCloudfunctions2FunctionIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleCloudfunctions2FunctionIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_cloudfunctions2_function_iam_policy", resourceName);
   }

@@ -22,7 +22,7 @@ export interface GoogleCloudIdentityGroupArgs {
 }
 
 export class google_cloud_identity_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudIdentityGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudIdentityGroupArgs) {
     const meta = {group_key:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloud_identity_group", resourceName);
   }

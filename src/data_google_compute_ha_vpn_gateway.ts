@@ -7,7 +7,7 @@ export interface DataGoogleComputeHaVpnGatewayArgs {
 }
 
 export class data_google_compute_ha_vpn_gateway extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeHaVpnGatewayArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeHaVpnGatewayArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_ha_vpn_gateway", resourceName);
   }

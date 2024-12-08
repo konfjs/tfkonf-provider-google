@@ -16,7 +16,7 @@ export interface GoogleNetworkSecurityFirewallEndpointArgs {
 }
 
 export class google_network_security_firewall_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkSecurityFirewallEndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkSecurityFirewallEndpointArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_network_security_firewall_endpoint", resourceName);
   }

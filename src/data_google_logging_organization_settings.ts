@@ -5,7 +5,7 @@ export interface DataGoogleLoggingOrganizationSettingsArgs {
 }
 
 export class data_google_logging_organization_settings extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleLoggingOrganizationSettingsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleLoggingOrganizationSettingsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_logging_organization_settings", resourceName);
   }

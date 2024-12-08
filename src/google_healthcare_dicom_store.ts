@@ -20,7 +20,7 @@ export interface GoogleHealthcareDicomStoreArgs {
 }
 
 export class google_healthcare_dicom_store extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleHealthcareDicomStoreArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleHealthcareDicomStoreArgs) {
     const meta = {notification_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_healthcare_dicom_store", resourceName);
   }

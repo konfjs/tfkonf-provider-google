@@ -15,7 +15,7 @@ export interface GoogleFirestoreDocumentArgs {
 }
 
 export class google_firestore_document extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleFirestoreDocumentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleFirestoreDocumentArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_firestore_document", resourceName);
   }

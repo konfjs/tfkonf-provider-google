@@ -20,7 +20,7 @@ export interface GooglePubsubLiteSubscriptionArgs {
 }
 
 export class google_pubsub_lite_subscription extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GooglePubsubLiteSubscriptionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GooglePubsubLiteSubscriptionArgs) {
     const meta = {delivery_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_pubsub_lite_subscription", resourceName);
   }

@@ -14,7 +14,7 @@ export interface GoogleDataCatalogTaxonomyArgs {
 }
 
 export class google_data_catalog_taxonomy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataCatalogTaxonomyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataCatalogTaxonomyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_data_catalog_taxonomy", resourceName);
   }

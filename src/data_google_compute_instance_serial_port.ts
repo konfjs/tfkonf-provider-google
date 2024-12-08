@@ -6,7 +6,7 @@ export interface DataGoogleComputeInstanceSerialPortArgs {
 }
 
 export class data_google_compute_instance_serial_port extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeInstanceSerialPortArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeInstanceSerialPortArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_instance_serial_port", resourceName);
   }

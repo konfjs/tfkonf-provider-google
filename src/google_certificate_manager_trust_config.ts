@@ -34,7 +34,7 @@ export interface GoogleCertificateManagerTrustConfigArgs {
 }
 
 export class google_certificate_manager_trust_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCertificateManagerTrustConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCertificateManagerTrustConfigArgs) {
     const meta = {allowlisted_certificates:{isBlock:true},timeouts:{isBlock:true},trust_stores:{isBlock:true,intermediate_cas:{isBlock:true},trust_anchors:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "google_certificate_manager_trust_config", resourceName);
   }

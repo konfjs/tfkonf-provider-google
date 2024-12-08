@@ -16,7 +16,7 @@ export interface GoogleSccOrganizationSccBigQueryExportArgs {
 }
 
 export class google_scc_organization_scc_big_query_export extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSccOrganizationSccBigQueryExportArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSccOrganizationSccBigQueryExportArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_scc_organization_scc_big_query_export", resourceName);
   }

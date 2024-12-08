@@ -14,7 +14,7 @@ export interface GoogleHealthcareFhirStoreIamBindingArgs {
 }
 
 export class google_healthcare_fhir_store_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleHealthcareFhirStoreIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleHealthcareFhirStoreIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_healthcare_fhir_store_iam_binding", resourceName);
   }

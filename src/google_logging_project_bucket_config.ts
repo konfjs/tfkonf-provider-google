@@ -21,7 +21,7 @@ export interface GoogleLoggingProjectBucketConfigArgs {
 }
 
 export class google_logging_project_bucket_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleLoggingProjectBucketConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleLoggingProjectBucketConfigArgs) {
     const meta = {cmek_settings:{isBlock:true},index_configs:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_logging_project_bucket_config", resourceName);
   }

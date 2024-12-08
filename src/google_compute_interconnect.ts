@@ -36,7 +36,7 @@ export interface GoogleComputeInterconnectArgs {
 }
 
 export class google_compute_interconnect extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeInterconnectArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeInterconnectArgs) {
     const meta = {macsec:{isBlock:true,pre_shared_keys:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_interconnect", resourceName);
   }

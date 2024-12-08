@@ -5,7 +5,7 @@ export interface GoogleStorageDefaultObjectAclArgs {
 }
 
 export class google_storage_default_object_acl extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleStorageDefaultObjectAclArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleStorageDefaultObjectAclArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_storage_default_object_acl", resourceName);
   }

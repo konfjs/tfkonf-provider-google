@@ -27,7 +27,7 @@ export interface GoogleCloudbuildWorkerPoolArgs {
 }
 
 export class google_cloudbuild_worker_pool extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudbuildWorkerPoolArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudbuildWorkerPoolArgs) {
     const meta = {network_config:{isBlock:true},timeouts:{isBlock:true},worker_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloudbuild_worker_pool", resourceName);
   }

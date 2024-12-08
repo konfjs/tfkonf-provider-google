@@ -15,7 +15,7 @@ export interface GoogleNetworkSecurityUrlListsArgs {
 }
 
 export class google_network_security_url_lists extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkSecurityUrlListsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkSecurityUrlListsArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_network_security_url_lists", resourceName);
   }

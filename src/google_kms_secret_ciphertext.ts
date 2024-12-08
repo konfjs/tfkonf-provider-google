@@ -13,7 +13,7 @@ export interface GoogleKmsSecretCiphertextArgs {
 }
 
 export class google_kms_secret_ciphertext extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleKmsSecretCiphertextArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleKmsSecretCiphertextArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_kms_secret_ciphertext", resourceName);
   }

@@ -39,7 +39,7 @@ export interface GoogleAccessContextManagerServicePerimeterIngressPolicyArgs {
 }
 
 export class google_access_context_manager_service_perimeter_ingress_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleAccessContextManagerServicePerimeterIngressPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleAccessContextManagerServicePerimeterIngressPolicyArgs) {
     const meta = {ingress_from:{isBlock:true,sources:{isBlock:true}},ingress_to:{isBlock:true,operations:{isBlock:true,method_selectors:{isBlock:true}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_access_context_manager_service_perimeter_ingress_policy", resourceName);
   }

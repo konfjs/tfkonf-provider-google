@@ -5,7 +5,7 @@ export interface DataGoogleDnsManagedZonesArgs {
 }
 
 export class data_google_dns_managed_zones extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleDnsManagedZonesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleDnsManagedZonesArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_dns_managed_zones", resourceName);
   }

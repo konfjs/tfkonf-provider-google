@@ -16,7 +16,7 @@ export interface GoogleIapAppEngineVersionIamBindingArgs {
 }
 
 export class google_iap_app_engine_version_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIapAppEngineVersionIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIapAppEngineVersionIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_iap_app_engine_version_iam_binding", resourceName);
   }

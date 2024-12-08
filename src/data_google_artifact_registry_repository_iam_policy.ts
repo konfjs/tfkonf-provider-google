@@ -5,7 +5,7 @@ export interface DataGoogleArtifactRegistryRepositoryIamPolicyArgs {
 }
 
 export class data_google_artifact_registry_repository_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleArtifactRegistryRepositoryIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleArtifactRegistryRepositoryIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_artifact_registry_repository_iam_policy", resourceName);
   }

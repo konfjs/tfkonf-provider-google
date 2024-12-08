@@ -33,7 +33,7 @@ export interface GoogleGkeonpremBareMetalNodePoolArgs {
 }
 
 export class google_gkeonprem_bare_metal_node_pool extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleGkeonpremBareMetalNodePoolArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleGkeonpremBareMetalNodePoolArgs) {
     const meta = {node_pool_config:{isBlock:true,node_configs:{isBlock:true},taints:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_gkeonprem_bare_metal_node_pool", resourceName);
   }

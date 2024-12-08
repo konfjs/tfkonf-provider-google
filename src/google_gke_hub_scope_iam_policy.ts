@@ -6,7 +6,7 @@ export interface GoogleGkeHubScopeIamPolicyArgs {
 }
 
 export class google_gke_hub_scope_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleGkeHubScopeIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleGkeHubScopeIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_gke_hub_scope_iam_policy", resourceName);
   }

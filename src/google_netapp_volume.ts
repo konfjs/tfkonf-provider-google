@@ -97,7 +97,7 @@ export interface GoogleNetappVolumeArgs {
 }
 
 export class google_netapp_volume extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetappVolumeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetappVolumeArgs) {
     const meta = {backup_config:{isBlock:true},export_policy:{isBlock:true,rules:{isBlock:true}},restore_parameters:{isBlock:true},snapshot_policy:{isBlock:true,daily_schedule:{isBlock:true},hourly_schedule:{isBlock:true},monthly_schedule:{isBlock:true},weekly_schedule:{isBlock:true}},tiering_policy:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_netapp_volume", resourceName);
   }

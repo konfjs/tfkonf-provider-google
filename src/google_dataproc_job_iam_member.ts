@@ -14,7 +14,7 @@ export interface GoogleDataprocJobIamMemberArgs {
 }
 
 export class google_dataproc_job_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataprocJobIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataprocJobIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataproc_job_iam_member", resourceName);
   }

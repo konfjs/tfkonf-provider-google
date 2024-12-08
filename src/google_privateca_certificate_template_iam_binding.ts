@@ -14,7 +14,7 @@ export interface GooglePrivatecaCertificateTemplateIamBindingArgs {
 }
 
 export class google_privateca_certificate_template_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GooglePrivatecaCertificateTemplateIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GooglePrivatecaCertificateTemplateIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_privateca_certificate_template_iam_binding", resourceName);
   }

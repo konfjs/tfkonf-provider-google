@@ -18,7 +18,7 @@ export interface GoogleAppEngineDomainMappingArgs {
 }
 
 export class google_app_engine_domain_mapping extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleAppEngineDomainMappingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleAppEngineDomainMappingArgs) {
     const meta = {ssl_settings:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_app_engine_domain_mapping", resourceName);
   }

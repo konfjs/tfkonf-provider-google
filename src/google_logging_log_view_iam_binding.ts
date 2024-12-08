@@ -16,7 +16,7 @@ export interface GoogleLoggingLogViewIamBindingArgs {
 }
 
 export class google_logging_log_view_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleLoggingLogViewIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleLoggingLogViewIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_logging_log_view_iam_binding", resourceName);
   }

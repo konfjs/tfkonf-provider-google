@@ -128,7 +128,7 @@ export interface GoogleMonitoringSloArgs {
 }
 
 export class google_monitoring_slo extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleMonitoringSloArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleMonitoringSloArgs) {
     const meta = {basic_sli:{isBlock:true,availability:{isBlock:true},latency:{isBlock:true}},request_based_sli:{isBlock:true,distribution_cut:{isBlock:true,range:{isBlock:true}},good_total_ratio:{isBlock:true}},timeouts:{isBlock:true},windows_based_sli:{isBlock:true,good_total_ratio_threshold:{isBlock:true,basic_sli_performance:{isBlock:true,availability:{isBlock:true},latency:{isBlock:true}},performance:{isBlock:true,distribution_cut:{isBlock:true,range:{isBlock:true}},good_total_ratio:{isBlock:true}}},metric_mean_in_range:{isBlock:true,range:{isBlock:true}},metric_sum_in_range:{isBlock:true,range:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "google_monitoring_slo", resourceName);
   }

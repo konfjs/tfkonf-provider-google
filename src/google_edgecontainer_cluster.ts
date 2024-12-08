@@ -85,7 +85,7 @@ export interface GoogleEdgecontainerClusterArgs {
 }
 
 export class google_edgecontainer_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleEdgecontainerClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleEdgecontainerClusterArgs) {
     const meta = {authorization:{isBlock:true,admin_users:{isBlock:true}},control_plane:{isBlock:true,local:{isBlock:true},remote:{isBlock:true}},control_plane_encryption:{isBlock:true},fleet:{isBlock:true},maintenance_policy:{isBlock:true,maintenance_exclusions:{isBlock:true,window:{isBlock:true}},window:{isBlock:true,recurring_window:{isBlock:true,window:{isBlock:true}}}},networking:{isBlock:true},system_addons_config:{isBlock:true,ingress:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_edgecontainer_cluster", resourceName);
   }

@@ -29,7 +29,7 @@ export interface GoogleNotebooksEnvironmentArgs {
 }
 
 export class google_notebooks_environment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNotebooksEnvironmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNotebooksEnvironmentArgs) {
     const meta = {container_image:{isBlock:true},timeouts:{isBlock:true},vm_image:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_notebooks_environment", resourceName);
   }

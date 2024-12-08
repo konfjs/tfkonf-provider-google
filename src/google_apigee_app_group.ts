@@ -23,7 +23,7 @@ export interface GoogleApigeeAppGroupArgs {
 }
 
 export class google_apigee_app_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleApigeeAppGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleApigeeAppGroupArgs) {
     const meta = {attributes:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_apigee_app_group", resourceName);
   }

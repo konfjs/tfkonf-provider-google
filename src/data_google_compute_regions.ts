@@ -5,7 +5,7 @@ export interface DataGoogleComputeRegionsArgs {
 }
 
 export class data_google_compute_regions extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeRegionsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeRegionsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_regions", resourceName);
   }

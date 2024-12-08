@@ -12,7 +12,7 @@ export interface GoogleIapClientArgs {
 }
 
 export class google_iap_client extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIapClientArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIapClientArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_iap_client", resourceName);
   }

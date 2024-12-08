@@ -15,7 +15,7 @@ export interface GoogleBigqueryAnalyticsHubListingIamBindingArgs {
 }
 
 export class google_bigquery_analytics_hub_listing_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigqueryAnalyticsHubListingIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigqueryAnalyticsHubListingIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_bigquery_analytics_hub_listing_iam_binding", resourceName);
   }

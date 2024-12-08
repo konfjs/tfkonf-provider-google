@@ -25,7 +25,7 @@ export interface GoogleBigtableAuthorizedViewArgs {
 }
 
 export class google_bigtable_authorized_view extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigtableAuthorizedViewArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigtableAuthorizedViewArgs) {
     const meta = {subset_view:{isBlock:true,family_subsets:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_bigtable_authorized_view", resourceName);
   }

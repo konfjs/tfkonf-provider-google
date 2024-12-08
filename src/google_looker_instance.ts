@@ -98,7 +98,7 @@ export interface GoogleLookerInstanceArgs {
 }
 
 export class google_looker_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleLookerInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleLookerInstanceArgs) {
     const meta = {admin_settings:{isBlock:true},custom_domain:{isBlock:true},deny_maintenance_period:{isBlock:true,end_date:{isBlock:true},start_date:{isBlock:true},time:{isBlock:true}},encryption_config:{isBlock:true},maintenance_window:{isBlock:true,start_time:{isBlock:true}},oauth_config:{isBlock:true},psc_config:{isBlock:true,service_attachments:{isBlock:true}},timeouts:{isBlock:true},user_metadata:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_looker_instance", resourceName);
   }

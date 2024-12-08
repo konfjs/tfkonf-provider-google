@@ -22,7 +22,7 @@ export interface GoogleFirestoreBackupScheduleArgs {
 }
 
 export class google_firestore_backup_schedule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleFirestoreBackupScheduleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleFirestoreBackupScheduleArgs) {
     const meta = {daily_recurrence:{isBlock:true},timeouts:{isBlock:true},weekly_recurrence:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_firestore_backup_schedule", resourceName);
   }

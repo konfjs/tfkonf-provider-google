@@ -7,7 +7,7 @@ export interface DataGoogleIamTestablePermissionsArgs {
 }
 
 export class data_google_iam_testable_permissions extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleIamTestablePermissionsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleIamTestablePermissionsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_iam_testable_permissions", resourceName);
   }

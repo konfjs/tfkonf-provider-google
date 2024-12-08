@@ -6,7 +6,7 @@ export interface GoogleWorkbenchInstanceIamPolicyArgs {
 }
 
 export class google_workbench_instance_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleWorkbenchInstanceIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleWorkbenchInstanceIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_workbench_instance_iam_policy", resourceName);
   }

@@ -47,7 +47,7 @@ export interface GoogleComputeRouterPeerArgs {
 }
 
 export class google_compute_router_peer extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeRouterPeerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeRouterPeerArgs) {
     const meta = {advertised_ip_ranges:{isBlock:true},bfd:{isBlock:true},custom_learned_ip_ranges:{isBlock:true},md5_authentication_key:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_router_peer", resourceName);
   }

@@ -52,7 +52,7 @@ export interface GoogleApphubApplicationArgs {
 }
 
 export class google_apphub_application extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleApphubApplicationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleApphubApplicationArgs) {
     const meta = {attributes:{isBlock:true,business_owners:{isBlock:true},criticality:{isBlock:true},developer_owners:{isBlock:true},environment:{isBlock:true},operator_owners:{isBlock:true}},scope:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_apphub_application", resourceName);
   }

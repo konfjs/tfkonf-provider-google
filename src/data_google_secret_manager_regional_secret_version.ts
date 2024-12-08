@@ -6,7 +6,7 @@ export interface DataGoogleSecretManagerRegionalSecretVersionArgs {
 }
 
 export class data_google_secret_manager_regional_secret_version extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleSecretManagerRegionalSecretVersionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleSecretManagerRegionalSecretVersionArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_secret_manager_regional_secret_version", resourceName);
   }

@@ -14,7 +14,7 @@ export interface GoogleStorageBucketAccessControlArgs {
 }
 
 export class google_storage_bucket_access_control extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleStorageBucketAccessControlArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleStorageBucketAccessControlArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_storage_bucket_access_control", resourceName);
   }

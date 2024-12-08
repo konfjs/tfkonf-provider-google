@@ -16,7 +16,7 @@ export interface GoogleApigeeFlowhookArgs {
 }
 
 export class google_apigee_flowhook extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleApigeeFlowhookArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleApigeeFlowhookArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_apigee_flowhook", resourceName);
   }

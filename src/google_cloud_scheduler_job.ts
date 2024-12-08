@@ -62,7 +62,7 @@ export interface GoogleCloudSchedulerJobArgs {
 }
 
 export class google_cloud_scheduler_job extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudSchedulerJobArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudSchedulerJobArgs) {
     const meta = {app_engine_http_target:{isBlock:true,app_engine_routing:{isBlock:true}},http_target:{isBlock:true,oauth_token:{isBlock:true},oidc_token:{isBlock:true}},pubsub_target:{isBlock:true},retry_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloud_scheduler_job", resourceName);
   }

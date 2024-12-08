@@ -32,7 +32,7 @@ export interface GoogleDataCatalogTagTemplateArgs {
 }
 
 export class google_data_catalog_tag_template extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataCatalogTagTemplateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataCatalogTagTemplateArgs) {
     const meta = {fields:{isBlock:true,type:{isBlock:true,enum_type:{isBlock:true,allowed_values:{isBlock:true}}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_data_catalog_tag_template", resourceName);
   }

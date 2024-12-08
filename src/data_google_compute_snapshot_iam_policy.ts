@@ -5,7 +5,7 @@ export interface DataGoogleComputeSnapshotIamPolicyArgs {
 }
 
 export class data_google_compute_snapshot_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeSnapshotIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeSnapshotIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_snapshot_iam_policy", resourceName);
   }

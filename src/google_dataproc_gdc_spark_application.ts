@@ -62,7 +62,7 @@ export interface GoogleDataprocGdcSparkApplicationArgs {
 }
 
 export class google_dataproc_gdc_spark_application extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataprocGdcSparkApplicationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataprocGdcSparkApplicationArgs) {
     const meta = {pyspark_application_config:{isBlock:true},spark_application_config:{isBlock:true},spark_r_application_config:{isBlock:true},spark_sql_application_config:{isBlock:true,query_list:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataproc_gdc_spark_application", resourceName);
   }

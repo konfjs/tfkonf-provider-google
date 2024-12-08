@@ -15,7 +15,7 @@ export interface GoogleLoggingLogViewArgs {
 }
 
 export class google_logging_log_view extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleLoggingLogViewArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleLoggingLogViewArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_logging_log_view", resourceName);
   }

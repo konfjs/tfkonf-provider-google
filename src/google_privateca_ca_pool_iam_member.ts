@@ -14,7 +14,7 @@ export interface GooglePrivatecaCaPoolIamMemberArgs {
 }
 
 export class google_privateca_ca_pool_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GooglePrivatecaCaPoolIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GooglePrivatecaCaPoolIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_privateca_ca_pool_iam_member", resourceName);
   }

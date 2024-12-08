@@ -8,7 +8,7 @@ export interface DataGoogleServiceAccountIdTokenArgs {
 }
 
 export class data_google_service_account_id_token extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleServiceAccountIdTokenArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleServiceAccountIdTokenArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_service_account_id_token", resourceName);
   }

@@ -14,7 +14,7 @@ export interface GoogleHealthcareHl7V2StoreIamBindingArgs {
 }
 
 export class google_healthcare_hl7_v2_store_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleHealthcareHl7V2StoreIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleHealthcareHl7V2StoreIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_healthcare_hl7_v2_store_iam_binding", resourceName);
   }

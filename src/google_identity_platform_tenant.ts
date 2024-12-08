@@ -15,7 +15,7 @@ export interface GoogleIdentityPlatformTenantArgs {
 }
 
 export class google_identity_platform_tenant extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIdentityPlatformTenantArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIdentityPlatformTenantArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_identity_platform_tenant", resourceName);
   }

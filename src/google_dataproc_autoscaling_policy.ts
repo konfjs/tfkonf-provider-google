@@ -41,7 +41,7 @@ export interface GoogleDataprocAutoscalingPolicyArgs {
 }
 
 export class google_dataproc_autoscaling_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataprocAutoscalingPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataprocAutoscalingPolicyArgs) {
     const meta = {basic_algorithm:{isBlock:true,yarn_config:{isBlock:true}},secondary_worker_config:{isBlock:true},timeouts:{isBlock:true},worker_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataproc_autoscaling_policy", resourceName);
   }

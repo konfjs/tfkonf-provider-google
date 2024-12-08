@@ -20,7 +20,7 @@ export interface GoogleBiglakeDatabaseArgs {
 }
 
 export class google_biglake_database extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBiglakeDatabaseArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBiglakeDatabaseArgs) {
     const meta = {hive_options:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_biglake_database", resourceName);
   }

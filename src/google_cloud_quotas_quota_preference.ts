@@ -20,7 +20,7 @@ export interface GoogleCloudQuotasQuotaPreferenceArgs {
 }
 
 export class google_cloud_quotas_quota_preference extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudQuotasQuotaPreferenceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudQuotasQuotaPreferenceArgs) {
     const meta = {quota_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloud_quotas_quota_preference", resourceName);
   }

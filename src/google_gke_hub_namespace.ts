@@ -16,7 +16,7 @@ export interface GoogleGkeHubNamespaceArgs {
 }
 
 export class google_gke_hub_namespace extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleGkeHubNamespaceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleGkeHubNamespaceArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_gke_hub_namespace", resourceName);
   }

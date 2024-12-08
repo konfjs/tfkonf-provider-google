@@ -6,7 +6,7 @@ export interface DataGoogleCertificateManagerCertificatesArgs {
 }
 
 export class data_google_certificate_manager_certificates extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleCertificateManagerCertificatesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleCertificateManagerCertificatesArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_certificate_manager_certificates", resourceName);
   }

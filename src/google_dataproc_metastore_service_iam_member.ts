@@ -14,7 +14,7 @@ export interface GoogleDataprocMetastoreServiceIamMemberArgs {
 }
 
 export class google_dataproc_metastore_service_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataprocMetastoreServiceIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataprocMetastoreServiceIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataproc_metastore_service_iam_member", resourceName);
   }

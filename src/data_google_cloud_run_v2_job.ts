@@ -7,7 +7,7 @@ export interface DataGoogleCloudRunV2JobArgs {
 }
 
 export class data_google_cloud_run_v2_job extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleCloudRunV2JobArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleCloudRunV2JobArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_cloud_run_v2_job", resourceName);
   }

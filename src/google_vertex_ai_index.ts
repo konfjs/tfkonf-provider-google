@@ -44,7 +44,7 @@ export interface GoogleVertexAiIndexArgs {
 }
 
 export class google_vertex_ai_index extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleVertexAiIndexArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleVertexAiIndexArgs) {
     const meta = {metadata:{isBlock:true,config:{isBlock:true,algorithm_config:{isBlock:true,brute_force_config:{isBlock:true},tree_ah_config:{isBlock:true}}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_vertex_ai_index", resourceName);
   }

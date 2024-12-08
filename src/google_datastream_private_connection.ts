@@ -22,7 +22,7 @@ export interface GoogleDatastreamPrivateConnectionArgs {
 }
 
 export class google_datastream_private_connection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDatastreamPrivateConnectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDatastreamPrivateConnectionArgs) {
     const meta = {timeouts:{isBlock:true},vpc_peering_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_datastream_private_connection", resourceName);
   }

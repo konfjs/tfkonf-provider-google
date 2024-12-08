@@ -14,7 +14,7 @@ export interface GoogleGkeBackupRestorePlanIamBindingArgs {
 }
 
 export class google_gke_backup_restore_plan_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleGkeBackupRestorePlanIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleGkeBackupRestorePlanIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_gke_backup_restore_plan_iam_binding", resourceName);
   }

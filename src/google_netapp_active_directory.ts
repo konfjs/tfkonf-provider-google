@@ -30,7 +30,7 @@ export interface GoogleNetappActiveDirectoryArgs {
 }
 
 export class google_netapp_active_directory extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetappActiveDirectoryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetappActiveDirectoryArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_netapp_active_directory", resourceName);
   }

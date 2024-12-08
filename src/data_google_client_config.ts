@@ -4,7 +4,7 @@ export interface DataGoogleClientConfigArgs {
 }
 
 export class data_google_client_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleClientConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleClientConfigArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_client_config", resourceName);
   }

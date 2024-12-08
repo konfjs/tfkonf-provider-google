@@ -12,7 +12,7 @@ export interface GoogleApigeeEnvironmentKeyvaluemapsArgs {
 }
 
 export class google_apigee_environment_keyvaluemaps extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleApigeeEnvironmentKeyvaluemapsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleApigeeEnvironmentKeyvaluemapsArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_apigee_environment_keyvaluemaps", resourceName);
   }

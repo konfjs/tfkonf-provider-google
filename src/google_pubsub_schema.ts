@@ -14,7 +14,7 @@ export interface GooglePubsubSchemaArgs {
 }
 
 export class google_pubsub_schema extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GooglePubsubSchemaArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GooglePubsubSchemaArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_pubsub_schema", resourceName);
   }

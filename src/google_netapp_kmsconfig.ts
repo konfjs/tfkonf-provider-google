@@ -16,7 +16,7 @@ export interface GoogleNetappKmsconfigArgs {
 }
 
 export class google_netapp_kmsconfig extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetappKmsconfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetappKmsconfigArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_netapp_kmsconfig", resourceName);
   }

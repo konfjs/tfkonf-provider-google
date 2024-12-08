@@ -24,7 +24,7 @@ export interface GoogleSqlUserArgs {
 }
 
 export class google_sql_user extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSqlUserArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSqlUserArgs) {
     const meta = {password_policy:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_sql_user", resourceName);
   }

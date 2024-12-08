@@ -14,7 +14,7 @@ export interface GoogleDataplexLakeIamMemberArgs {
 }
 
 export class google_dataplex_lake_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataplexLakeIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataplexLakeIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataplex_lake_iam_member", resourceName);
   }

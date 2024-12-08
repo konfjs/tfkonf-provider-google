@@ -65,7 +65,7 @@ export interface GoogleCloudfunctionsFunctionArgs {
 }
 
 export class google_cloudfunctions_function extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudfunctionsFunctionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudfunctionsFunctionArgs) {
     const meta = {event_trigger:{isBlock:true,failure_policy:{isBlock:true}},secret_environment_variables:{isBlock:true},secret_volumes:{isBlock:true,versions:{isBlock:true}},source_repository:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloudfunctions_function", resourceName);
   }

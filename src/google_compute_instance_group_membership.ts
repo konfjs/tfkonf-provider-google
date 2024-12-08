@@ -13,7 +13,7 @@ export interface GoogleComputeInstanceGroupMembershipArgs {
 }
 
 export class google_compute_instance_group_membership extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeInstanceGroupMembershipArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeInstanceGroupMembershipArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_instance_group_membership", resourceName);
   }

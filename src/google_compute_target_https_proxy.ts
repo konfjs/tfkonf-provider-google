@@ -21,7 +21,7 @@ export interface GoogleComputeTargetHttpsProxyArgs {
 }
 
 export class google_compute_target_https_proxy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeTargetHttpsProxyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeTargetHttpsProxyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_target_https_proxy", resourceName);
   }

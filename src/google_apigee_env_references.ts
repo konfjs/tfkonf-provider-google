@@ -16,7 +16,7 @@ export interface GoogleApigeeEnvReferencesArgs {
 }
 
 export class google_apigee_env_references extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleApigeeEnvReferencesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleApigeeEnvReferencesArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_apigee_env_references", resourceName);
   }

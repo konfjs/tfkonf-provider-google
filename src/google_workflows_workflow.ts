@@ -18,7 +18,7 @@ export interface GoogleWorkflowsWorkflowArgs {
 }
 
 export class google_workflows_workflow extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleWorkflowsWorkflowArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleWorkflowsWorkflowArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_workflows_workflow", resourceName);
   }

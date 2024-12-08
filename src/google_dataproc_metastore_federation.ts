@@ -22,7 +22,7 @@ export interface GoogleDataprocMetastoreFederationArgs {
 }
 
 export class google_dataproc_metastore_federation extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataprocMetastoreFederationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataprocMetastoreFederationArgs) {
     const meta = {backend_metastores:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataproc_metastore_federation", resourceName);
   }

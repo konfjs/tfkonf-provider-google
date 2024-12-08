@@ -6,7 +6,7 @@ export interface GoogleBillingAccountIamPolicyArgs {
 }
 
 export class google_billing_account_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBillingAccountIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBillingAccountIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_billing_account_iam_policy", resourceName);
   }

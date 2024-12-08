@@ -14,7 +14,7 @@ export interface GoogleDocumentAiProcessorArgs {
 }
 
 export class google_document_ai_processor extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDocumentAiProcessorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDocumentAiProcessorArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_document_ai_processor", resourceName);
   }

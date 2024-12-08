@@ -26,7 +26,7 @@ export interface GoogleNetworkServicesEdgeCacheKeysetArgs {
 }
 
 export class google_network_services_edge_cache_keyset extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkServicesEdgeCacheKeysetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkServicesEdgeCacheKeysetArgs) {
     const meta = {public_key:{isBlock:true},timeouts:{isBlock:true},validation_shared_keys:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_network_services_edge_cache_keyset", resourceName);
   }

@@ -92,7 +92,7 @@ export interface GoogleNotebooksRuntimeArgs {
 }
 
 export class google_notebooks_runtime extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNotebooksRuntimeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNotebooksRuntimeArgs) {
     const meta = {access_config:{isBlock:true},software_config:{isBlock:true,kernels:{isBlock:true}},timeouts:{isBlock:true},virtual_machine:{isBlock:true,virtual_machine_config:{isBlock:true,accelerator_config:{isBlock:true},container_images:{isBlock:true},data_disk:{isBlock:true,initialize_params:{isBlock:true}},encryption_config:{isBlock:true},shielded_instance_config:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "google_notebooks_runtime", resourceName);
   }

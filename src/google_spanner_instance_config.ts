@@ -20,7 +20,7 @@ export interface GoogleSpannerInstanceConfigArgs {
 }
 
 export class google_spanner_instance_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSpannerInstanceConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSpannerInstanceConfigArgs) {
     const meta = {replicas:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_spanner_instance_config", resourceName);
   }

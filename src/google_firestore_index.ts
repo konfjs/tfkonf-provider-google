@@ -30,7 +30,7 @@ export interface GoogleFirestoreIndexArgs {
 }
 
 export class google_firestore_index extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleFirestoreIndexArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleFirestoreIndexArgs) {
     const meta = {fields:{isBlock:true,vector_config:{isBlock:true,flat:{isBlock:true}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_firestore_index", resourceName);
   }

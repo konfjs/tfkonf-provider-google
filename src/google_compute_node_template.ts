@@ -39,7 +39,7 @@ export interface GoogleComputeNodeTemplateArgs {
 }
 
 export class google_compute_node_template extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeNodeTemplateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeNodeTemplateArgs) {
     const meta = {accelerators:{isBlock:true},disks:{isBlock:true},node_type_flexibility:{isBlock:true},server_binding:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_node_template", resourceName);
   }

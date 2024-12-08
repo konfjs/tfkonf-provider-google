@@ -14,7 +14,7 @@ export interface GoogleFirebaseAppCheckDebugTokenArgs {
 }
 
 export class google_firebase_app_check_debug_token extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleFirebaseAppCheckDebugTokenArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleFirebaseAppCheckDebugTokenArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_firebase_app_check_debug_token", resourceName);
   }

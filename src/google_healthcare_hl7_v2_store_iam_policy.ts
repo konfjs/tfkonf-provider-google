@@ -6,7 +6,7 @@ export interface GoogleHealthcareHl7V2StoreIamPolicyArgs {
 }
 
 export class google_healthcare_hl7_v2_store_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleHealthcareHl7V2StoreIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleHealthcareHl7V2StoreIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_healthcare_hl7_v2_store_iam_policy", resourceName);
   }

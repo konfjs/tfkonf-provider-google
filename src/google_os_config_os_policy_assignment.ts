@@ -286,7 +286,7 @@ export interface GoogleOsConfigOsPolicyAssignmentArgs {
 }
 
 export class google_os_config_os_policy_assignment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleOsConfigOsPolicyAssignmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleOsConfigOsPolicyAssignmentArgs) {
     const meta = {instance_filter:{isBlock:true,exclusion_labels:{isBlock:true},inclusion_labels:{isBlock:true},inventories:{isBlock:true}},os_policies:{isBlock:true,resource_groups:{isBlock:true,inventory_filters:{isBlock:true},resources:{isBlock:true,exec:{isBlock:true,enforce:{isBlock:true,file:{isBlock:true,gcs:{isBlock:true},remote:{isBlock:true}}},validate:{isBlock:true,file:{isBlock:true,gcs:{isBlock:true},remote:{isBlock:true}}}},file:{isBlock:true,file:{isBlock:true,gcs:{isBlock:true},remote:{isBlock:true}}},pkg:{isBlock:true,apt:{isBlock:true},deb:{isBlock:true,source:{isBlock:true,gcs:{isBlock:true},remote:{isBlock:true}}},googet:{isBlock:true},msi:{isBlock:true,source:{isBlock:true,gcs:{isBlock:true},remote:{isBlock:true}}},rpm:{isBlock:true,source:{isBlock:true,gcs:{isBlock:true},remote:{isBlock:true}}},yum:{isBlock:true},zypper:{isBlock:true}},repository:{isBlock:true,apt:{isBlock:true},goo:{isBlock:true},yum:{isBlock:true},zypper:{isBlock:true}}}}},rollout:{isBlock:true,disruption_budget:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_os_config_os_policy_assignment", resourceName);
   }

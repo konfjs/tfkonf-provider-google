@@ -4,7 +4,7 @@ export interface DataGoogleAppEngineDefaultServiceAccountArgs {
 }
 
 export class data_google_app_engine_default_service_account extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleAppEngineDefaultServiceAccountArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleAppEngineDefaultServiceAccountArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_app_engine_default_service_account", resourceName);
   }

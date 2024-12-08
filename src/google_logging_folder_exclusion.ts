@@ -9,7 +9,7 @@ export interface GoogleLoggingFolderExclusionArgs {
 }
 
 export class google_logging_folder_exclusion extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleLoggingFolderExclusionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleLoggingFolderExclusionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_logging_folder_exclusion", resourceName);
   }

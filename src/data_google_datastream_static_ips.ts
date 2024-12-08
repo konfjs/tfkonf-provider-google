@@ -6,7 +6,7 @@ export interface DataGoogleDatastreamStaticIpsArgs {
 }
 
 export class data_google_datastream_static_ips extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleDatastreamStaticIpsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleDatastreamStaticIpsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_datastream_static_ips", resourceName);
   }

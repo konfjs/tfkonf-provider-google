@@ -10,7 +10,7 @@ export interface GoogleComputeProjectDefaultNetworkTierArgs {
 }
 
 export class google_compute_project_default_network_tier extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeProjectDefaultNetworkTierArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeProjectDefaultNetworkTierArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_project_default_network_tier", resourceName);
   }

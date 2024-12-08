@@ -14,7 +14,7 @@ export interface GoogleOrganizationIamBindingArgs {
 }
 
 export class google_organization_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleOrganizationIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleOrganizationIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_organization_iam_binding", resourceName);
   }

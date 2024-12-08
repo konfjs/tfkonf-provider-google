@@ -25,7 +25,7 @@ export interface GoogleLoggingOrganizationSinkArgs {
 }
 
 export class google_logging_organization_sink extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleLoggingOrganizationSinkArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleLoggingOrganizationSinkArgs) {
     const meta = {bigquery_options:{isBlock:true},exclusions:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_logging_organization_sink", resourceName);
   }

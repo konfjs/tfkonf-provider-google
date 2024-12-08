@@ -6,7 +6,7 @@ export interface DataGoogleFolderOrganizationPolicyArgs {
 }
 
 export class data_google_folder_organization_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleFolderOrganizationPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleFolderOrganizationPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_folder_organization_policy", resourceName);
   }

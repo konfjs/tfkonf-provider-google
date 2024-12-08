@@ -38,7 +38,7 @@ export interface GoogleNetworkServicesLbTrafficExtensionArgs {
 }
 
 export class google_network_services_lb_traffic_extension extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkServicesLbTrafficExtensionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkServicesLbTrafficExtensionArgs) {
     const meta = {extension_chains:{isBlock:true,extensions:{isBlock:true},match_condition:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_network_services_lb_traffic_extension", resourceName);
   }

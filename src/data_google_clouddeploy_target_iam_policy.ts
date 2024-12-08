@@ -5,7 +5,7 @@ export interface DataGoogleClouddeployTargetIamPolicyArgs {
 }
 
 export class data_google_clouddeploy_target_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleClouddeployTargetIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleClouddeployTargetIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_clouddeploy_target_iam_policy", resourceName);
   }

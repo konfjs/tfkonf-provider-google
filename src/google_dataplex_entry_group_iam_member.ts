@@ -14,7 +14,7 @@ export interface GoogleDataplexEntryGroupIamMemberArgs {
 }
 
 export class google_dataplex_entry_group_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataplexEntryGroupIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataplexEntryGroupIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataplex_entry_group_iam_member", resourceName);
   }

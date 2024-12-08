@@ -37,7 +37,7 @@ export interface GoogleDialogflowCxWebhookArgs {
 }
 
 export class google_dialogflow_cx_webhook extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDialogflowCxWebhookArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDialogflowCxWebhookArgs) {
     const meta = {generic_web_service:{isBlock:true},service_directory:{isBlock:true,generic_web_service:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dialogflow_cx_webhook", resourceName);
   }

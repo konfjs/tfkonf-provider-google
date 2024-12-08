@@ -4,7 +4,7 @@ export interface DataGoogleCloudRunLocationsArgs {
 }
 
 export class data_google_cloud_run_locations extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleCloudRunLocationsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleCloudRunLocationsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_cloud_run_locations", resourceName);
   }

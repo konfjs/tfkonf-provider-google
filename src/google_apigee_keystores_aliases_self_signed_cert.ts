@@ -33,7 +33,7 @@ export interface GoogleApigeeKeystoresAliasesSelfSignedCertArgs {
 }
 
 export class google_apigee_keystores_aliases_self_signed_cert extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleApigeeKeystoresAliasesSelfSignedCertArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleApigeeKeystoresAliasesSelfSignedCertArgs) {
     const meta = {subject:{isBlock:true},subject_alternative_dns_names:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_apigee_keystores_aliases_self_signed_cert", resourceName);
   }

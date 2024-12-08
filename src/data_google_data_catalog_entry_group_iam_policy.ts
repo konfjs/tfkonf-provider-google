@@ -5,7 +5,7 @@ export interface DataGoogleDataCatalogEntryGroupIamPolicyArgs {
 }
 
 export class data_google_data_catalog_entry_group_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleDataCatalogEntryGroupIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleDataCatalogEntryGroupIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_data_catalog_entry_group_iam_policy", resourceName);
   }

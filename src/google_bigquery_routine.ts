@@ -46,7 +46,7 @@ export interface GoogleBigqueryRoutineArgs {
 }
 
 export class google_bigquery_routine extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigqueryRoutineArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigqueryRoutineArgs) {
     const meta = {arguments:{isBlock:true},remote_function_options:{isBlock:true},spark_options:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_bigquery_routine", resourceName);
   }

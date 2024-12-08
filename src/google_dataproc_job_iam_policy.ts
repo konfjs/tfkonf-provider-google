@@ -6,7 +6,7 @@ export interface GoogleDataprocJobIamPolicyArgs {
 }
 
 export class google_dataproc_job_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataprocJobIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataprocJobIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_dataproc_job_iam_policy", resourceName);
   }

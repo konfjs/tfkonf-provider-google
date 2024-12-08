@@ -12,7 +12,7 @@ export interface DataGoogleSiteVerificationTokenArgs {
 }
 
 export class data_google_site_verification_token extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleSiteVerificationTokenArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleSiteVerificationTokenArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "google_site_verification_token", resourceName);
   }

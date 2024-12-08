@@ -5,7 +5,7 @@ export interface DataGoogleKmsCryptoKeyIamPolicyArgs {
 }
 
 export class data_google_kms_crypto_key_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleKmsCryptoKeyIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleKmsCryptoKeyIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_kms_crypto_key_iam_policy", resourceName);
   }

@@ -18,7 +18,7 @@ export interface GoogleComputeManagedSslCertificateArgs {
 }
 
 export class google_compute_managed_ssl_certificate extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeManagedSslCertificateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeManagedSslCertificateArgs) {
     const meta = {managed:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_managed_ssl_certificate", resourceName);
   }

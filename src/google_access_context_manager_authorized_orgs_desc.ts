@@ -17,7 +17,7 @@ export interface GoogleAccessContextManagerAuthorizedOrgsDescArgs {
 }
 
 export class google_access_context_manager_authorized_orgs_desc extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleAccessContextManagerAuthorizedOrgsDescArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleAccessContextManagerAuthorizedOrgsDescArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_access_context_manager_authorized_orgs_desc", resourceName);
   }

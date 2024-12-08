@@ -7,7 +7,7 @@ export interface DataGoogleApphubDiscoveredWorkloadArgs {
 }
 
 export class data_google_apphub_discovered_workload extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleApphubDiscoveredWorkloadArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleApphubDiscoveredWorkloadArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_apphub_discovered_workload", resourceName);
   }

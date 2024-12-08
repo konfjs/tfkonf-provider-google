@@ -14,7 +14,7 @@ export interface GoogleContainerAzureClientArgs {
 }
 
 export class google_container_azure_client extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleContainerAzureClientArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleContainerAzureClientArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_container_azure_client", resourceName);
   }

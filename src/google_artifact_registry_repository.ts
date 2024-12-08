@@ -143,7 +143,7 @@ export interface GoogleArtifactRegistryRepositoryArgs {
 }
 
 export class google_artifact_registry_repository extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleArtifactRegistryRepositoryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleArtifactRegistryRepositoryArgs) {
     const meta = {cleanup_policies:{isBlock:true,condition:{isBlock:true},most_recent_versions:{isBlock:true}},docker_config:{isBlock:true},maven_config:{isBlock:true},remote_repository_config:{isBlock:true,apt_repository:{isBlock:true,public_repository:{isBlock:true}},common_repository:{isBlock:true},docker_repository:{isBlock:true,custom_repository:{isBlock:true}},maven_repository:{isBlock:true,custom_repository:{isBlock:true}},npm_repository:{isBlock:true,custom_repository:{isBlock:true}},python_repository:{isBlock:true,custom_repository:{isBlock:true}},upstream_credentials:{isBlock:true,username_password_credentials:{isBlock:true}},yum_repository:{isBlock:true,public_repository:{isBlock:true}}},timeouts:{isBlock:true},virtual_repository_config:{isBlock:true,upstream_policies:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "google_artifact_registry_repository", resourceName);
   }

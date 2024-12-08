@@ -16,7 +16,7 @@ export interface GoogleComputeRegionSslPolicyArgs {
 }
 
 export class google_compute_region_ssl_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeRegionSslPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeRegionSslPolicyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_region_ssl_policy", resourceName);
   }

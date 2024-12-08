@@ -138,7 +138,7 @@ export interface GoogleMonitoringAlertPolicyArgs {
 }
 
 export class google_monitoring_alert_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleMonitoringAlertPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleMonitoringAlertPolicyArgs) {
     const meta = {alert_strategy:{isBlock:true,notification_channel_strategy:{isBlock:true},notification_rate_limit:{isBlock:true}},conditions:{isBlock:true,condition_absent:{isBlock:true,aggregations:{isBlock:true},trigger:{isBlock:true}},condition_matched_log:{isBlock:true},condition_monitoring_query_language:{isBlock:true,trigger:{isBlock:true}},condition_prometheus_query_language:{isBlock:true},condition_threshold:{isBlock:true,aggregations:{isBlock:true},denominator_aggregations:{isBlock:true},forecast_options:{isBlock:true},trigger:{isBlock:true}}},documentation:{isBlock:true,links:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_monitoring_alert_policy", resourceName);
   }

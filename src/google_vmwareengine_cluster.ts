@@ -52,7 +52,7 @@ export interface GoogleVmwareengineClusterArgs {
 }
 
 export class google_vmwareengine_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleVmwareengineClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleVmwareengineClusterArgs) {
     const meta = {autoscaling_settings:{isBlock:true,autoscaling_policies:{isBlock:true,consumed_memory_thresholds:{isBlock:true},cpu_thresholds:{isBlock:true},storage_thresholds:{isBlock:true}}},node_type_configs:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_vmwareengine_cluster", resourceName);
   }

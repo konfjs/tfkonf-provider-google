@@ -5,7 +5,7 @@ export interface DataGooglePubsubTopicIamPolicyArgs {
 }
 
 export class data_google_pubsub_topic_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGooglePubsubTopicIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGooglePubsubTopicIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_pubsub_topic_iam_policy", resourceName);
   }

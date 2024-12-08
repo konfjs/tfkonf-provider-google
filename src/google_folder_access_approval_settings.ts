@@ -19,7 +19,7 @@ export interface GoogleFolderAccessApprovalSettingsArgs {
 }
 
 export class google_folder_access_approval_settings extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleFolderAccessApprovalSettingsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleFolderAccessApprovalSettingsArgs) {
     const meta = {enrolled_services:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_folder_access_approval_settings", resourceName);
   }

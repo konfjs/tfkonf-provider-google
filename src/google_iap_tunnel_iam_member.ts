@@ -13,7 +13,7 @@ export interface GoogleIapTunnelIamMemberArgs {
 }
 
 export class google_iap_tunnel_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIapTunnelIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIapTunnelIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_iap_tunnel_iam_member", resourceName);
   }

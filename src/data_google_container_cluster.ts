@@ -7,7 +7,7 @@ export interface DataGoogleContainerClusterArgs {
 }
 
 export class data_google_container_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleContainerClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleContainerClusterArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_container_cluster", resourceName);
   }

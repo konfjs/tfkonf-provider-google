@@ -24,7 +24,7 @@ export interface GoogleDataplexEntryTypeArgs {
 }
 
 export class google_dataplex_entry_type extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataplexEntryTypeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataplexEntryTypeArgs) {
     const meta = {required_aspects:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataplex_entry_type", resourceName);
   }

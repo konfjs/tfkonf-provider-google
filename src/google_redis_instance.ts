@@ -44,7 +44,7 @@ export interface GoogleRedisInstanceArgs {
 }
 
 export class google_redis_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleRedisInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleRedisInstanceArgs) {
     const meta = {maintenance_policy:{isBlock:true,weekly_maintenance_window:{isBlock:true,start_time:{isBlock:true}}},persistence_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_redis_instance", resourceName);
   }

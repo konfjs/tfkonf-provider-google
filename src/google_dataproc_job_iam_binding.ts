@@ -14,7 +14,7 @@ export interface GoogleDataprocJobIamBindingArgs {
 }
 
 export class google_dataproc_job_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataprocJobIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataprocJobIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataproc_job_iam_binding", resourceName);
   }

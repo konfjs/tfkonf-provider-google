@@ -82,7 +82,7 @@ export interface GoogleIapSettingsArgs {
 }
 
 export class google_iap_settings extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIapSettingsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIapSettingsArgs) {
     const meta = {access_settings:{isBlock:true,allowed_domains_settings:{isBlock:true},cors_settings:{isBlock:true},gcip_settings:{isBlock:true},oauth_settings:{isBlock:true},reauth_settings:{isBlock:true},workforce_identity_settings:{isBlock:true,oauth2:{isBlock:true}}},application_settings:{isBlock:true,access_denied_page_settings:{isBlock:true},attribute_propagation_settings:{isBlock:true},csm_settings:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_iap_settings", resourceName);
   }

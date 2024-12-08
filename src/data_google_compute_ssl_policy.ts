@@ -6,7 +6,7 @@ export interface DataGoogleComputeSslPolicyArgs {
 }
 
 export class data_google_compute_ssl_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeSslPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeSslPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_ssl_policy", resourceName);
   }

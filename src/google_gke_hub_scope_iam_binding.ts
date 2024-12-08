@@ -14,7 +14,7 @@ export interface GoogleGkeHubScopeIamBindingArgs {
 }
 
 export class google_gke_hub_scope_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleGkeHubScopeIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleGkeHubScopeIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_gke_hub_scope_iam_binding", resourceName);
   }

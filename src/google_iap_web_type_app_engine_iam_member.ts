@@ -14,7 +14,7 @@ export interface GoogleIapWebTypeAppEngineIamMemberArgs {
 }
 
 export class google_iap_web_type_app_engine_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIapWebTypeAppEngineIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIapWebTypeAppEngineIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_iap_web_type_app_engine_iam_member", resourceName);
   }

@@ -31,7 +31,7 @@ export interface GoogleVertexAiDeploymentResourcePoolArgs {
 }
 
 export class google_vertex_ai_deployment_resource_pool extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleVertexAiDeploymentResourcePoolArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleVertexAiDeploymentResourcePoolArgs) {
     const meta = {dedicated_resources:{isBlock:true,autoscaling_metric_specs:{isBlock:true},machine_spec:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_vertex_ai_deployment_resource_pool", resourceName);
   }

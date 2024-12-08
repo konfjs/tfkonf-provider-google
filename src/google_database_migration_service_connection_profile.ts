@@ -149,7 +149,7 @@ export interface GoogleDatabaseMigrationServiceConnectionProfileArgs {
 }
 
 export class google_database_migration_service_connection_profile extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDatabaseMigrationServiceConnectionProfileArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDatabaseMigrationServiceConnectionProfileArgs) {
     const meta = {alloydb:{isBlock:true,settings:{isBlock:true,initial_user:{isBlock:true},primary_instance_settings:{isBlock:true,machine_config:{isBlock:true}}}},cloudsql:{isBlock:true,settings:{isBlock:true,ip_config:{isBlock:true,authorized_networks:{isBlock:true}}}},mysql:{isBlock:true,ssl:{isBlock:true}},oracle:{isBlock:true,forward_ssh_connectivity:{isBlock:true},private_connectivity:{isBlock:true},ssl:{isBlock:true},static_service_ip_connectivity:{isBlock:true}},postgresql:{isBlock:true,ssl:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_database_migration_service_connection_profile", resourceName);
   }

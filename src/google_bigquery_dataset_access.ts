@@ -42,7 +42,7 @@ export interface GoogleBigqueryDatasetAccessArgs {
 }
 
 export class google_bigquery_dataset_access extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigqueryDatasetAccessArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigqueryDatasetAccessArgs) {
     const meta = {dataset:{isBlock:true,dataset:{isBlock:true}},routine:{isBlock:true},timeouts:{isBlock:true},view:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_bigquery_dataset_access", resourceName);
   }

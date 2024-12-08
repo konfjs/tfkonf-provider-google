@@ -42,7 +42,7 @@ export interface GoogleComputeFirewallPolicyRuleArgs {
 }
 
 export class google_compute_firewall_policy_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeFirewallPolicyRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeFirewallPolicyRuleArgs) {
     const meta = {match:{isBlock:true,layer4_configs:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_firewall_policy_rule", resourceName);
   }

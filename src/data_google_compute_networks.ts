@@ -5,7 +5,7 @@ export interface DataGoogleComputeNetworksArgs {
 }
 
 export class data_google_compute_networks extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeNetworksArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeNetworksArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_networks", resourceName);
   }

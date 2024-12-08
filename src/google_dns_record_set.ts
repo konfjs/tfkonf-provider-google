@@ -98,7 +98,7 @@ export interface GoogleDnsRecordSetArgs {
 }
 
 export class google_dns_record_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDnsRecordSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDnsRecordSetArgs) {
     const meta = {routing_policy:{isBlock:true,geo:{isBlock:true,health_checked_targets:{isBlock:true,internal_load_balancers:{isBlock:true}}},primary_backup:{isBlock:true,backup_geo:{isBlock:true,health_checked_targets:{isBlock:true,internal_load_balancers:{isBlock:true}}},primary:{isBlock:true,internal_load_balancers:{isBlock:true}}},wrr:{isBlock:true,health_checked_targets:{isBlock:true,internal_load_balancers:{isBlock:true}}}}};
     super(terraformConfig, "resource", args, meta, "google_dns_record_set", resourceName);
   }

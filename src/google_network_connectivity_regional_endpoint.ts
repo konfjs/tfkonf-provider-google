@@ -17,7 +17,7 @@ export interface GoogleNetworkConnectivityRegionalEndpointArgs {
 }
 
 export class google_network_connectivity_regional_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkConnectivityRegionalEndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkConnectivityRegionalEndpointArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_network_connectivity_regional_endpoint", resourceName);
   }

@@ -14,7 +14,7 @@ export interface GoogleCloudTasksQueueIamMemberArgs {
 }
 
 export class google_cloud_tasks_queue_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudTasksQueueIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudTasksQueueIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloud_tasks_queue_iam_member", resourceName);
   }

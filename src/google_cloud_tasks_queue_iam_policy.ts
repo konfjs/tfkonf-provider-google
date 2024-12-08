@@ -6,7 +6,7 @@ export interface GoogleCloudTasksQueueIamPolicyArgs {
 }
 
 export class google_cloud_tasks_queue_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudTasksQueueIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudTasksQueueIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_cloud_tasks_queue_iam_policy", resourceName);
   }

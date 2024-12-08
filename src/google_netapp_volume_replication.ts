@@ -27,7 +27,7 @@ export interface GoogleNetappVolumeReplicationArgs {
 }
 
 export class google_netapp_volume_replication extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetappVolumeReplicationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetappVolumeReplicationArgs) {
     const meta = {destination_volume_parameters:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_netapp_volume_replication", resourceName);
   }

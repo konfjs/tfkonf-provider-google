@@ -14,7 +14,7 @@ export interface GooglePrivatecaCertificateTemplateIamMemberArgs {
 }
 
 export class google_privateca_certificate_template_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GooglePrivatecaCertificateTemplateIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GooglePrivatecaCertificateTemplateIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_privateca_certificate_template_iam_member", resourceName);
   }

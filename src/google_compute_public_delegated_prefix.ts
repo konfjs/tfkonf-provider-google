@@ -16,7 +16,7 @@ export interface GoogleComputePublicDelegatedPrefixArgs {
 }
 
 export class google_compute_public_delegated_prefix extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputePublicDelegatedPrefixArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputePublicDelegatedPrefixArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_public_delegated_prefix", resourceName);
   }

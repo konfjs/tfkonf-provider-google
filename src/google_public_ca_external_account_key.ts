@@ -11,7 +11,7 @@ export interface GooglePublicCaExternalAccountKeyArgs {
 }
 
 export class google_public_ca_external_account_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GooglePublicCaExternalAccountKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GooglePublicCaExternalAccountKeyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_public_ca_external_account_key", resourceName);
   }

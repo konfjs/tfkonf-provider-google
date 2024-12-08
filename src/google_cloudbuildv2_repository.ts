@@ -14,7 +14,7 @@ export interface GoogleCloudbuildv2RepositoryArgs {
 }
 
 export class google_cloudbuildv2_repository extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudbuildv2RepositoryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudbuildv2RepositoryArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloudbuildv2_repository", resourceName);
   }

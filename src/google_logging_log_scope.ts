@@ -14,7 +14,7 @@ export interface GoogleLoggingLogScopeArgs {
 }
 
 export class google_logging_log_scope extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleLoggingLogScopeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleLoggingLogScopeArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_logging_log_scope", resourceName);
   }

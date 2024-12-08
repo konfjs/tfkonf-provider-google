@@ -22,7 +22,7 @@ export interface GoogleSecureSourceManagerRepositoryArgs {
 }
 
 export class google_secure_source_manager_repository extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSecureSourceManagerRepositoryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSecureSourceManagerRepositoryArgs) {
     const meta = {initial_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_secure_source_manager_repository", resourceName);
   }

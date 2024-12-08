@@ -14,7 +14,7 @@ export interface GoogleBillingAccountIamBindingArgs {
 }
 
 export class google_billing_account_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBillingAccountIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBillingAccountIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_billing_account_iam_binding", resourceName);
   }

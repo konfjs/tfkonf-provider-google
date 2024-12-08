@@ -16,7 +16,7 @@ export interface GoogleHealthcareConsentStoreArgs {
 }
 
 export class google_healthcare_consent_store extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleHealthcareConsentStoreArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleHealthcareConsentStoreArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_healthcare_consent_store", resourceName);
   }

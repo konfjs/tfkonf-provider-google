@@ -6,7 +6,7 @@ export interface DataGoogleCloudQuotasQuotaInfosArgs {
 }
 
 export class data_google_cloud_quotas_quota_infos extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleCloudQuotasQuotaInfosArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleCloudQuotasQuotaInfosArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_cloud_quotas_quota_infos", resourceName);
   }

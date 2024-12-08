@@ -41,7 +41,7 @@ export interface GoogleApigeeAddonsConfigArgs {
 }
 
 export class google_apigee_addons_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleApigeeAddonsConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleApigeeAddonsConfigArgs) {
     const meta = {addons_config:{isBlock:true,advanced_api_ops_config:{isBlock:true},api_security_config:{isBlock:true},connectors_platform_config:{isBlock:true},integration_config:{isBlock:true},monetization_config:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_apigee_addons_config", resourceName);
   }

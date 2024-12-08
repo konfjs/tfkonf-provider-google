@@ -14,7 +14,7 @@ export interface GoogleSecretManagerRegionalSecretIamBindingArgs {
 }
 
 export class google_secret_manager_regional_secret_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSecretManagerRegionalSecretIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSecretManagerRegionalSecretIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_secret_manager_regional_secret_iam_binding", resourceName);
   }

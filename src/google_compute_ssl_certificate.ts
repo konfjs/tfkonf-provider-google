@@ -13,7 +13,7 @@ export interface GoogleComputeSslCertificateArgs {
 }
 
 export class google_compute_ssl_certificate extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeSslCertificateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeSslCertificateArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_ssl_certificate", resourceName);
   }

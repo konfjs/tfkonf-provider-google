@@ -28,7 +28,7 @@ export interface GoogleCloudIdentityGroupMembershipArgs {
 }
 
 export class google_cloud_identity_group_membership extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudIdentityGroupMembershipArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudIdentityGroupMembershipArgs) {
     const meta = {preferred_member_key:{isBlock:true},roles:{isBlock:true,expiry_detail:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloud_identity_group_membership", resourceName);
   }

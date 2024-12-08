@@ -15,7 +15,7 @@ export interface GoogleNetappBackupVaultArgs {
 }
 
 export class google_netapp_backup_vault extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetappBackupVaultArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetappBackupVaultArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_netapp_backup_vault", resourceName);
   }

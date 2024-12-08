@@ -208,7 +208,7 @@ export interface GoogleCloudRunV2ServiceArgs {
 }
 
 export class google_cloud_run_v2_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudRunV2ServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudRunV2ServiceArgs) {
     const meta = {binary_authorization:{isBlock:true},scaling:{isBlock:true},template:{isBlock:true,containers:{isBlock:true,env:{isBlock:true,value_source:{isBlock:true,secret_key_ref:{isBlock:true}}},liveness_probe:{isBlock:true,grpc:{isBlock:true},http_get:{isBlock:true,http_headers:{isBlock:true}},tcp_socket:{isBlock:true}},ports:{isBlock:true},resources:{isBlock:true},startup_probe:{isBlock:true,grpc:{isBlock:true},http_get:{isBlock:true,http_headers:{isBlock:true}},tcp_socket:{isBlock:true}},volume_mounts:{isBlock:true}},scaling:{isBlock:true},volumes:{isBlock:true,cloud_sql_instance:{isBlock:true},empty_dir:{isBlock:true},gcs:{isBlock:true},nfs:{isBlock:true},secret:{isBlock:true,items:{isBlock:true}}},vpc_access:{isBlock:true,network_interfaces:{isBlock:true}}},timeouts:{isBlock:true},traffic:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloud_run_v2_service", resourceName);
   }

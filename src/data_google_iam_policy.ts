@@ -28,7 +28,7 @@ export interface DataGoogleIamPolicyArgs {
 }
 
 export class data_google_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleIamPolicyArgs) {
     const meta = {audit_config:{isBlock:true,audit_log_configs:{isBlock:true}},binding:{isBlock:true,condition:{isBlock:true}}};
     super(terraformConfig, "data", args, meta, "google_iam_policy", resourceName);
   }

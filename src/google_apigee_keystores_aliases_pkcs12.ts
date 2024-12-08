@@ -16,7 +16,7 @@ export interface GoogleApigeeKeystoresAliasesPkcs12Args {
 }
 
 export class google_apigee_keystores_aliases_pkcs12 extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleApigeeKeystoresAliasesPkcs12Args) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleApigeeKeystoresAliasesPkcs12Args) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_apigee_keystores_aliases_pkcs12", resourceName);
   }

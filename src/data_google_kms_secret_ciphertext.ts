@@ -6,7 +6,7 @@ export interface DataGoogleKmsSecretCiphertextArgs {
 }
 
 export class data_google_kms_secret_ciphertext extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleKmsSecretCiphertextArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleKmsSecretCiphertextArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_kms_secret_ciphertext", resourceName);
   }

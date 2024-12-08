@@ -17,7 +17,7 @@ export interface GoogleSccV2FolderMuteConfigArgs {
 }
 
 export class google_scc_v2_folder_mute_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSccV2FolderMuteConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSccV2FolderMuteConfigArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_scc_v2_folder_mute_config", resourceName);
   }

@@ -28,7 +28,7 @@ export interface GoogleIamWorkforcePoolArgs {
 }
 
 export class google_iam_workforce_pool extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIamWorkforcePoolArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIamWorkforcePoolArgs) {
     const meta = {access_restrictions:{isBlock:true,allowed_services:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_iam_workforce_pool", resourceName);
   }

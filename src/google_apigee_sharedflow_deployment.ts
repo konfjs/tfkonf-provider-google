@@ -16,7 +16,7 @@ export interface GoogleApigeeSharedflowDeploymentArgs {
 }
 
 export class google_apigee_sharedflow_deployment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleApigeeSharedflowDeploymentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleApigeeSharedflowDeploymentArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_apigee_sharedflow_deployment", resourceName);
   }

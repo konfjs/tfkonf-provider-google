@@ -49,7 +49,7 @@ export interface GoogleApphubServiceArgs {
 }
 
 export class google_apphub_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleApphubServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleApphubServiceArgs) {
     const meta = {attributes:{isBlock:true,business_owners:{isBlock:true},criticality:{isBlock:true},developer_owners:{isBlock:true},environment:{isBlock:true},operator_owners:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_apphub_service", resourceName);
   }

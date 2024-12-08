@@ -14,7 +14,7 @@ export interface GoogleDataplexDatascanIamMemberArgs {
 }
 
 export class google_dataplex_datascan_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataplexDatascanIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataplexDatascanIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataplex_datascan_iam_member", resourceName);
   }

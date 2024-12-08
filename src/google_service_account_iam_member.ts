@@ -14,7 +14,7 @@ export interface GoogleServiceAccountIamMemberArgs {
 }
 
 export class google_service_account_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleServiceAccountIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleServiceAccountIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_service_account_iam_member", resourceName);
   }

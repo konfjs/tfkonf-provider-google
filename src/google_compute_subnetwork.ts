@@ -33,7 +33,7 @@ export interface GoogleComputeSubnetworkArgs {
 }
 
 export class google_compute_subnetwork extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeSubnetworkArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeSubnetworkArgs) {
     const meta = {log_config:{isBlock:true},secondary_ip_range:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_subnetwork", resourceName);
   }

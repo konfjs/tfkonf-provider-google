@@ -10,7 +10,7 @@ export interface DataGoogleCloudIdentityGroupLookupArgs {
 }
 
 export class data_google_cloud_identity_group_lookup extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleCloudIdentityGroupLookupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleCloudIdentityGroupLookupArgs) {
     const meta = {group_key:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "google_cloud_identity_group_lookup", resourceName);
   }

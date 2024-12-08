@@ -19,7 +19,7 @@ export interface GoogleOrganizationAccessApprovalSettingsArgs {
 }
 
 export class google_organization_access_approval_settings extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleOrganizationAccessApprovalSettingsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleOrganizationAccessApprovalSettingsArgs) {
     const meta = {enrolled_services:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_organization_access_approval_settings", resourceName);
   }

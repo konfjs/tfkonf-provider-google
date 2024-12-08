@@ -5,7 +5,7 @@ export interface DataGoogleSqlDatabaseInstanceLatestRecoveryTimeArgs {
 }
 
 export class data_google_sql_database_instance_latest_recovery_time extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleSqlDatabaseInstanceLatestRecoveryTimeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleSqlDatabaseInstanceLatestRecoveryTimeArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_sql_database_instance_latest_recovery_time", resourceName);
   }

@@ -33,7 +33,7 @@ export interface GoogleBigtableAppProfileArgs {
 }
 
 export class google_bigtable_app_profile extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigtableAppProfileArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigtableAppProfileArgs) {
     const meta = {data_boost_isolation_read_only:{isBlock:true},single_cluster_routing:{isBlock:true},standard_isolation:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_bigtable_app_profile", resourceName);
   }

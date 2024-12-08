@@ -21,7 +21,7 @@ export interface GoogleProjectArgs {
 }
 
 export class google_project extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleProjectArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleProjectArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_project", resourceName);
   }

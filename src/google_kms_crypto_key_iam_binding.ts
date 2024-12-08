@@ -14,7 +14,7 @@ export interface GoogleKmsCryptoKeyIamBindingArgs {
 }
 
 export class google_kms_crypto_key_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleKmsCryptoKeyIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleKmsCryptoKeyIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_kms_crypto_key_iam_binding", resourceName);
   }

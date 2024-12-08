@@ -130,7 +130,7 @@ export interface GoogleDataprocJobArgs {
 }
 
 export class google_dataproc_job extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataprocJobArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataprocJobArgs) {
     const meta = {hadoop_config:{isBlock:true,logging_config:{isBlock:true}},hive_config:{isBlock:true},pig_config:{isBlock:true,logging_config:{isBlock:true}},placement:{isBlock:true},presto_config:{isBlock:true,logging_config:{isBlock:true}},pyspark_config:{isBlock:true,logging_config:{isBlock:true}},reference:{isBlock:true},scheduling:{isBlock:true},spark_config:{isBlock:true,logging_config:{isBlock:true}},sparksql_config:{isBlock:true,logging_config:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataproc_job", resourceName);
   }

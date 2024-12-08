@@ -12,7 +12,7 @@ export interface GoogleFolderIamAuditConfigArgs {
 }
 
 export class google_folder_iam_audit_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleFolderIamAuditConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleFolderIamAuditConfigArgs) {
     const meta = {audit_log_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_folder_iam_audit_config", resourceName);
   }

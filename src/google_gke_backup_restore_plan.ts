@@ -115,7 +115,7 @@ export interface GoogleGkeBackupRestorePlanArgs {
 }
 
 export class google_gke_backup_restore_plan extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleGkeBackupRestorePlanArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleGkeBackupRestorePlanArgs) {
     const meta = {restore_config:{isBlock:true,cluster_resource_restore_scope:{isBlock:true,excluded_group_kinds:{isBlock:true},selected_group_kinds:{isBlock:true}},excluded_namespaces:{isBlock:true},restore_order:{isBlock:true,group_kind_dependencies:{isBlock:true,requiring:{isBlock:true},satisfying:{isBlock:true}}},selected_applications:{isBlock:true,namespaced_names:{isBlock:true}},selected_namespaces:{isBlock:true},transformation_rules:{isBlock:true,field_actions:{isBlock:true},resource_filter:{isBlock:true,group_kinds:{isBlock:true}}},volume_data_restore_policy_bindings:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_gke_backup_restore_plan", resourceName);
   }

@@ -15,7 +15,7 @@ export interface GoogleSccSourceIamBindingArgs {
 }
 
 export class google_scc_source_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSccSourceIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSccSourceIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_scc_source_iam_binding", resourceName);
   }

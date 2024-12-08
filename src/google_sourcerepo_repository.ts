@@ -19,7 +19,7 @@ export interface GoogleSourcerepoRepositoryArgs {
 }
 
 export class google_sourcerepo_repository extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSourcerepoRepositoryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSourcerepoRepositoryArgs) {
     const meta = {pubsub_configs:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_sourcerepo_repository", resourceName);
   }

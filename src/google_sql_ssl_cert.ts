@@ -12,7 +12,7 @@ export interface GoogleSqlSslCertArgs {
 }
 
 export class google_sql_ssl_cert extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSqlSslCertArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSqlSslCertArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_sql_ssl_cert", resourceName);
   }

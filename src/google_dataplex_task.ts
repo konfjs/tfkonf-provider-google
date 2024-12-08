@@ -103,7 +103,7 @@ export interface GoogleDataplexTaskArgs {
 }
 
 export class google_dataplex_task extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataplexTaskArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataplexTaskArgs) {
     const meta = {execution_spec:{isBlock:true},notebook:{isBlock:true,infrastructure_spec:{isBlock:true,batch:{isBlock:true},container_image:{isBlock:true},vpc_network:{isBlock:true}}},spark:{isBlock:true,infrastructure_spec:{isBlock:true,batch:{isBlock:true},container_image:{isBlock:true},vpc_network:{isBlock:true}}},timeouts:{isBlock:true},trigger_spec:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataplex_task", resourceName);
   }

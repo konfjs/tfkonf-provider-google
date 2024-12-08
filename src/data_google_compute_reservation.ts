@@ -7,7 +7,7 @@ export interface DataGoogleComputeReservationArgs {
 }
 
 export class data_google_compute_reservation extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeReservationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeReservationArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_reservation", resourceName);
   }

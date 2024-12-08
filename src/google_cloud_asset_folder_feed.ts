@@ -34,7 +34,7 @@ export interface GoogleCloudAssetFolderFeedArgs {
 }
 
 export class google_cloud_asset_folder_feed extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudAssetFolderFeedArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudAssetFolderFeedArgs) {
     const meta = {condition:{isBlock:true},feed_output_config:{isBlock:true,pubsub_destination:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloud_asset_folder_feed", resourceName);
   }

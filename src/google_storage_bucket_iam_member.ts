@@ -14,7 +14,7 @@ export interface GoogleStorageBucketIamMemberArgs {
 }
 
 export class google_storage_bucket_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleStorageBucketIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleStorageBucketIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_storage_bucket_iam_member", resourceName);
   }

@@ -6,7 +6,7 @@ export interface GooglePubsubSubscriptionIamPolicyArgs {
 }
 
 export class google_pubsub_subscription_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GooglePubsubSubscriptionIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GooglePubsubSubscriptionIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_pubsub_subscription_iam_policy", resourceName);
   }

@@ -128,7 +128,7 @@ export interface GoogleClouddeployDeliveryPipelineArgs {
 }
 
 export class google_clouddeploy_delivery_pipeline extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleClouddeployDeliveryPipelineArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleClouddeployDeliveryPipelineArgs) {
     const meta = {serial_pipeline:{isBlock:true,stages:{isBlock:true,deploy_parameters:{isBlock:true},strategy:{isBlock:true,canary:{isBlock:true,canary_deployment:{isBlock:true,postdeploy:{isBlock:true},predeploy:{isBlock:true}},custom_canary_deployment:{isBlock:true,phase_configs:{isBlock:true,postdeploy:{isBlock:true},predeploy:{isBlock:true}}},runtime_config:{isBlock:true,cloud_run:{isBlock:true},kubernetes:{isBlock:true,gateway_service_mesh:{isBlock:true},service_networking:{isBlock:true}}}},standard:{isBlock:true,postdeploy:{isBlock:true},predeploy:{isBlock:true}}}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_clouddeploy_delivery_pipeline", resourceName);
   }

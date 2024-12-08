@@ -5,7 +5,7 @@ export interface DataGoogleCloudRunServiceIamPolicyArgs {
 }
 
 export class data_google_cloud_run_service_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleCloudRunServiceIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleCloudRunServiceIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_cloud_run_service_iam_policy", resourceName);
   }

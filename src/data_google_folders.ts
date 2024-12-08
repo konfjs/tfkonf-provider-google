@@ -5,7 +5,7 @@ export interface DataGoogleFoldersArgs {
 }
 
 export class data_google_folders extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleFoldersArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleFoldersArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_folders", resourceName);
   }

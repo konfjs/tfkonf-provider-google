@@ -14,7 +14,7 @@ export interface GoogleDataprocAutoscalingPolicyIamBindingArgs {
 }
 
 export class google_dataproc_autoscaling_policy_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataprocAutoscalingPolicyIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataprocAutoscalingPolicyIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataproc_autoscaling_policy_iam_binding", resourceName);
   }

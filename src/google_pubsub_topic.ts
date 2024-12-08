@@ -63,7 +63,7 @@ export interface GooglePubsubTopicArgs {
 }
 
 export class google_pubsub_topic extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GooglePubsubTopicArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GooglePubsubTopicArgs) {
     const meta = {ingestion_data_source_settings:{isBlock:true,aws_kinesis:{isBlock:true},cloud_storage:{isBlock:true,avro_format:{isBlock:true},pubsub_avro_format:{isBlock:true},text_format:{isBlock:true}},platform_logs_settings:{isBlock:true}},message_storage_policy:{isBlock:true},schema_settings:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_pubsub_topic", resourceName);
   }

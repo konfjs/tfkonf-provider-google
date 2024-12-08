@@ -17,7 +17,7 @@ export interface GoogleIntegrationConnectorsManagedZoneArgs {
 }
 
 export class google_integration_connectors_managed_zone extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIntegrationConnectorsManagedZoneArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIntegrationConnectorsManagedZoneArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_integration_connectors_managed_zone", resourceName);
   }

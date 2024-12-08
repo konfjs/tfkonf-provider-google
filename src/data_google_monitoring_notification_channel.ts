@@ -9,7 +9,7 @@ export interface DataGoogleMonitoringNotificationChannelArgs {
 }
 
 export class data_google_monitoring_notification_channel extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleMonitoringNotificationChannelArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleMonitoringNotificationChannelArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_monitoring_notification_channel", resourceName);
   }

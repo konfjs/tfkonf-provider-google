@@ -14,7 +14,7 @@ export interface GoogleClouddeployDeliveryPipelineIamMemberArgs {
 }
 
 export class google_clouddeploy_delivery_pipeline_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleClouddeployDeliveryPipelineIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleClouddeployDeliveryPipelineIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_clouddeploy_delivery_pipeline_iam_member", resourceName);
   }

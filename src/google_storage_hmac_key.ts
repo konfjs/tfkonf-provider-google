@@ -13,7 +13,7 @@ export interface GoogleStorageHmacKeyArgs {
 }
 
 export class google_storage_hmac_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleStorageHmacKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleStorageHmacKeyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_storage_hmac_key", resourceName);
   }

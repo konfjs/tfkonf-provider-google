@@ -14,7 +14,7 @@ export interface GoogleDataplexEntryTypeIamBindingArgs {
 }
 
 export class google_dataplex_entry_type_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataplexEntryTypeIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataplexEntryTypeIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataplex_entry_type_iam_binding", resourceName);
   }

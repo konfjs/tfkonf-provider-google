@@ -31,7 +31,7 @@ export interface GoogleComputeForwardingRuleArgs {
 }
 
 export class google_compute_forwarding_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeForwardingRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeForwardingRuleArgs) {
     const meta = {service_directory_registrations:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_forwarding_rule", resourceName);
   }

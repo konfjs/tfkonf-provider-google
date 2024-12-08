@@ -15,7 +15,7 @@ export interface GoogleEndpointsServiceConsumersIamBindingArgs {
 }
 
 export class google_endpoints_service_consumers_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleEndpointsServiceConsumersIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleEndpointsServiceConsumersIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_endpoints_service_consumers_iam_binding", resourceName);
   }

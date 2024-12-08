@@ -5,7 +5,7 @@ export interface DataGoogleLoggingSinkArgs {
 }
 
 export class data_google_logging_sink extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleLoggingSinkArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleLoggingSinkArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_logging_sink", resourceName);
   }

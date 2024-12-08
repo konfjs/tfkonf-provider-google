@@ -14,7 +14,7 @@ export interface GoogleHealthcareDatasetIamMemberArgs {
 }
 
 export class google_healthcare_dataset_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleHealthcareDatasetIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleHealthcareDatasetIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_healthcare_dataset_iam_member", resourceName);
   }

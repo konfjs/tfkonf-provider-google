@@ -17,7 +17,7 @@ export interface GoogleLoggingLinkedDatasetArgs {
 }
 
 export class google_logging_linked_dataset extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleLoggingLinkedDatasetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleLoggingLinkedDatasetArgs) {
     const meta = {bigquery_dataset:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_logging_linked_dataset", resourceName);
   }

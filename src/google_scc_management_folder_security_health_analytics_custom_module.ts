@@ -52,7 +52,7 @@ export interface GoogleSccManagementFolderSecurityHealthAnalyticsCustomModuleArg
 }
 
 export class google_scc_management_folder_security_health_analytics_custom_module extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSccManagementFolderSecurityHealthAnalyticsCustomModuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSccManagementFolderSecurityHealthAnalyticsCustomModuleArgs) {
     const meta = {custom_config:{isBlock:true,custom_output:{isBlock:true,properties:{isBlock:true,value_expression:{isBlock:true}}},predicate:{isBlock:true},resource_selector:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_scc_management_folder_security_health_analytics_custom_module", resourceName);
   }

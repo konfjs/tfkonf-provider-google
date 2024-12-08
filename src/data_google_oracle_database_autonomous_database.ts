@@ -7,7 +7,7 @@ export interface DataGoogleOracleDatabaseAutonomousDatabaseArgs {
 }
 
 export class data_google_oracle_database_autonomous_database extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleOracleDatabaseAutonomousDatabaseArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleOracleDatabaseAutonomousDatabaseArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_oracle_database_autonomous_database", resourceName);
   }

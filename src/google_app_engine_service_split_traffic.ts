@@ -19,7 +19,7 @@ export interface GoogleAppEngineServiceSplitTrafficArgs {
 }
 
 export class google_app_engine_service_split_traffic extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleAppEngineServiceSplitTrafficArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleAppEngineServiceSplitTrafficArgs) {
     const meta = {split:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_app_engine_service_split_traffic", resourceName);
   }

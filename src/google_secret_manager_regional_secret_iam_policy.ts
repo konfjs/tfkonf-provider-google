@@ -6,7 +6,7 @@ export interface GoogleSecretManagerRegionalSecretIamPolicyArgs {
 }
 
 export class google_secret_manager_regional_secret_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSecretManagerRegionalSecretIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSecretManagerRegionalSecretIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_secret_manager_regional_secret_iam_policy", resourceName);
   }

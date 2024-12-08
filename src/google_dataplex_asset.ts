@@ -46,7 +46,7 @@ export interface GoogleDataplexAssetArgs {
 }
 
 export class google_dataplex_asset extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataplexAssetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataplexAssetArgs) {
     const meta = {discovery_spec:{isBlock:true,csv_options:{isBlock:true},json_options:{isBlock:true}},resource_spec:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataplex_asset", resourceName);
   }

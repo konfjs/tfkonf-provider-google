@@ -6,7 +6,7 @@ export interface DataGoogleSourcerepoRepositoryArgs {
 }
 
 export class data_google_sourcerepo_repository extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleSourcerepoRepositoryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleSourcerepoRepositoryArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_sourcerepo_repository", resourceName);
   }

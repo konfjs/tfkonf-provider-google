@@ -23,7 +23,7 @@ export interface GoogleComputeVpnTunnelArgs {
 }
 
 export class google_compute_vpn_tunnel extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeVpnTunnelArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeVpnTunnelArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_vpn_tunnel", resourceName);
   }

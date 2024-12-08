@@ -86,7 +86,7 @@ export interface GoogleComputeResourcePolicyArgs {
 }
 
 export class google_compute_resource_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeResourcePolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeResourcePolicyArgs) {
     const meta = {disk_consistency_group_policy:{isBlock:true},group_placement_policy:{isBlock:true},instance_schedule_policy:{isBlock:true,vm_start_schedule:{isBlock:true},vm_stop_schedule:{isBlock:true}},snapshot_schedule_policy:{isBlock:true,retention_policy:{isBlock:true},schedule:{isBlock:true,daily_schedule:{isBlock:true},hourly_schedule:{isBlock:true},weekly_schedule:{isBlock:true,day_of_weeks:{isBlock:true}}},snapshot_properties:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_resource_policy", resourceName);
   }

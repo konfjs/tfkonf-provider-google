@@ -7,7 +7,7 @@ export interface DataGoogleComputeSecurityPolicyArgs {
 }
 
 export class data_google_compute_security_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeSecurityPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeSecurityPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_security_policy", resourceName);
   }

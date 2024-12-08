@@ -16,7 +16,7 @@ export interface GoogleSccEventThreatDetectionCustomModuleArgs {
 }
 
 export class google_scc_event_threat_detection_custom_module extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSccEventThreatDetectionCustomModuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSccEventThreatDetectionCustomModuleArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_scc_event_threat_detection_custom_module", resourceName);
   }

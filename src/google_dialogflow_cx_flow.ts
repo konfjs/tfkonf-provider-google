@@ -180,7 +180,7 @@ export interface GoogleDialogflowCxFlowArgs {
 }
 
 export class google_dialogflow_cx_flow extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDialogflowCxFlowArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDialogflowCxFlowArgs) {
     const meta = {advanced_settings:{isBlock:true,audio_export_gcs_destination:{isBlock:true},dtmf_settings:{isBlock:true},logging_settings:{isBlock:true},speech_settings:{isBlock:true}},event_handlers:{isBlock:true,trigger_fulfillment:{isBlock:true,conditional_cases:{isBlock:true},messages:{isBlock:true,conversation_success:{isBlock:true},live_agent_handoff:{isBlock:true},output_audio_text:{isBlock:true},play_audio:{isBlock:true},telephony_transfer_call:{isBlock:true},text:{isBlock:true}},set_parameter_actions:{isBlock:true}}},nlu_settings:{isBlock:true},timeouts:{isBlock:true},transition_routes:{isBlock:true,trigger_fulfillment:{isBlock:true,conditional_cases:{isBlock:true},messages:{isBlock:true,conversation_success:{isBlock:true},live_agent_handoff:{isBlock:true},output_audio_text:{isBlock:true},play_audio:{isBlock:true},telephony_transfer_call:{isBlock:true},text:{isBlock:true}},set_parameter_actions:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "google_dialogflow_cx_flow", resourceName);
   }

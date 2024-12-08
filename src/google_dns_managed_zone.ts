@@ -69,7 +69,7 @@ export interface GoogleDnsManagedZoneArgs {
 }
 
 export class google_dns_managed_zone extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDnsManagedZoneArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDnsManagedZoneArgs) {
     const meta = {cloud_logging_config:{isBlock:true},dnssec_config:{isBlock:true,default_key_specs:{isBlock:true}},forwarding_config:{isBlock:true,target_name_servers:{isBlock:true}},peering_config:{isBlock:true,target_network:{isBlock:true}},private_visibility_config:{isBlock:true,gke_clusters:{isBlock:true},networks:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dns_managed_zone", resourceName);
   }

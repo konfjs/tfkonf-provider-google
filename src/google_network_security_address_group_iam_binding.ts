@@ -14,7 +14,7 @@ export interface GoogleNetworkSecurityAddressGroupIamBindingArgs {
 }
 
 export class google_network_security_address_group_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkSecurityAddressGroupIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkSecurityAddressGroupIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_network_security_address_group_iam_binding", resourceName);
   }

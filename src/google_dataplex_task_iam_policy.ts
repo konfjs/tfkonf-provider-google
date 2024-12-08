@@ -7,7 +7,7 @@ export interface GoogleDataplexTaskIamPolicyArgs {
 }
 
 export class google_dataplex_task_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataplexTaskIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataplexTaskIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_dataplex_task_iam_policy", resourceName);
   }

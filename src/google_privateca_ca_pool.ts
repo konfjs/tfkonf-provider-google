@@ -136,7 +136,7 @@ export interface GooglePrivatecaCaPoolArgs {
 }
 
 export class google_privateca_ca_pool extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GooglePrivatecaCaPoolArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GooglePrivatecaCaPoolArgs) {
     const meta = {issuance_policy:{isBlock:true,allowed_issuance_modes:{isBlock:true},allowed_key_types:{isBlock:true,elliptic_curve:{isBlock:true},rsa:{isBlock:true}},baseline_values:{isBlock:true,additional_extensions:{isBlock:true,object_id:{isBlock:true}},ca_options:{isBlock:true},key_usage:{isBlock:true,base_key_usage:{isBlock:true},extended_key_usage:{isBlock:true},unknown_extended_key_usages:{isBlock:true}},name_constraints:{isBlock:true},policy_ids:{isBlock:true}},identity_constraints:{isBlock:true,cel_expression:{isBlock:true}}},publishing_options:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_privateca_ca_pool", resourceName);
   }

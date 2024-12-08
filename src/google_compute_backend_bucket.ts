@@ -41,7 +41,7 @@ export interface GoogleComputeBackendBucketArgs {
 }
 
 export class google_compute_backend_bucket extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeBackendBucketArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeBackendBucketArgs) {
     const meta = {cdn_policy:{isBlock:true,bypass_cache_on_request_headers:{isBlock:true},cache_key_policy:{isBlock:true},negative_caching_policy:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_backend_bucket", resourceName);
   }

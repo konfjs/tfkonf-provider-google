@@ -146,7 +146,7 @@ export interface GooglePrivatecaCertificateAuthorityArgs {
 }
 
 export class google_privateca_certificate_authority extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GooglePrivatecaCertificateAuthorityArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GooglePrivatecaCertificateAuthorityArgs) {
     const meta = {config:{isBlock:true,subject_config:{isBlock:true,subject:{isBlock:true},subject_alt_name:{isBlock:true}},subject_key_id:{isBlock:true},x509_config:{isBlock:true,additional_extensions:{isBlock:true,object_id:{isBlock:true}},ca_options:{isBlock:true},key_usage:{isBlock:true,base_key_usage:{isBlock:true},extended_key_usage:{isBlock:true},unknown_extended_key_usages:{isBlock:true}},name_constraints:{isBlock:true},policy_ids:{isBlock:true}}},key_spec:{isBlock:true},subordinate_config:{isBlock:true,pem_issuer_chain:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_privateca_certificate_authority", resourceName);
   }

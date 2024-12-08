@@ -14,7 +14,7 @@ export interface GoogleClouddeployCustomTargetTypeIamMemberArgs {
 }
 
 export class google_clouddeploy_custom_target_type_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleClouddeployCustomTargetTypeIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleClouddeployCustomTargetTypeIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_clouddeploy_custom_target_type_iam_member", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataGoogleAlloydbLocationsArgs {
 }
 
 export class data_google_alloydb_locations extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleAlloydbLocationsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleAlloydbLocationsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_alloydb_locations", resourceName);
   }

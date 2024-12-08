@@ -19,7 +19,7 @@ export interface GoogleOrgPolicyCustomConstraintArgs {
 }
 
 export class google_org_policy_custom_constraint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleOrgPolicyCustomConstraintArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleOrgPolicyCustomConstraintArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_org_policy_custom_constraint", resourceName);
   }

@@ -22,7 +22,7 @@ export interface GoogleIntegrationsClientArgs {
 }
 
 export class google_integrations_client extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIntegrationsClientArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIntegrationsClientArgs) {
     const meta = {cloud_kms_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_integrations_client", resourceName);
   }

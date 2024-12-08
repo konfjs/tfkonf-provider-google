@@ -5,7 +5,7 @@ export interface DataGoogleComputeMachineTypesArgs {
 }
 
 export class data_google_compute_machine_types extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeMachineTypesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeMachineTypesArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_machine_types", resourceName);
   }

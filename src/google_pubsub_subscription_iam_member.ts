@@ -14,7 +14,7 @@ export interface GooglePubsubSubscriptionIamMemberArgs {
 }
 
 export class google_pubsub_subscription_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GooglePubsubSubscriptionIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GooglePubsubSubscriptionIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_pubsub_subscription_iam_member", resourceName);
   }

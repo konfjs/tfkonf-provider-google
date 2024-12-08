@@ -35,7 +35,7 @@ export interface GoogleOracleDatabaseAutonomousDatabaseArgs {
 }
 
 export class google_oracle_database_autonomous_database extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleOracleDatabaseAutonomousDatabaseArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleOracleDatabaseAutonomousDatabaseArgs) {
     const meta = {properties:{isBlock:true,customer_contacts:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_oracle_database_autonomous_database", resourceName);
   }

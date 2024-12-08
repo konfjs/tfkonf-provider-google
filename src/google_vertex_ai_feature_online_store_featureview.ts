@@ -36,7 +36,7 @@ export interface GoogleVertexAiFeatureOnlineStoreFeatureviewArgs {
 }
 
 export class google_vertex_ai_feature_online_store_featureview extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleVertexAiFeatureOnlineStoreFeatureviewArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleVertexAiFeatureOnlineStoreFeatureviewArgs) {
     const meta = {big_query_source:{isBlock:true},feature_registry_source:{isBlock:true,feature_groups:{isBlock:true}},sync_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_vertex_ai_feature_online_store_featureview", resourceName);
   }

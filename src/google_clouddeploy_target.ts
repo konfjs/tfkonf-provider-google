@@ -52,7 +52,7 @@ export interface GoogleClouddeployTargetArgs {
 }
 
 export class google_clouddeploy_target extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleClouddeployTargetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleClouddeployTargetArgs) {
     const meta = {anthos_cluster:{isBlock:true},custom_target:{isBlock:true},execution_configs:{isBlock:true},gke:{isBlock:true},multi_target:{isBlock:true},run:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_clouddeploy_target", resourceName);
   }

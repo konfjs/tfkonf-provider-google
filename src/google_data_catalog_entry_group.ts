@@ -14,7 +14,7 @@ export interface GoogleDataCatalogEntryGroupArgs {
 }
 
 export class google_data_catalog_entry_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataCatalogEntryGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataCatalogEntryGroupArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_data_catalog_entry_group", resourceName);
   }

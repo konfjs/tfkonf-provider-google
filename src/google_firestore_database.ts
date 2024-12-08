@@ -21,7 +21,7 @@ export interface GoogleFirestoreDatabaseArgs {
 }
 
 export class google_firestore_database extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleFirestoreDatabaseArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleFirestoreDatabaseArgs) {
     const meta = {cmek_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_firestore_database", resourceName);
   }

@@ -8,7 +8,7 @@ export interface DataGoogleContainerRegistryImageArgs {
 }
 
 export class data_google_container_registry_image extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleContainerRegistryImageArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleContainerRegistryImageArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_container_registry_image", resourceName);
   }

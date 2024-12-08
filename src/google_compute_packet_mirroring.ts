@@ -45,7 +45,7 @@ export interface GoogleComputePacketMirroringArgs {
 }
 
 export class google_compute_packet_mirroring extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputePacketMirroringArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputePacketMirroringArgs) {
     const meta = {collector_ilb:{isBlock:true},filter:{isBlock:true},mirrored_resources:{isBlock:true,instances:{isBlock:true},subnetworks:{isBlock:true}},network:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_packet_mirroring", resourceName);
   }

@@ -43,7 +43,7 @@ export interface GoogleBigqueryDataTransferConfigArgs {
 }
 
 export class google_bigquery_data_transfer_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigqueryDataTransferConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigqueryDataTransferConfigArgs) {
     const meta = {email_preferences:{isBlock:true},encryption_configuration:{isBlock:true},schedule_options:{isBlock:true},sensitive_params:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_bigquery_data_transfer_config", resourceName);
   }

@@ -7,7 +7,7 @@ export interface DataGoogleKmsKeyRingsArgs {
 }
 
 export class data_google_kms_key_rings extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleKmsKeyRingsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleKmsKeyRingsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_kms_key_rings", resourceName);
   }

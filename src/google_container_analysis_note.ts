@@ -31,7 +31,7 @@ export interface GoogleContainerAnalysisNoteArgs {
 }
 
 export class google_container_analysis_note extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleContainerAnalysisNoteArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleContainerAnalysisNoteArgs) {
     const meta = {attestation_authority:{isBlock:true,hint:{isBlock:true}},related_url:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_container_analysis_note", resourceName);
   }

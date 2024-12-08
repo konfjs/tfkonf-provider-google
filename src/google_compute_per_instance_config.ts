@@ -52,7 +52,7 @@ export interface GoogleComputePerInstanceConfigArgs {
 }
 
 export class google_compute_per_instance_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputePerInstanceConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputePerInstanceConfigArgs) {
     const meta = {preserved_state:{isBlock:true,disk:{isBlock:true},external_ip:{isBlock:true,ip_address:{isBlock:true}},internal_ip:{isBlock:true,ip_address:{isBlock:true}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_per_instance_config", resourceName);
   }

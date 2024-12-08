@@ -14,7 +14,7 @@ export interface GoogleSccV2OrganizationSourceArgs {
 }
 
 export class google_scc_v2_organization_source extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSccV2OrganizationSourceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSccV2OrganizationSourceArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_scc_v2_organization_source", resourceName);
   }

@@ -14,7 +14,7 @@ export interface GoogleResourceManagerLienArgs {
 }
 
 export class google_resource_manager_lien extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleResourceManagerLienArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleResourceManagerLienArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_resource_manager_lien", resourceName);
   }

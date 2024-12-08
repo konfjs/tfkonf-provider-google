@@ -6,7 +6,7 @@ export interface DataGoogleBillingAccountArgs {
 }
 
 export class data_google_billing_account extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleBillingAccountArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleBillingAccountArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_billing_account", resourceName);
   }

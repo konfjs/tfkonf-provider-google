@@ -6,7 +6,7 @@ export interface GoogleBinaryAuthorizationAttestorIamPolicyArgs {
 }
 
 export class google_binary_authorization_attestor_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBinaryAuthorizationAttestorIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBinaryAuthorizationAttestorIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_binary_authorization_attestor_iam_policy", resourceName);
   }

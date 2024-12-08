@@ -15,7 +15,7 @@ export interface GoogleOsLoginSshPublicKeyArgs {
 }
 
 export class google_os_login_ssh_public_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleOsLoginSshPublicKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleOsLoginSshPublicKeyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_os_login_ssh_public_key", resourceName);
   }

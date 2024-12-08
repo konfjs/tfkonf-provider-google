@@ -17,7 +17,7 @@ export interface GoogleSccV2OrganizationMuteConfigArgs {
 }
 
 export class google_scc_v2_organization_mute_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSccV2OrganizationMuteConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSccV2OrganizationMuteConfigArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_scc_v2_organization_mute_config", resourceName);
   }

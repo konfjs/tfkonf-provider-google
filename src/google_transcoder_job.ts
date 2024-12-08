@@ -142,7 +142,7 @@ export interface GoogleTranscoderJobArgs {
 }
 
 export class google_transcoder_job extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleTranscoderJobArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleTranscoderJobArgs) {
     const meta = {config:{isBlock:true,ad_breaks:{isBlock:true},edit_list:{isBlock:true},elementary_streams:{isBlock:true,audio_stream:{isBlock:true},video_stream:{isBlock:true,h264:{isBlock:true,hlg:{isBlock:true},sdr:{isBlock:true}}}},encryptions:{isBlock:true,aes128:{isBlock:true},drm_systems:{isBlock:true,clearkey:{isBlock:true},fairplay:{isBlock:true},playready:{isBlock:true},widevine:{isBlock:true}},mpeg_cenc:{isBlock:true},sample_aes:{isBlock:true},secret_manager_key_source:{isBlock:true}},inputs:{isBlock:true},manifests:{isBlock:true},mux_streams:{isBlock:true,segment_settings:{isBlock:true}},output:{isBlock:true},overlays:{isBlock:true,animations:{isBlock:true,animation_fade:{isBlock:true,xy:{isBlock:true}}},image:{isBlock:true}},pubsub_destination:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_transcoder_job", resourceName);
   }

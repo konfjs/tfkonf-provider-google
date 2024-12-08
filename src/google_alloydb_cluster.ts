@@ -117,7 +117,7 @@ export interface GoogleAlloydbClusterArgs {
 }
 
 export class google_alloydb_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleAlloydbClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleAlloydbClusterArgs) {
     const meta = {automated_backup_policy:{isBlock:true,encryption_config:{isBlock:true},quantity_based_retention:{isBlock:true},time_based_retention:{isBlock:true},weekly_schedule:{isBlock:true,start_times:{isBlock:true}}},continuous_backup_config:{isBlock:true,encryption_config:{isBlock:true}},encryption_config:{isBlock:true},initial_user:{isBlock:true},maintenance_update_policy:{isBlock:true,maintenance_windows:{isBlock:true,start_time:{isBlock:true}}},network_config:{isBlock:true},psc_config:{isBlock:true},restore_backup_source:{isBlock:true},restore_continuous_backup_source:{isBlock:true},secondary_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_alloydb_cluster", resourceName);
   }

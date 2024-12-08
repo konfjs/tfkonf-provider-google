@@ -53,7 +53,7 @@ export interface GoogleIamWorkloadIdentityPoolProviderArgs {
 }
 
 export class google_iam_workload_identity_pool_provider extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIamWorkloadIdentityPoolProviderArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIamWorkloadIdentityPoolProviderArgs) {
     const meta = {aws:{isBlock:true},oidc:{isBlock:true},saml:{isBlock:true},timeouts:{isBlock:true},x509:{isBlock:true,trust_store:{isBlock:true,intermediate_cas:{isBlock:true},trust_anchors:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "google_iam_workload_identity_pool_provider", resourceName);
   }

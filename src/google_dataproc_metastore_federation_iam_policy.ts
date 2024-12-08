@@ -6,7 +6,7 @@ export interface GoogleDataprocMetastoreFederationIamPolicyArgs {
 }
 
 export class google_dataproc_metastore_federation_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataprocMetastoreFederationIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataprocMetastoreFederationIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_dataproc_metastore_federation_iam_policy", resourceName);
   }

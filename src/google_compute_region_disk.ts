@@ -39,7 +39,7 @@ export interface GoogleComputeRegionDiskArgs {
 }
 
 export class google_compute_region_disk extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeRegionDiskArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeRegionDiskArgs) {
     const meta = {async_primary_disk:{isBlock:true},disk_encryption_key:{isBlock:true},guest_os_features:{isBlock:true},source_snapshot_encryption_key:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_region_disk", resourceName);
   }

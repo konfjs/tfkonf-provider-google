@@ -20,7 +20,7 @@ export interface GoogleDatabaseMigrationServicePrivateConnectionArgs {
 }
 
 export class google_database_migration_service_private_connection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDatabaseMigrationServicePrivateConnectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDatabaseMigrationServicePrivateConnectionArgs) {
     const meta = {timeouts:{isBlock:true},vpc_peering_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_database_migration_service_private_connection", resourceName);
   }

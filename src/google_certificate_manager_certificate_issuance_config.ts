@@ -27,7 +27,7 @@ export interface GoogleCertificateManagerCertificateIssuanceConfigArgs {
 }
 
 export class google_certificate_manager_certificate_issuance_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCertificateManagerCertificateIssuanceConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCertificateManagerCertificateIssuanceConfigArgs) {
     const meta = {certificate_authority_config:{isBlock:true,certificate_authority_service_config:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_certificate_manager_certificate_issuance_config", resourceName);
   }

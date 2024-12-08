@@ -28,7 +28,7 @@ export interface GoogleDiscoveryEngineSearchEngineArgs {
 }
 
 export class google_discovery_engine_search_engine extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDiscoveryEngineSearchEngineArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDiscoveryEngineSearchEngineArgs) {
     const meta = {common_config:{isBlock:true},search_engine_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_discovery_engine_search_engine", resourceName);
   }

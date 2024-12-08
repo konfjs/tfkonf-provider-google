@@ -33,7 +33,7 @@ export interface GoogleDialogflowCxSecuritySettingsArgs {
 }
 
 export class google_dialogflow_cx_security_settings extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDialogflowCxSecuritySettingsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDialogflowCxSecuritySettingsArgs) {
     const meta = {audio_export_settings:{isBlock:true},insights_export_settings:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dialogflow_cx_security_settings", resourceName);
   }

@@ -23,7 +23,7 @@ export interface GoogleNetworkConnectivityServiceConnectionPolicyArgs {
 }
 
 export class google_network_connectivity_service_connection_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkConnectivityServiceConnectionPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkConnectivityServiceConnectionPolicyArgs) {
     const meta = {psc_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_network_connectivity_service_connection_policy", resourceName);
   }

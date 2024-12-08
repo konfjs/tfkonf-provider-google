@@ -82,7 +82,7 @@ export interface GoogleGkeBackupBackupPlanArgs {
 }
 
 export class google_gke_backup_backup_plan extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleGkeBackupBackupPlanArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleGkeBackupBackupPlanArgs) {
     const meta = {backup_config:{isBlock:true,encryption_key:{isBlock:true},selected_applications:{isBlock:true,namespaced_names:{isBlock:true}},selected_namespaces:{isBlock:true}},backup_schedule:{isBlock:true,rpo_config:{isBlock:true,exclusion_windows:{isBlock:true,days_of_week:{isBlock:true},single_occurrence_date:{isBlock:true},start_time:{isBlock:true}}}},retention_policy:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_gke_backup_backup_plan", resourceName);
   }

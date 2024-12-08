@@ -25,7 +25,7 @@ export interface GoogleDataprocGdcServiceInstanceArgs {
 }
 
 export class google_dataproc_gdc_service_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataprocGdcServiceInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataprocGdcServiceInstanceArgs) {
     const meta = {gdce_cluster:{isBlock:true},spark_service_instance_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataproc_gdc_service_instance", resourceName);
   }

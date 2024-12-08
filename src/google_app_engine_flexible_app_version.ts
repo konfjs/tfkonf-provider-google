@@ -200,7 +200,7 @@ export interface GoogleAppEngineFlexibleAppVersionArgs {
 }
 
 export class google_app_engine_flexible_app_version extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleAppEngineFlexibleAppVersionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleAppEngineFlexibleAppVersionArgs) {
     const meta = {api_config:{isBlock:true},automatic_scaling:{isBlock:true,cpu_utilization:{isBlock:true},disk_utilization:{isBlock:true},network_utilization:{isBlock:true},request_utilization:{isBlock:true}},deployment:{isBlock:true,cloud_build_options:{isBlock:true},container:{isBlock:true},files:{isBlock:true},zip:{isBlock:true}},endpoints_api_service:{isBlock:true},entrypoint:{isBlock:true},flexible_runtime_settings:{isBlock:true},handlers:{isBlock:true,script:{isBlock:true},static_files:{isBlock:true}},liveness_check:{isBlock:true},manual_scaling:{isBlock:true},network:{isBlock:true},readiness_check:{isBlock:true},resources:{isBlock:true,volumes:{isBlock:true}},timeouts:{isBlock:true},vpc_access_connector:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_app_engine_flexible_app_version", resourceName);
   }

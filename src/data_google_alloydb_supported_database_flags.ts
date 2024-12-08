@@ -6,7 +6,7 @@ export interface DataGoogleAlloydbSupportedDatabaseFlagsArgs {
 }
 
 export class data_google_alloydb_supported_database_flags extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleAlloydbSupportedDatabaseFlagsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleAlloydbSupportedDatabaseFlagsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_alloydb_supported_database_flags", resourceName);
   }

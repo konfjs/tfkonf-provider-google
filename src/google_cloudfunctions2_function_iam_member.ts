@@ -14,7 +14,7 @@ export interface GoogleCloudfunctions2FunctionIamMemberArgs {
 }
 
 export class google_cloudfunctions2_function_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudfunctions2FunctionIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudfunctions2FunctionIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloudfunctions2_function_iam_member", resourceName);
   }

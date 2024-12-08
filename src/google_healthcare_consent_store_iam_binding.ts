@@ -15,7 +15,7 @@ export interface GoogleHealthcareConsentStoreIamBindingArgs {
 }
 
 export class google_healthcare_consent_store_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleHealthcareConsentStoreIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleHealthcareConsentStoreIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_healthcare_consent_store_iam_binding", resourceName);
   }

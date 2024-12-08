@@ -6,7 +6,7 @@ export interface GoogleDataFusionInstanceIamPolicyArgs {
 }
 
 export class google_data_fusion_instance_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataFusionInstanceIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataFusionInstanceIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_data_fusion_instance_iam_policy", resourceName);
   }

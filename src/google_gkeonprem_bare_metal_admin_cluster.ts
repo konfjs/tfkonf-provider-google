@@ -138,7 +138,7 @@ export interface GoogleGkeonpremBareMetalAdminClusterArgs {
 }
 
 export class google_gkeonprem_bare_metal_admin_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleGkeonpremBareMetalAdminClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleGkeonpremBareMetalAdminClusterArgs) {
     const meta = {cluster_operations:{isBlock:true},control_plane:{isBlock:true,api_server_args:{isBlock:true},control_plane_node_pool_config:{isBlock:true,node_pool_config:{isBlock:true,node_configs:{isBlock:true},taints:{isBlock:true}}}},load_balancer:{isBlock:true,manual_lb_config:{isBlock:true},port_config:{isBlock:true},vip_config:{isBlock:true}},maintenance_config:{isBlock:true},network_config:{isBlock:true,island_mode_cidr:{isBlock:true}},node_access_config:{isBlock:true},node_config:{isBlock:true},proxy:{isBlock:true},security_config:{isBlock:true,authorization:{isBlock:true,admin_users:{isBlock:true}}},storage:{isBlock:true,lvp_node_mounts_config:{isBlock:true},lvp_share_config:{isBlock:true,lvp_config:{isBlock:true}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_gkeonprem_bare_metal_admin_cluster", resourceName);
   }

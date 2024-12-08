@@ -109,7 +109,7 @@ export interface GoogleClouddomainsRegistrationArgs {
 }
 
 export class google_clouddomains_registration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleClouddomainsRegistrationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleClouddomainsRegistrationArgs) {
     const meta = {contact_settings:{isBlock:true,admin_contact:{isBlock:true,postal_address:{isBlock:true}},registrant_contact:{isBlock:true,postal_address:{isBlock:true}},technical_contact:{isBlock:true,postal_address:{isBlock:true}}},dns_settings:{isBlock:true,custom_dns:{isBlock:true,ds_records:{isBlock:true}},glue_records:{isBlock:true}},management_settings:{isBlock:true},timeouts:{isBlock:true},yearly_price:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_clouddomains_registration", resourceName);
   }

@@ -14,7 +14,7 @@ export interface GoogleComputeDiskIamMemberArgs {
 }
 
 export class google_compute_disk_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeDiskIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeDiskIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_disk_iam_member", resourceName);
   }

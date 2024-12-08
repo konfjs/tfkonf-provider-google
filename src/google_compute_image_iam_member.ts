@@ -14,7 +14,7 @@ export interface GoogleComputeImageIamMemberArgs {
 }
 
 export class google_compute_image_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeImageIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeImageIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_image_iam_member", resourceName);
   }

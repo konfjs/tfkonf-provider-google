@@ -99,7 +99,7 @@ export interface GoogleDataPipelinePipelineArgs {
 }
 
 export class google_data_pipeline_pipeline extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataPipelinePipelineArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataPipelinePipelineArgs) {
     const meta = {schedule_info:{isBlock:true},timeouts:{isBlock:true},workload:{isBlock:true,dataflow_flex_template_request:{isBlock:true,launch_parameter:{isBlock:true,environment:{isBlock:true}}},dataflow_launch_template_request:{isBlock:true,launch_parameters:{isBlock:true,environment:{isBlock:true}}}}};
     super(terraformConfig, "resource", args, meta, "google_data_pipeline_pipeline", resourceName);
   }

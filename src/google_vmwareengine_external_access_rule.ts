@@ -31,7 +31,7 @@ export interface GoogleVmwareengineExternalAccessRuleArgs {
 }
 
 export class google_vmwareengine_external_access_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleVmwareengineExternalAccessRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleVmwareengineExternalAccessRuleArgs) {
     const meta = {destination_ip_ranges:{isBlock:true},source_ip_ranges:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_vmwareengine_external_access_rule", resourceName);
   }

@@ -6,7 +6,7 @@ export interface DataGoogleSccV2OrganizationSourceIamPolicyArgs {
 }
 
 export class data_google_scc_v2_organization_source_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleSccV2OrganizationSourceIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleSccV2OrganizationSourceIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_scc_v2_organization_source_iam_policy", resourceName);
   }

@@ -14,7 +14,7 @@ export interface GoogleCloudbuildv2ConnectionIamMemberArgs {
 }
 
 export class google_cloudbuildv2_connection_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudbuildv2ConnectionIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudbuildv2ConnectionIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloudbuildv2_connection_iam_member", resourceName);
   }

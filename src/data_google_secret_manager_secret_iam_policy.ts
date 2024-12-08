@@ -5,7 +5,7 @@ export interface DataGoogleSecretManagerSecretIamPolicyArgs {
 }
 
 export class data_google_secret_manager_secret_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleSecretManagerSecretIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleSecretManagerSecretIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_secret_manager_secret_iam_policy", resourceName);
   }

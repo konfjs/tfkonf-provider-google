@@ -20,7 +20,7 @@ export interface GoogleNetworkConnectivityGroupArgs {
 }
 
 export class google_network_connectivity_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkConnectivityGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkConnectivityGroupArgs) {
     const meta = {auto_accept:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_network_connectivity_group", resourceName);
   }

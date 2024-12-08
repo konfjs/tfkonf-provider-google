@@ -5,7 +5,7 @@ export interface DataGoogleCloudbuildv2ConnectionIamPolicyArgs {
 }
 
 export class data_google_cloudbuildv2_connection_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleCloudbuildv2ConnectionIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleCloudbuildv2ConnectionIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_cloudbuildv2_connection_iam_policy", resourceName);
   }

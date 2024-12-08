@@ -6,7 +6,7 @@ export interface GoogleDataplexLakeIamPolicyArgs {
 }
 
 export class google_dataplex_lake_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataplexLakeIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataplexLakeIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_dataplex_lake_iam_policy", resourceName);
   }

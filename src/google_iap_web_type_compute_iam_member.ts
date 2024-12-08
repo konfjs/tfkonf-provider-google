@@ -13,7 +13,7 @@ export interface GoogleIapWebTypeComputeIamMemberArgs {
 }
 
 export class google_iap_web_type_compute_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIapWebTypeComputeIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIapWebTypeComputeIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_iap_web_type_compute_iam_member", resourceName);
   }

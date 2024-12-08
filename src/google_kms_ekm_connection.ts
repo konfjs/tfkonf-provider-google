@@ -25,7 +25,7 @@ export interface GoogleKmsEkmConnectionArgs {
 }
 
 export class google_kms_ekm_connection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleKmsEkmConnectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleKmsEkmConnectionArgs) {
     const meta = {service_resolvers:{isBlock:true,server_certificates:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_kms_ekm_connection", resourceName);
   }

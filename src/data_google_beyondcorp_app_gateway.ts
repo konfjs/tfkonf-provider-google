@@ -7,7 +7,7 @@ export interface DataGoogleBeyondcorpAppGatewayArgs {
 }
 
 export class data_google_beyondcorp_app_gateway extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleBeyondcorpAppGatewayArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleBeyondcorpAppGatewayArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_beyondcorp_app_gateway", resourceName);
   }

@@ -15,7 +15,7 @@ export interface GoogleComputeTargetGrpcProxyArgs {
 }
 
 export class google_compute_target_grpc_proxy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeTargetGrpcProxyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeTargetGrpcProxyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_target_grpc_proxy", resourceName);
   }

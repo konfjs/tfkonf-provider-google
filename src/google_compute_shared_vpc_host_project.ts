@@ -11,7 +11,7 @@ export interface GoogleComputeSharedVpcHostProjectArgs {
 }
 
 export class google_compute_shared_vpc_host_project extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeSharedVpcHostProjectArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeSharedVpcHostProjectArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_shared_vpc_host_project", resourceName);
   }

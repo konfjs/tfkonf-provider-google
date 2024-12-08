@@ -12,7 +12,7 @@ export interface GoogleNotebooksLocationArgs {
 }
 
 export class google_notebooks_location extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNotebooksLocationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNotebooksLocationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_notebooks_location", resourceName);
   }

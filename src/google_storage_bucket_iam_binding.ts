@@ -14,7 +14,7 @@ export interface GoogleStorageBucketIamBindingArgs {
 }
 
 export class google_storage_bucket_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleStorageBucketIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleStorageBucketIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_storage_bucket_iam_binding", resourceName);
   }

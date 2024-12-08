@@ -7,7 +7,7 @@ export interface DataGoogleComputeRegionDiskArgs {
 }
 
 export class data_google_compute_region_disk extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeRegionDiskArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeRegionDiskArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_region_disk", resourceName);
   }

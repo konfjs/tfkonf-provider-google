@@ -18,7 +18,7 @@ export interface GoogleActiveDirectoryDomainArgs {
 }
 
 export class google_active_directory_domain extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleActiveDirectoryDomainArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleActiveDirectoryDomainArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_active_directory_domain", resourceName);
   }

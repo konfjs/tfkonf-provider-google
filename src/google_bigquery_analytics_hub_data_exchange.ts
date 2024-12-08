@@ -30,7 +30,7 @@ export interface GoogleBigqueryAnalyticsHubDataExchangeArgs {
 }
 
 export class google_bigquery_analytics_hub_data_exchange extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigqueryAnalyticsHubDataExchangeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigqueryAnalyticsHubDataExchangeArgs) {
     const meta = {sharing_environment_config:{isBlock:true,dcr_exchange_config:{isBlock:true},default_exchange_config:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_bigquery_analytics_hub_data_exchange", resourceName);
   }

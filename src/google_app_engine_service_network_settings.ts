@@ -17,7 +17,7 @@ export interface GoogleAppEngineServiceNetworkSettingsArgs {
 }
 
 export class google_app_engine_service_network_settings extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleAppEngineServiceNetworkSettingsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleAppEngineServiceNetworkSettingsArgs) {
     const meta = {network_settings:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_app_engine_service_network_settings", resourceName);
   }

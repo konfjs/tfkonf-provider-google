@@ -130,7 +130,7 @@ export interface GoogleCloudRunV2JobArgs {
 }
 
 export class google_cloud_run_v2_job extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudRunV2JobArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudRunV2JobArgs) {
     const meta = {binary_authorization:{isBlock:true},template:{isBlock:true,template:{isBlock:true,containers:{isBlock:true,env:{isBlock:true,value_source:{isBlock:true,secret_key_ref:{isBlock:true}}},ports:{isBlock:true},resources:{isBlock:true},volume_mounts:{isBlock:true}},volumes:{isBlock:true,cloud_sql_instance:{isBlock:true},empty_dir:{isBlock:true},gcs:{isBlock:true},nfs:{isBlock:true},secret:{isBlock:true,items:{isBlock:true}}},vpc_access:{isBlock:true,network_interfaces:{isBlock:true}}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloud_run_v2_job", resourceName);
   }

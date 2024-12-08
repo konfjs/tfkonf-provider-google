@@ -68,7 +68,7 @@ export interface GoogleIamWorkforcePoolProviderArgs {
 }
 
 export class google_iam_workforce_pool_provider extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIamWorkforcePoolProviderArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIamWorkforcePoolProviderArgs) {
     const meta = {extra_attributes_oauth2_client:{isBlock:true,client_secret:{isBlock:true,value:{isBlock:true}},query_parameters:{isBlock:true}},oidc:{isBlock:true,client_secret:{isBlock:true,value:{isBlock:true}},web_sso_config:{isBlock:true}},saml:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_iam_workforce_pool_provider", resourceName);
   }

@@ -10,7 +10,7 @@ export interface GoogleOrganizationIamCustomRoleArgs {
 }
 
 export class google_organization_iam_custom_role extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleOrganizationIamCustomRoleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleOrganizationIamCustomRoleArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_organization_iam_custom_role", resourceName);
   }

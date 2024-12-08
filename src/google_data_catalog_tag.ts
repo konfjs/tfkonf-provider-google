@@ -24,7 +24,7 @@ export interface GoogleDataCatalogTagArgs {
 }
 
 export class google_data_catalog_tag extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataCatalogTagArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataCatalogTagArgs) {
     const meta = {fields:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_data_catalog_tag", resourceName);
   }

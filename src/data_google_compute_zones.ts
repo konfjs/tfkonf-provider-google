@@ -6,7 +6,7 @@ export interface DataGoogleComputeZonesArgs {
 }
 
 export class data_google_compute_zones extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeZonesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeZonesArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_zones", resourceName);
   }

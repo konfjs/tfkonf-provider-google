@@ -33,7 +33,7 @@ export interface GoogleApigeeOrganizationArgs {
 }
 
 export class google_apigee_organization extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleApigeeOrganizationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleApigeeOrganizationArgs) {
     const meta = {properties:{isBlock:true,property:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_apigee_organization", resourceName);
   }

@@ -33,7 +33,7 @@ export interface GoogleIamAccessBoundaryPolicyArgs {
 }
 
 export class google_iam_access_boundary_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIamAccessBoundaryPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIamAccessBoundaryPolicyArgs) {
     const meta = {rules:{isBlock:true,access_boundary_rule:{isBlock:true,availability_condition:{isBlock:true}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_iam_access_boundary_policy", resourceName);
   }

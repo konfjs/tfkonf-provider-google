@@ -14,7 +14,7 @@ export interface GoogleComputeRegionDiskIamBindingArgs {
 }
 
 export class google_compute_region_disk_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeRegionDiskIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeRegionDiskIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_region_disk_iam_binding", resourceName);
   }

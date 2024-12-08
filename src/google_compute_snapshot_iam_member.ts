@@ -14,7 +14,7 @@ export interface GoogleComputeSnapshotIamMemberArgs {
 }
 
 export class google_compute_snapshot_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeSnapshotIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeSnapshotIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_snapshot_iam_member", resourceName);
   }

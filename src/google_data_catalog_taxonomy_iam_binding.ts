@@ -14,7 +14,7 @@ export interface GoogleDataCatalogTaxonomyIamBindingArgs {
 }
 
 export class google_data_catalog_taxonomy_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataCatalogTaxonomyIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataCatalogTaxonomyIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_data_catalog_taxonomy_iam_binding", resourceName);
   }

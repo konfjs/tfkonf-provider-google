@@ -6,7 +6,7 @@ export interface DataGoogleVmwareengineSubnetArgs {
 }
 
 export class data_google_vmwareengine_subnet extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleVmwareengineSubnetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleVmwareengineSubnetArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_vmwareengine_subnet", resourceName);
   }

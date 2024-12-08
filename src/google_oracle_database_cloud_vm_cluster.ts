@@ -40,7 +40,7 @@ export interface GoogleOracleDatabaseCloudVmClusterArgs {
 }
 
 export class google_oracle_database_cloud_vm_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleOracleDatabaseCloudVmClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleOracleDatabaseCloudVmClusterArgs) {
     const meta = {properties:{isBlock:true,diagnostics_data_collection_options:{isBlock:true},time_zone:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_oracle_database_cloud_vm_cluster", resourceName);
   }

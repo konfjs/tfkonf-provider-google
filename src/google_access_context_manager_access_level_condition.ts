@@ -41,7 +41,7 @@ export interface GoogleAccessContextManagerAccessLevelConditionArgs {
 }
 
 export class google_access_context_manager_access_level_condition extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleAccessContextManagerAccessLevelConditionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleAccessContextManagerAccessLevelConditionArgs) {
     const meta = {device_policy:{isBlock:true,os_constraints:{isBlock:true}},timeouts:{isBlock:true},vpc_network_sources:{isBlock:true,vpc_subnetwork:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "google_access_context_manager_access_level_condition", resourceName);
   }

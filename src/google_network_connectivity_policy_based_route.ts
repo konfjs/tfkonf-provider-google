@@ -36,7 +36,7 @@ export interface GoogleNetworkConnectivityPolicyBasedRouteArgs {
 }
 
 export class google_network_connectivity_policy_based_route extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkConnectivityPolicyBasedRouteArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkConnectivityPolicyBasedRouteArgs) {
     const meta = {filter:{isBlock:true},interconnect_attachment:{isBlock:true},timeouts:{isBlock:true},virtual_machine:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_network_connectivity_policy_based_route", resourceName);
   }

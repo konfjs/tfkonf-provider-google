@@ -36,7 +36,7 @@ export interface GoogleComputeImageArgs {
 }
 
 export class google_compute_image extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeImageArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeImageArgs) {
     const meta = {guest_os_features:{isBlock:true},image_encryption_key:{isBlock:true},raw_disk:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_image", resourceName);
   }

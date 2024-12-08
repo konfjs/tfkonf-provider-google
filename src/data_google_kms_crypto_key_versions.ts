@@ -6,7 +6,7 @@ export interface DataGoogleKmsCryptoKeyVersionsArgs {
 }
 
 export class data_google_kms_crypto_key_versions extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleKmsCryptoKeyVersionsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleKmsCryptoKeyVersionsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_kms_crypto_key_versions", resourceName);
   }

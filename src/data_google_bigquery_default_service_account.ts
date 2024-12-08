@@ -4,7 +4,7 @@ export interface DataGoogleBigqueryDefaultServiceAccountArgs {
 }
 
 export class data_google_bigquery_default_service_account extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleBigqueryDefaultServiceAccountArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleBigqueryDefaultServiceAccountArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_bigquery_default_service_account", resourceName);
   }

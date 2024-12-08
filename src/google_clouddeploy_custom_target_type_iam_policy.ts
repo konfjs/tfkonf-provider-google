@@ -6,7 +6,7 @@ export interface GoogleClouddeployCustomTargetTypeIamPolicyArgs {
 }
 
 export class google_clouddeploy_custom_target_type_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleClouddeployCustomTargetTypeIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleClouddeployCustomTargetTypeIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_clouddeploy_custom_target_type_iam_policy", resourceName);
   }

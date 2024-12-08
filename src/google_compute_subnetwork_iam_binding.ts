@@ -14,7 +14,7 @@ export interface GoogleComputeSubnetworkIamBindingArgs {
 }
 
 export class google_compute_subnetwork_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeSubnetworkIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeSubnetworkIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_subnetwork_iam_binding", resourceName);
   }

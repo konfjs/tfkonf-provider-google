@@ -7,7 +7,7 @@ export interface GoogleStorageManagedFolderIamPolicyArgs {
 }
 
 export class google_storage_managed_folder_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleStorageManagedFolderIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleStorageManagedFolderIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_storage_managed_folder_iam_policy", resourceName);
   }

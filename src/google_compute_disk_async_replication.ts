@@ -16,7 +16,7 @@ export interface GoogleComputeDiskAsyncReplicationArgs {
 }
 
 export class google_compute_disk_async_replication extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeDiskAsyncReplicationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeDiskAsyncReplicationArgs) {
     const meta = {secondary_disk:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_disk_async_replication", resourceName);
   }

@@ -32,7 +32,7 @@ export interface GoogleGkeHubFleetArgs {
 }
 
 export class google_gke_hub_fleet extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleGkeHubFleetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleGkeHubFleetArgs) {
     const meta = {default_cluster_config:{isBlock:true,binary_authorization_config:{isBlock:true,policy_bindings:{isBlock:true}},security_posture_config:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_gke_hub_fleet", resourceName);
   }

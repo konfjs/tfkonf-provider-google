@@ -31,7 +31,7 @@ export interface GoogleOracleDatabaseCloudExadataInfrastructureArgs {
 }
 
 export class google_oracle_database_cloud_exadata_infrastructure extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleOracleDatabaseCloudExadataInfrastructureArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleOracleDatabaseCloudExadataInfrastructureArgs) {
     const meta = {properties:{isBlock:true,customer_contacts:{isBlock:true},maintenance_window:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_oracle_database_cloud_exadata_infrastructure", resourceName);
   }

@@ -12,7 +12,7 @@ export interface GoogleComputeDiskResourcePolicyAttachmentArgs {
 }
 
 export class google_compute_disk_resource_policy_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeDiskResourcePolicyAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeDiskResourcePolicyAttachmentArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_disk_resource_policy_attachment", resourceName);
   }

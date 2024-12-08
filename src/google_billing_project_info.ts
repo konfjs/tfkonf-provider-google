@@ -12,7 +12,7 @@ export interface GoogleBillingProjectInfoArgs {
 }
 
 export class google_billing_project_info extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBillingProjectInfoArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBillingProjectInfoArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_billing_project_info", resourceName);
   }

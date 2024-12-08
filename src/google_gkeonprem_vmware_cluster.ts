@@ -156,7 +156,7 @@ export interface GoogleGkeonpremVmwareClusterArgs {
 }
 
 export class google_gkeonprem_vmware_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleGkeonpremVmwareClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleGkeonpremVmwareClusterArgs) {
     const meta = {anti_affinity_groups:{isBlock:true},authorization:{isBlock:true,admin_users:{isBlock:true}},auto_repair_config:{isBlock:true},control_plane_node:{isBlock:true,auto_resize_config:{isBlock:true}},dataplane_v2:{isBlock:true},load_balancer:{isBlock:true,f5_config:{isBlock:true},manual_lb_config:{isBlock:true},metal_lb_config:{isBlock:true,address_pools:{isBlock:true}},vip_config:{isBlock:true}},network_config:{isBlock:true,control_plane_v2_config:{isBlock:true,control_plane_ip_block:{isBlock:true,ips:{isBlock:true}}},dhcp_ip_config:{isBlock:true},host_config:{isBlock:true},static_ip_config:{isBlock:true,ip_blocks:{isBlock:true,ips:{isBlock:true}}}},storage:{isBlock:true},timeouts:{isBlock:true},upgrade_policy:{isBlock:true},vcenter:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_gkeonprem_vmware_cluster", resourceName);
   }

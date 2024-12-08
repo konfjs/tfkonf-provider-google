@@ -5,7 +5,7 @@ export interface DataGoogleKmsEkmConnectionIamPolicyArgs {
 }
 
 export class data_google_kms_ekm_connection_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleKmsEkmConnectionIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleKmsEkmConnectionIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_kms_ekm_connection_iam_policy", resourceName);
   }

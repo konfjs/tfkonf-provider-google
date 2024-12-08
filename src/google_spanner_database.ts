@@ -22,7 +22,7 @@ export interface GoogleSpannerDatabaseArgs {
 }
 
 export class google_spanner_database extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSpannerDatabaseArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSpannerDatabaseArgs) {
     const meta = {encryption_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_spanner_database", resourceName);
   }

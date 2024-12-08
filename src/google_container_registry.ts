@@ -5,7 +5,7 @@ export interface GoogleContainerRegistryArgs {
 }
 
 export class google_container_registry extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleContainerRegistryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleContainerRegistryArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_container_registry", resourceName);
   }

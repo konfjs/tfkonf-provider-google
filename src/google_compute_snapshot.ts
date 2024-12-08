@@ -29,7 +29,7 @@ export interface GoogleComputeSnapshotArgs {
 }
 
 export class google_compute_snapshot extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeSnapshotArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeSnapshotArgs) {
     const meta = {snapshot_encryption_key:{isBlock:true},source_disk_encryption_key:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_snapshot", resourceName);
   }

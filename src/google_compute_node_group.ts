@@ -36,7 +36,7 @@ export interface GoogleComputeNodeGroupArgs {
 }
 
 export class google_compute_node_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeNodeGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeNodeGroupArgs) {
     const meta = {autoscaling_policy:{isBlock:true},maintenance_window:{isBlock:true},share_settings:{isBlock:true,project_map:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_node_group", resourceName);
   }

@@ -6,7 +6,7 @@ export interface GoogleBigtableInstanceIamPolicyArgs {
 }
 
 export class google_bigtable_instance_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigtableInstanceIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigtableInstanceIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_bigtable_instance_iam_policy", resourceName);
   }

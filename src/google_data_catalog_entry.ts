@@ -24,7 +24,7 @@ export interface GoogleDataCatalogEntryArgs {
 }
 
 export class google_data_catalog_entry extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataCatalogEntryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataCatalogEntryArgs) {
     const meta = {gcs_fileset_spec:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_data_catalog_entry", resourceName);
   }

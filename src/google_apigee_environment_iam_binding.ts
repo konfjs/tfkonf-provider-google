@@ -15,7 +15,7 @@ export interface GoogleApigeeEnvironmentIamBindingArgs {
 }
 
 export class google_apigee_environment_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleApigeeEnvironmentIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleApigeeEnvironmentIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_apigee_environment_iam_binding", resourceName);
   }

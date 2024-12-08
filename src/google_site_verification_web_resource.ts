@@ -17,7 +17,7 @@ export interface GoogleSiteVerificationWebResourceArgs {
 }
 
 export class google_site_verification_web_resource extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSiteVerificationWebResourceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSiteVerificationWebResourceArgs) {
     const meta = {site:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_site_verification_web_resource", resourceName);
   }

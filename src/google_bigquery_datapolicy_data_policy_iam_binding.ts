@@ -14,7 +14,7 @@ export interface GoogleBigqueryDatapolicyDataPolicyIamBindingArgs {
 }
 
 export class google_bigquery_datapolicy_data_policy_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigqueryDatapolicyDataPolicyIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigqueryDatapolicyDataPolicyIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_bigquery_datapolicy_data_policy_iam_binding", resourceName);
   }

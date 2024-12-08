@@ -24,7 +24,7 @@ export interface GoogleBeyondcorpAppConnectorArgs {
 }
 
 export class google_beyondcorp_app_connector extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBeyondcorpAppConnectorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBeyondcorpAppConnectorArgs) {
     const meta = {principal_info:{isBlock:true,service_account:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_beyondcorp_app_connector", resourceName);
   }

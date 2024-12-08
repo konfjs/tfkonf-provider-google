@@ -5,7 +5,7 @@ export interface DataGoogleSecretManagerSecretsArgs {
 }
 
 export class data_google_secret_manager_secrets extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleSecretManagerSecretsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleSecretManagerSecretsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_secret_manager_secrets", resourceName);
   }

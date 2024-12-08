@@ -18,7 +18,7 @@ export interface GoogleStorageTransferAgentPoolArgs {
 }
 
 export class google_storage_transfer_agent_pool extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleStorageTransferAgentPoolArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleStorageTransferAgentPoolArgs) {
     const meta = {bandwidth_limit:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_storage_transfer_agent_pool", resourceName);
   }

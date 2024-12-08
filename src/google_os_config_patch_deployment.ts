@@ -186,7 +186,7 @@ export interface GoogleOsConfigPatchDeploymentArgs {
 }
 
 export class google_os_config_patch_deployment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleOsConfigPatchDeploymentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleOsConfigPatchDeploymentArgs) {
     const meta = {instance_filter:{isBlock:true,group_labels:{isBlock:true}},one_time_schedule:{isBlock:true},patch_config:{isBlock:true,apt:{isBlock:true},goo:{isBlock:true},post_step:{isBlock:true,linux_exec_step_config:{isBlock:true,gcs_object:{isBlock:true}},windows_exec_step_config:{isBlock:true,gcs_object:{isBlock:true}}},pre_step:{isBlock:true,linux_exec_step_config:{isBlock:true,gcs_object:{isBlock:true}},windows_exec_step_config:{isBlock:true,gcs_object:{isBlock:true}}},windows_update:{isBlock:true},yum:{isBlock:true},zypper:{isBlock:true}},recurring_schedule:{isBlock:true,monthly:{isBlock:true,week_day_of_month:{isBlock:true}},time_of_day:{isBlock:true},time_zone:{isBlock:true},weekly:{isBlock:true}},rollout:{isBlock:true,disruption_budget:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_os_config_patch_deployment", resourceName);
   }

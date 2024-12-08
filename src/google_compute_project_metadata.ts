@@ -11,7 +11,7 @@ export interface GoogleComputeProjectMetadataArgs {
 }
 
 export class google_compute_project_metadata extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeProjectMetadataArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeProjectMetadataArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_project_metadata", resourceName);
   }

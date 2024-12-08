@@ -14,7 +14,7 @@ export interface GooglePubsubTopicIamBindingArgs {
 }
 
 export class google_pubsub_topic_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GooglePubsubTopicIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GooglePubsubTopicIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_pubsub_topic_iam_binding", resourceName);
   }

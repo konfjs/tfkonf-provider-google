@@ -5,7 +5,7 @@ export interface DataGoogleEndpointsServiceIamPolicyArgs {
 }
 
 export class data_google_endpoints_service_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleEndpointsServiceIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleEndpointsServiceIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_endpoints_service_iam_policy", resourceName);
   }

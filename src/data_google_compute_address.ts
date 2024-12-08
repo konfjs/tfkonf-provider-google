@@ -5,7 +5,7 @@ export interface DataGoogleComputeAddressArgs {
 }
 
 export class data_google_compute_address extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeAddressArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeAddressArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_address", resourceName);
   }

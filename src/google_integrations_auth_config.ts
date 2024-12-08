@@ -104,7 +104,7 @@ export interface GoogleIntegrationsAuthConfigArgs {
 }
 
 export class google_integrations_auth_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIntegrationsAuthConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIntegrationsAuthConfigArgs) {
     const meta = {client_certificate:{isBlock:true},decrypted_credential:{isBlock:true,auth_token:{isBlock:true},jwt:{isBlock:true},oauth2_authorization_code:{isBlock:true},oauth2_client_credentials:{isBlock:true,token_params:{isBlock:true,entries:{isBlock:true,key:{isBlock:true,literal_value:{isBlock:true}},value:{isBlock:true,literal_value:{isBlock:true}}}}},oidc_token:{isBlock:true},service_account_credentials:{isBlock:true},username_and_password:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_integrations_auth_config", resourceName);
   }

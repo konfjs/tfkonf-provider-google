@@ -42,7 +42,7 @@ export interface GoogleVertexAiFeaturestoreEntitytypeArgs {
 }
 
 export class google_vertex_ai_featurestore_entitytype extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleVertexAiFeaturestoreEntitytypeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleVertexAiFeaturestoreEntitytypeArgs) {
     const meta = {monitoring_config:{isBlock:true,categorical_threshold_config:{isBlock:true},import_features_analysis:{isBlock:true},numerical_threshold_config:{isBlock:true},snapshot_analysis:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_vertex_ai_featurestore_entitytype", resourceName);
   }

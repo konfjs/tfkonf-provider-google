@@ -6,7 +6,7 @@ export interface DataGoogleStorageBucketArgs {
 }
 
 export class data_google_storage_bucket extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleStorageBucketArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleStorageBucketArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_storage_bucket", resourceName);
   }

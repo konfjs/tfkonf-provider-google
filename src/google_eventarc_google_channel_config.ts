@@ -14,7 +14,7 @@ export interface GoogleEventarcGoogleChannelConfigArgs {
 }
 
 export class google_eventarc_google_channel_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleEventarcGoogleChannelConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleEventarcGoogleChannelConfigArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_eventarc_google_channel_config", resourceName);
   }

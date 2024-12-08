@@ -24,7 +24,7 @@ export interface GoogleDataprocGdcApplicationEnvironmentArgs {
 }
 
 export class google_dataproc_gdc_application_environment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataprocGdcApplicationEnvironmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataprocGdcApplicationEnvironmentArgs) {
     const meta = {spark_application_environment_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataproc_gdc_application_environment", resourceName);
   }

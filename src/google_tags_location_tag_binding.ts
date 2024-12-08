@@ -13,7 +13,7 @@ export interface GoogleTagsLocationTagBindingArgs {
 }
 
 export class google_tags_location_tag_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleTagsLocationTagBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleTagsLocationTagBindingArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_tags_location_tag_binding", resourceName);
   }

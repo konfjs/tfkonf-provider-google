@@ -14,7 +14,7 @@ export interface GoogleHealthcareFhirStoreIamMemberArgs {
 }
 
 export class google_healthcare_fhir_store_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleHealthcareFhirStoreIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleHealthcareFhirStoreIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_healthcare_fhir_store_iam_member", resourceName);
   }

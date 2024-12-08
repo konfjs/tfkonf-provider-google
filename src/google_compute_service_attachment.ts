@@ -26,7 +26,7 @@ export interface GoogleComputeServiceAttachmentArgs {
 }
 
 export class google_compute_service_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeServiceAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeServiceAttachmentArgs) {
     const meta = {consumer_accept_lists:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_service_attachment", resourceName);
   }

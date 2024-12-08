@@ -145,7 +145,7 @@ export interface GoogleGkeHubFeatureMembershipArgs {
 }
 
 export class google_gke_hub_feature_membership extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleGkeHubFeatureMembershipArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleGkeHubFeatureMembershipArgs) {
     const meta = {configmanagement:{isBlock:true,binauthz:{isBlock:true},config_sync:{isBlock:true,git:{isBlock:true},oci:{isBlock:true}},hierarchy_controller:{isBlock:true},policy_controller:{isBlock:true,monitoring:{isBlock:true}}},mesh:{isBlock:true},policycontroller:{isBlock:true,policy_controller_hub_config:{isBlock:true,deployment_configs:{isBlock:true,container_resources:{isBlock:true,limits:{isBlock:true},requests:{isBlock:true}},pod_tolerations:{isBlock:true}},monitoring:{isBlock:true},policy_content:{isBlock:true,bundles:{isBlock:true},template_library:{isBlock:true}}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_gke_hub_feature_membership", resourceName);
   }

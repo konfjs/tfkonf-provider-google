@@ -25,7 +25,7 @@ export interface GoogleMonitoringNotificationChannelArgs {
 }
 
 export class google_monitoring_notification_channel extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleMonitoringNotificationChannelArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleMonitoringNotificationChannelArgs) {
     const meta = {sensitive_labels:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_monitoring_notification_channel", resourceName);
   }

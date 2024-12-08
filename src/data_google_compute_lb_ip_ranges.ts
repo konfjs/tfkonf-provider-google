@@ -4,7 +4,7 @@ export interface DataGoogleComputeLbIpRangesArgs {
 }
 
 export class data_google_compute_lb_ip_ranges extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeLbIpRangesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeLbIpRangesArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_lb_ip_ranges", resourceName);
   }

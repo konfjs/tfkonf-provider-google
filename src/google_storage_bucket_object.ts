@@ -34,7 +34,7 @@ export interface GoogleStorageBucketObjectArgs {
 }
 
 export class google_storage_bucket_object extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleStorageBucketObjectArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleStorageBucketObjectArgs) {
     const meta = {customer_encryption:{isBlock:true},retention:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_storage_bucket_object", resourceName);
   }

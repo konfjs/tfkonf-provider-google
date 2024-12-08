@@ -23,7 +23,7 @@ export interface GoogleAlloydbBackupArgs {
 }
 
 export class google_alloydb_backup extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleAlloydbBackupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleAlloydbBackupArgs) {
     const meta = {encryption_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_alloydb_backup", resourceName);
   }

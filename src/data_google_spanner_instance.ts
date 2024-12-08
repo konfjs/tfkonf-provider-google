@@ -8,7 +8,7 @@ export interface DataGoogleSpannerInstanceArgs {
 }
 
 export class data_google_spanner_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleSpannerInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleSpannerInstanceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_spanner_instance", resourceName);
   }

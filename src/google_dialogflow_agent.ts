@@ -20,7 +20,7 @@ export interface GoogleDialogflowAgentArgs {
 }
 
 export class google_dialogflow_agent extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDialogflowAgentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDialogflowAgentArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dialogflow_agent", resourceName);
   }

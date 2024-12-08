@@ -29,7 +29,7 @@ export interface GoogleComputeRouterArgs {
 }
 
 export class google_compute_router extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeRouterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeRouterArgs) {
     const meta = {bgp:{isBlock:true,advertised_ip_ranges:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_router", resourceName);
   }

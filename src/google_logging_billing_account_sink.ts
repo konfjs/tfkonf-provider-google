@@ -23,7 +23,7 @@ export interface GoogleLoggingBillingAccountSinkArgs {
 }
 
 export class google_logging_billing_account_sink extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleLoggingBillingAccountSinkArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleLoggingBillingAccountSinkArgs) {
     const meta = {bigquery_options:{isBlock:true},exclusions:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_logging_billing_account_sink", resourceName);
   }

@@ -18,7 +18,7 @@ export interface GoogleComputeTargetSslProxyArgs {
 }
 
 export class google_compute_target_ssl_proxy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeTargetSslProxyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeTargetSslProxyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_target_ssl_proxy", resourceName);
   }

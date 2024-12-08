@@ -16,7 +16,7 @@ export interface GoogleNetappVolumeSnapshotArgs {
 }
 
 export class google_netapp_volume_snapshot extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetappVolumeSnapshotArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetappVolumeSnapshotArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_netapp_volume_snapshot", resourceName);
   }

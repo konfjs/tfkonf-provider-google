@@ -7,7 +7,7 @@ export interface GoogleSpannerDatabaseIamPolicyArgs {
 }
 
 export class google_spanner_database_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSpannerDatabaseIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSpannerDatabaseIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_spanner_database_iam_policy", resourceName);
   }

@@ -7,7 +7,7 @@ export interface DataGoogleVertexAiIndexArgs {
 }
 
 export class data_google_vertex_ai_index extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleVertexAiIndexArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleVertexAiIndexArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_vertex_ai_index", resourceName);
   }

@@ -47,7 +47,7 @@ export interface GoogleClouddeployCustomTargetTypeArgs {
 }
 
 export class google_clouddeploy_custom_target_type extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleClouddeployCustomTargetTypeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleClouddeployCustomTargetTypeArgs) {
     const meta = {custom_actions:{isBlock:true,include_skaffold_modules:{isBlock:true,git:{isBlock:true},google_cloud_build_repo:{isBlock:true},google_cloud_storage:{isBlock:true}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_clouddeploy_custom_target_type", resourceName);
   }

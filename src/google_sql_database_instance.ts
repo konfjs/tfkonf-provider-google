@@ -170,7 +170,7 @@ export interface GoogleSqlDatabaseInstanceArgs {
 }
 
 export class google_sql_database_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSqlDatabaseInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSqlDatabaseInstanceArgs) {
     const meta = {clone:{isBlock:true},replica_configuration:{isBlock:true},restore_backup_context:{isBlock:true},settings:{isBlock:true,active_directory_config:{isBlock:true},advanced_machine_features:{isBlock:true},backup_configuration:{isBlock:true,backup_retention_settings:{isBlock:true}},data_cache_config:{isBlock:true},database_flags:{isBlock:true},deny_maintenance_period:{isBlock:true},insights_config:{isBlock:true},ip_configuration:{isBlock:true,authorized_networks:{isBlock:true},psc_config:{isBlock:true,psc_auto_connections:{isBlock:true}}},location_preference:{isBlock:true},maintenance_window:{isBlock:true},password_validation_policy:{isBlock:true},sql_server_audit_config:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_sql_database_instance", resourceName);
   }

@@ -51,7 +51,7 @@ export interface GoogleDataFusionInstanceArgs {
 }
 
 export class google_data_fusion_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataFusionInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataFusionInstanceArgs) {
     const meta = {accelerators:{isBlock:true},crypto_key_config:{isBlock:true},event_publish_config:{isBlock:true},network_config:{isBlock:true,private_service_connect_config:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_data_fusion_instance", resourceName);
   }

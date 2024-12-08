@@ -6,7 +6,7 @@ export interface DataGoogleApigeeEnvironmentIamPolicyArgs {
 }
 
 export class data_google_apigee_environment_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleApigeeEnvironmentIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleApigeeEnvironmentIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_apigee_environment_iam_policy", resourceName);
   }

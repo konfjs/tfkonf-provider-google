@@ -6,7 +6,7 @@ export interface DataGoogleSqlDatabasesArgs {
 }
 
 export class data_google_sql_databases extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleSqlDatabasesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleSqlDatabasesArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_sql_databases", resourceName);
   }

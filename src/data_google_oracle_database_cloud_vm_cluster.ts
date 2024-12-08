@@ -7,7 +7,7 @@ export interface DataGoogleOracleDatabaseCloudVmClusterArgs {
 }
 
 export class data_google_oracle_database_cloud_vm_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleOracleDatabaseCloudVmClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleOracleDatabaseCloudVmClusterArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_oracle_database_cloud_vm_cluster", resourceName);
   }

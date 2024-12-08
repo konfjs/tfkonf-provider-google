@@ -20,7 +20,7 @@ export interface GoogleBigqueryBiReservationArgs {
 }
 
 export class google_bigquery_bi_reservation extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigqueryBiReservationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigqueryBiReservationArgs) {
     const meta = {preferred_tables:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_bigquery_bi_reservation", resourceName);
   }

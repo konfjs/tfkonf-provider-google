@@ -14,7 +14,7 @@ export interface GoogleGkeHubMembershipIamMemberArgs {
 }
 
 export class google_gke_hub_membership_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleGkeHubMembershipIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleGkeHubMembershipIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_gke_hub_membership_iam_member", resourceName);
   }

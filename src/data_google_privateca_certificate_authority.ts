@@ -8,7 +8,7 @@ export interface DataGooglePrivatecaCertificateAuthorityArgs {
 }
 
 export class data_google_privateca_certificate_authority extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGooglePrivatecaCertificateAuthorityArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGooglePrivatecaCertificateAuthorityArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_privateca_certificate_authority", resourceName);
   }

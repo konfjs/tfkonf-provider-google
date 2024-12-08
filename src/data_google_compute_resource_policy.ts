@@ -7,7 +7,7 @@ export interface DataGoogleComputeResourcePolicyArgs {
 }
 
 export class data_google_compute_resource_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeResourcePolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeResourcePolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_resource_policy", resourceName);
   }

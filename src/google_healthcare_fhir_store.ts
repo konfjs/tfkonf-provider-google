@@ -54,7 +54,7 @@ export interface GoogleHealthcareFhirStoreArgs {
 }
 
 export class google_healthcare_fhir_store extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleHealthcareFhirStoreArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleHealthcareFhirStoreArgs) {
     const meta = {notification_config:{isBlock:true},notification_configs:{isBlock:true},stream_configs:{isBlock:true,bigquery_destination:{isBlock:true,schema_config:{isBlock:true,last_updated_partition_config:{isBlock:true}}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_healthcare_fhir_store", resourceName);
   }

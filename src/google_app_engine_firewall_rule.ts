@@ -15,7 +15,7 @@ export interface GoogleAppEngineFirewallRuleArgs {
 }
 
 export class google_app_engine_firewall_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleAppEngineFirewallRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleAppEngineFirewallRuleArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_app_engine_firewall_rule", resourceName);
   }

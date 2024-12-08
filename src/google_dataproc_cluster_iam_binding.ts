@@ -14,7 +14,7 @@ export interface GoogleDataprocClusterIamBindingArgs {
 }
 
 export class google_dataproc_cluster_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataprocClusterIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataprocClusterIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataproc_cluster_iam_binding", resourceName);
   }

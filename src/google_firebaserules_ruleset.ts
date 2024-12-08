@@ -22,7 +22,7 @@ export interface GoogleFirebaserulesRulesetArgs {
 }
 
 export class google_firebaserules_ruleset extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleFirebaserulesRulesetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleFirebaserulesRulesetArgs) {
     const meta = {source:{isBlock:true,files:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_firebaserules_ruleset", resourceName);
   }

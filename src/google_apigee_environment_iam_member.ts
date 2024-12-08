@@ -15,7 +15,7 @@ export interface GoogleApigeeEnvironmentIamMemberArgs {
 }
 
 export class google_apigee_environment_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleApigeeEnvironmentIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleApigeeEnvironmentIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_apigee_environment_iam_member", resourceName);
   }

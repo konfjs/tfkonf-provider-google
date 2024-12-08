@@ -32,7 +32,7 @@ export interface GoogleBinaryAuthorizationPolicyArgs {
 }
 
 export class google_binary_authorization_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBinaryAuthorizationPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBinaryAuthorizationPolicyArgs) {
     const meta = {admission_whitelist_patterns:{isBlock:true},cluster_admission_rules:{isBlock:true},default_admission_rule:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_binary_authorization_policy", resourceName);
   }

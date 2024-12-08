@@ -26,7 +26,7 @@ export interface GoogleDnsResponsePolicyRuleArgs {
 }
 
 export class google_dns_response_policy_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDnsResponsePolicyRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDnsResponsePolicyRuleArgs) {
     const meta = {local_data:{isBlock:true,local_datas:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dns_response_policy_rule", resourceName);
   }

@@ -7,7 +7,7 @@ export interface DataGoogleApphubApplicationArgs {
 }
 
 export class data_google_apphub_application extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleApphubApplicationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleApphubApplicationArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_apphub_application", resourceName);
   }

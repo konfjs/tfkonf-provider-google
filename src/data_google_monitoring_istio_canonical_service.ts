@@ -8,7 +8,7 @@ export interface DataGoogleMonitoringIstioCanonicalServiceArgs {
 }
 
 export class data_google_monitoring_istio_canonical_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleMonitoringIstioCanonicalServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleMonitoringIstioCanonicalServiceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_monitoring_istio_canonical_service", resourceName);
   }

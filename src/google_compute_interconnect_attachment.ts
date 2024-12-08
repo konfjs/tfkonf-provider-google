@@ -20,7 +20,7 @@ export interface GoogleComputeInterconnectAttachmentArgs {
 }
 
 export class google_compute_interconnect_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeInterconnectAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeInterconnectAttachmentArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_interconnect_attachment", resourceName);
   }

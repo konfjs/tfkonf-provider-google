@@ -12,7 +12,7 @@ export interface GoogleMonitoringDashboardArgs {
 }
 
 export class google_monitoring_dashboard extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleMonitoringDashboardArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleMonitoringDashboardArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_monitoring_dashboard", resourceName);
   }

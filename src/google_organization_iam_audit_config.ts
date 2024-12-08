@@ -12,7 +12,7 @@ export interface GoogleOrganizationIamAuditConfigArgs {
 }
 
 export class google_organization_iam_audit_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleOrganizationIamAuditConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleOrganizationIamAuditConfigArgs) {
     const meta = {audit_log_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_organization_iam_audit_config", resourceName);
   }

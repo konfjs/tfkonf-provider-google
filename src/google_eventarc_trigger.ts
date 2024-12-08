@@ -62,7 +62,7 @@ export interface GoogleEventarcTriggerArgs {
 }
 
 export class google_eventarc_trigger extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleEventarcTriggerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleEventarcTriggerArgs) {
     const meta = {destination:{isBlock:true,cloud_run_service:{isBlock:true},gke:{isBlock:true},http_endpoint:{isBlock:true},network_config:{isBlock:true}},matching_criteria:{isBlock:true},timeouts:{isBlock:true},transport:{isBlock:true,pubsub:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "google_eventarc_trigger", resourceName);
   }

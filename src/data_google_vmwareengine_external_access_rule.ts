@@ -6,7 +6,7 @@ export interface DataGoogleVmwareengineExternalAccessRuleArgs {
 }
 
 export class data_google_vmwareengine_external_access_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleVmwareengineExternalAccessRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleVmwareengineExternalAccessRuleArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_vmwareengine_external_access_rule", resourceName);
   }

@@ -14,7 +14,7 @@ export interface GoogleTagsTagValueArgs {
 }
 
 export class google_tags_tag_value extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleTagsTagValueArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleTagsTagValueArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_tags_tag_value", resourceName);
   }

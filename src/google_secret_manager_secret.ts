@@ -55,7 +55,7 @@ export interface GoogleSecretManagerSecretArgs {
 }
 
 export class google_secret_manager_secret extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSecretManagerSecretArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSecretManagerSecretArgs) {
     const meta = {replication:{isBlock:true,auto:{isBlock:true,customer_managed_encryption:{isBlock:true}},user_managed:{isBlock:true,replicas:{isBlock:true,customer_managed_encryption:{isBlock:true}}}},rotation:{isBlock:true},timeouts:{isBlock:true},topics:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_secret_manager_secret", resourceName);
   }

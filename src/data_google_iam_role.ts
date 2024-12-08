@@ -5,7 +5,7 @@ export interface DataGoogleIamRoleArgs {
 }
 
 export class data_google_iam_role extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleIamRoleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleIamRoleArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_iam_role", resourceName);
   }

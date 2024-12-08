@@ -31,7 +31,7 @@ export interface GoogleMonitoringMetricDescriptorArgs {
 }
 
 export class google_monitoring_metric_descriptor extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleMonitoringMetricDescriptorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleMonitoringMetricDescriptorArgs) {
     const meta = {labels:{isBlock:true},metadata:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_monitoring_metric_descriptor", resourceName);
   }

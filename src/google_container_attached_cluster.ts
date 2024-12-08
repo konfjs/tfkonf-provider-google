@@ -73,7 +73,7 @@ export interface GoogleContainerAttachedClusterArgs {
 }
 
 export class google_container_attached_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleContainerAttachedClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleContainerAttachedClusterArgs) {
     const meta = {authorization:{isBlock:true},binary_authorization:{isBlock:true},fleet:{isBlock:true},logging_config:{isBlock:true,component_config:{isBlock:true}},monitoring_config:{isBlock:true,managed_prometheus_config:{isBlock:true}},oidc_config:{isBlock:true},proxy_config:{isBlock:true,kubernetes_secret:{isBlock:true}},security_posture_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_container_attached_cluster", resourceName);
   }

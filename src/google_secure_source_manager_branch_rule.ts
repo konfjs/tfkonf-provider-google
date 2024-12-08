@@ -22,7 +22,7 @@ export interface GoogleSecureSourceManagerBranchRuleArgs {
 }
 
 export class google_secure_source_manager_branch_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSecureSourceManagerBranchRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSecureSourceManagerBranchRuleArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_secure_source_manager_branch_rule", resourceName);
   }

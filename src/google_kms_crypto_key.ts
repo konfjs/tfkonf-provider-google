@@ -23,7 +23,7 @@ export interface GoogleKmsCryptoKeyArgs {
 }
 
 export class google_kms_crypto_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleKmsCryptoKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleKmsCryptoKeyArgs) {
     const meta = {timeouts:{isBlock:true},version_template:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_kms_crypto_key", resourceName);
   }

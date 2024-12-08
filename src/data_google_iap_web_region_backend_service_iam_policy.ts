@@ -5,7 +5,7 @@ export interface DataGoogleIapWebRegionBackendServiceIamPolicyArgs {
 }
 
 export class data_google_iap_web_region_backend_service_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleIapWebRegionBackendServiceIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleIapWebRegionBackendServiceIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_iap_web_region_backend_service_iam_policy", resourceName);
   }

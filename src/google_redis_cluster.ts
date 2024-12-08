@@ -56,7 +56,7 @@ export interface GoogleRedisClusterArgs {
 }
 
 export class google_redis_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleRedisClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleRedisClusterArgs) {
     const meta = {maintenance_policy:{isBlock:true,weekly_maintenance_window:{isBlock:true,start_time:{isBlock:true}}},persistence_config:{isBlock:true,aof_config:{isBlock:true},rdb_config:{isBlock:true}},psc_configs:{isBlock:true},timeouts:{isBlock:true},zone_distribution_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_redis_cluster", resourceName);
   }

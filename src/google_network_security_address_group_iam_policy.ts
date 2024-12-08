@@ -6,7 +6,7 @@ export interface GoogleNetworkSecurityAddressGroupIamPolicyArgs {
 }
 
 export class google_network_security_address_group_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkSecurityAddressGroupIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkSecurityAddressGroupIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_network_security_address_group_iam_policy", resourceName);
   }

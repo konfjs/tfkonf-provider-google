@@ -6,7 +6,7 @@ export interface DataGoogleSqlBackupRunArgs {
 }
 
 export class data_google_sql_backup_run extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleSqlBackupRunArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleSqlBackupRunArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_sql_backup_run", resourceName);
   }

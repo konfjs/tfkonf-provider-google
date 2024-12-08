@@ -4,7 +4,7 @@ export interface DataGoogleTpuTensorflowVersionsArgs {
 }
 
 export class data_google_tpu_tensorflow_versions extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleTpuTensorflowVersionsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleTpuTensorflowVersionsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_tpu_tensorflow_versions", resourceName);
   }

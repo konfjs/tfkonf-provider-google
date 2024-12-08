@@ -114,7 +114,7 @@ export interface GoogleDocumentAiWarehouseDocumentSchemaArgs {
 }
 
 export class google_document_ai_warehouse_document_schema extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDocumentAiWarehouseDocumentSchemaArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDocumentAiWarehouseDocumentSchemaArgs) {
     const meta = {property_definitions:{isBlock:true,date_time_type_options:{isBlock:true},enum_type_options:{isBlock:true},float_type_options:{isBlock:true},integer_type_options:{isBlock:true},map_type_options:{isBlock:true},property_type_options:{isBlock:true,property_definitions:{isBlock:true,date_time_type_options:{isBlock:true},enum_type_options:{isBlock:true},float_type_options:{isBlock:true},integer_type_options:{isBlock:true},map_type_options:{isBlock:true},schema_sources:{isBlock:true},text_type_options:{isBlock:true},timestamp_type_options:{isBlock:true}}},schema_sources:{isBlock:true},text_type_options:{isBlock:true},timestamp_type_options:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_document_ai_warehouse_document_schema", resourceName);
   }

@@ -7,7 +7,7 @@ export interface GoogleBigqueryAnalyticsHubListingIamPolicyArgs {
 }
 
 export class google_bigquery_analytics_hub_listing_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigqueryAnalyticsHubListingIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigqueryAnalyticsHubListingIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_bigquery_analytics_hub_listing_iam_policy", resourceName);
   }

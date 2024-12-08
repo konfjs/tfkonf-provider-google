@@ -31,7 +31,7 @@ export interface GoogleCloudbuildBitbucketServerConfigArgs {
 }
 
 export class google_cloudbuild_bitbucket_server_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudbuildBitbucketServerConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudbuildBitbucketServerConfigArgs) {
     const meta = {connected_repositories:{isBlock:true},secrets:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloudbuild_bitbucket_server_config", resourceName);
   }

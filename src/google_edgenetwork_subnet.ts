@@ -19,7 +19,7 @@ export interface GoogleEdgenetworkSubnetArgs {
 }
 
 export class google_edgenetwork_subnet extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleEdgenetworkSubnetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleEdgenetworkSubnetArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_edgenetwork_subnet", resourceName);
   }

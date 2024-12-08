@@ -52,7 +52,7 @@ export interface GoogleSpannerInstanceArgs {
 }
 
 export class google_spanner_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSpannerInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSpannerInstanceArgs) {
     const meta = {autoscaling_config:{isBlock:true,asymmetric_autoscaling_options:{isBlock:true,overrides:{isBlock:true,autoscaling_limits:{isBlock:true}},replica_selection:{isBlock:true}},autoscaling_limits:{isBlock:true},autoscaling_targets:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_spanner_instance", resourceName);
   }

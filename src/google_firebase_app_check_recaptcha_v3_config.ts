@@ -13,7 +13,7 @@ export interface GoogleFirebaseAppCheckRecaptchaV3ConfigArgs {
 }
 
 export class google_firebase_app_check_recaptcha_v3_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleFirebaseAppCheckRecaptchaV3ConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleFirebaseAppCheckRecaptchaV3ConfigArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_firebase_app_check_recaptcha_v3_config", resourceName);
   }

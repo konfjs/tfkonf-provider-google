@@ -108,7 +108,7 @@ export interface GoogleAppEngineStandardAppVersionArgs {
 }
 
 export class google_app_engine_standard_app_version extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleAppEngineStandardAppVersionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleAppEngineStandardAppVersionArgs) {
     const meta = {automatic_scaling:{isBlock:true,standard_scheduler_settings:{isBlock:true}},basic_scaling:{isBlock:true},deployment:{isBlock:true,files:{isBlock:true},zip:{isBlock:true}},entrypoint:{isBlock:true},handlers:{isBlock:true,script:{isBlock:true},static_files:{isBlock:true}},libraries:{isBlock:true},manual_scaling:{isBlock:true},timeouts:{isBlock:true},vpc_access_connector:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_app_engine_standard_app_version", resourceName);
   }

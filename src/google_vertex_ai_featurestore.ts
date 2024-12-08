@@ -30,7 +30,7 @@ export interface GoogleVertexAiFeaturestoreArgs {
 }
 
 export class google_vertex_ai_featurestore extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleVertexAiFeaturestoreArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleVertexAiFeaturestoreArgs) {
     const meta = {encryption_spec:{isBlock:true},online_serving_config:{isBlock:true,scaling:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_vertex_ai_featurestore", resourceName);
   }

@@ -87,7 +87,7 @@ export interface GoogleDataprocMetastoreServiceArgs {
 }
 
 export class google_dataproc_metastore_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataprocMetastoreServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataprocMetastoreServiceArgs) {
     const meta = {encryption_config:{isBlock:true},hive_metastore_config:{isBlock:true,auxiliary_versions:{isBlock:true},kerberos_config:{isBlock:true,keytab:{isBlock:true}}},maintenance_window:{isBlock:true},metadata_integration:{isBlock:true,data_catalog_config:{isBlock:true}},network_config:{isBlock:true,consumers:{isBlock:true}},scaling_config:{isBlock:true},scheduled_backup:{isBlock:true},telemetry_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataproc_metastore_service", resourceName);
   }

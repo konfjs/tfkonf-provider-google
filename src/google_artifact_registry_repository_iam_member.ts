@@ -14,7 +14,7 @@ export interface GoogleArtifactRegistryRepositoryIamMemberArgs {
 }
 
 export class google_artifact_registry_repository_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleArtifactRegistryRepositoryIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleArtifactRegistryRepositoryIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_artifact_registry_repository_iam_member", resourceName);
   }

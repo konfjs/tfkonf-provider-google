@@ -6,7 +6,7 @@ export interface GoogleTagsTagValueIamPolicyArgs {
 }
 
 export class google_tags_tag_value_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleTagsTagValueIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleTagsTagValueIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_tags_tag_value_iam_policy", resourceName);
   }

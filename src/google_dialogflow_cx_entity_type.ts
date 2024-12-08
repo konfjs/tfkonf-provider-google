@@ -29,7 +29,7 @@ export interface GoogleDialogflowCxEntityTypeArgs {
 }
 
 export class google_dialogflow_cx_entity_type extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDialogflowCxEntityTypeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDialogflowCxEntityTypeArgs) {
     const meta = {entities:{isBlock:true},excluded_phrases:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dialogflow_cx_entity_type", resourceName);
   }

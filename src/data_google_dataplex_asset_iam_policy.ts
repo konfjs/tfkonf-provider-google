@@ -7,7 +7,7 @@ export interface DataGoogleDataplexAssetIamPolicyArgs {
 }
 
 export class data_google_dataplex_asset_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleDataplexAssetIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleDataplexAssetIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_dataplex_asset_iam_policy", resourceName);
   }

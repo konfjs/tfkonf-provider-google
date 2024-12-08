@@ -34,7 +34,7 @@ export interface GoogleHealthcareHl7V2StoreArgs {
 }
 
 export class google_healthcare_hl7_v2_store extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleHealthcareHl7V2StoreArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleHealthcareHl7V2StoreArgs) {
     const meta = {notification_config:{isBlock:true},notification_configs:{isBlock:true},parser_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_healthcare_hl7_v2_store", resourceName);
   }

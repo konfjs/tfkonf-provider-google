@@ -33,7 +33,7 @@ export interface GoogleCloudAssetProjectFeedArgs {
 }
 
 export class google_cloud_asset_project_feed extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudAssetProjectFeedArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudAssetProjectFeedArgs) {
     const meta = {condition:{isBlock:true},feed_output_config:{isBlock:true,pubsub_destination:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloud_asset_project_feed", resourceName);
   }

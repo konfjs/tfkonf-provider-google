@@ -19,7 +19,7 @@ export interface GoogleNetappBackupPolicyArgs {
 }
 
 export class google_netapp_backup_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetappBackupPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetappBackupPolicyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_netapp_backup_policy", resourceName);
   }

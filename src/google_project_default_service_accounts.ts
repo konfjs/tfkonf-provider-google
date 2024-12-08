@@ -14,7 +14,7 @@ export interface GoogleProjectDefaultServiceAccountsArgs {
 }
 
 export class google_project_default_service_accounts extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleProjectDefaultServiceAccountsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleProjectDefaultServiceAccountsArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_project_default_service_accounts", resourceName);
   }

@@ -12,7 +12,7 @@ export interface GoogleAccessContextManagerIngressPolicyArgs {
 }
 
 export class google_access_context_manager_ingress_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleAccessContextManagerIngressPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleAccessContextManagerIngressPolicyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_access_context_manager_ingress_policy", resourceName);
   }

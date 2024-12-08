@@ -57,7 +57,7 @@ export interface GoogleNetworkServicesEdgeCacheOriginArgs {
 }
 
 export class google_network_services_edge_cache_origin extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkServicesEdgeCacheOriginArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkServicesEdgeCacheOriginArgs) {
     const meta = {aws_v4_authentication:{isBlock:true},origin_override_action:{isBlock:true,header_action:{isBlock:true,request_headers_to_add:{isBlock:true}},url_rewrite:{isBlock:true}},origin_redirect:{isBlock:true},timeout:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_network_services_edge_cache_origin", resourceName);
   }

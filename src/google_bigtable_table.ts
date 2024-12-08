@@ -23,7 +23,7 @@ export interface GoogleBigtableTableArgs {
 }
 
 export class google_bigtable_table extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigtableTableArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigtableTableArgs) {
     const meta = {automated_backup_policy:{isBlock:true},column_family:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_bigtable_table", resourceName);
   }

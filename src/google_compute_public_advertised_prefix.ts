@@ -14,7 +14,7 @@ export interface GoogleComputePublicAdvertisedPrefixArgs {
 }
 
 export class google_compute_public_advertised_prefix extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputePublicAdvertisedPrefixArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputePublicAdvertisedPrefixArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_public_advertised_prefix", resourceName);
   }

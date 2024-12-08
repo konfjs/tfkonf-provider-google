@@ -44,7 +44,7 @@ export interface GoogleNetworkSecurityClientTlsPolicyArgs {
 }
 
 export class google_network_security_client_tls_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkSecurityClientTlsPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkSecurityClientTlsPolicyArgs) {
     const meta = {client_certificate:{isBlock:true,certificate_provider_instance:{isBlock:true},grpc_endpoint:{isBlock:true}},server_validation_ca:{isBlock:true,certificate_provider_instance:{isBlock:true},grpc_endpoint:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_network_security_client_tls_policy", resourceName);
   }

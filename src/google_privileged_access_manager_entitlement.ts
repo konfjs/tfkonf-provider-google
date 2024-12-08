@@ -74,7 +74,7 @@ export interface GooglePrivilegedAccessManagerEntitlementArgs {
 }
 
 export class google_privileged_access_manager_entitlement extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GooglePrivilegedAccessManagerEntitlementArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GooglePrivilegedAccessManagerEntitlementArgs) {
     const meta = {additional_notification_targets:{isBlock:true},approval_workflow:{isBlock:true,manual_approvals:{isBlock:true,steps:{isBlock:true,approvers:{isBlock:true}}}},eligible_users:{isBlock:true},privileged_access:{isBlock:true,gcp_iam_access:{isBlock:true,role_bindings:{isBlock:true}}},requester_justification_config:{isBlock:true,not_mandatory:{isBlock:true},unstructured:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_privileged_access_manager_entitlement", resourceName);
   }

@@ -17,7 +17,7 @@ export interface GoogleManagedKafkaTopicArgs {
 }
 
 export class google_managed_kafka_topic extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleManagedKafkaTopicArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleManagedKafkaTopicArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_managed_kafka_topic", resourceName);
   }

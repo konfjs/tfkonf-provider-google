@@ -7,7 +7,7 @@ export interface DataGoogleCloudfunctions2FunctionArgs {
 }
 
 export class data_google_cloudfunctions2_function extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleCloudfunctions2FunctionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleCloudfunctions2FunctionArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_cloudfunctions2_function", resourceName);
   }

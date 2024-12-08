@@ -5,7 +5,7 @@ export interface DataGoogleComputeRegionDiskIamPolicyArgs {
 }
 
 export class data_google_compute_region_disk_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeRegionDiskIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeRegionDiskIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_region_disk_iam_policy", resourceName);
   }

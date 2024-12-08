@@ -33,7 +33,7 @@ export interface GoogleIdentityPlatformTenantInboundSamlConfigArgs {
 }
 
 export class google_identity_platform_tenant_inbound_saml_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIdentityPlatformTenantInboundSamlConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIdentityPlatformTenantInboundSamlConfigArgs) {
     const meta = {idp_config:{isBlock:true,idp_certificates:{isBlock:true}},sp_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_identity_platform_tenant_inbound_saml_config", resourceName);
   }

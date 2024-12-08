@@ -140,7 +140,7 @@ export interface GoogleDataplexDatascanArgs {
 }
 
 export class google_dataplex_datascan extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataplexDatascanArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataplexDatascanArgs) {
     const meta = {data:{isBlock:true},data_profile_spec:{isBlock:true,exclude_fields:{isBlock:true},include_fields:{isBlock:true},post_scan_actions:{isBlock:true,bigquery_export:{isBlock:true}}},data_quality_spec:{isBlock:true,post_scan_actions:{isBlock:true,bigquery_export:{isBlock:true}},rules:{isBlock:true,non_null_expectation:{isBlock:true},range_expectation:{isBlock:true},regex_expectation:{isBlock:true},row_condition_expectation:{isBlock:true},set_expectation:{isBlock:true},sql_assertion:{isBlock:true},statistic_range_expectation:{isBlock:true},table_condition_expectation:{isBlock:true},uniqueness_expectation:{isBlock:true}}},execution_spec:{isBlock:true,trigger:{isBlock:true,on_demand:{isBlock:true},schedule:{isBlock:true}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_dataplex_datascan", resourceName);
   }

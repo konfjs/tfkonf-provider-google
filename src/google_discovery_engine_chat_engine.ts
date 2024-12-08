@@ -35,7 +35,7 @@ export interface GoogleDiscoveryEngineChatEngineArgs {
 }
 
 export class google_discovery_engine_chat_engine extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDiscoveryEngineChatEngineArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDiscoveryEngineChatEngineArgs) {
     const meta = {chat_engine_config:{isBlock:true,agent_creation_config:{isBlock:true}},common_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_discovery_engine_chat_engine", resourceName);
   }

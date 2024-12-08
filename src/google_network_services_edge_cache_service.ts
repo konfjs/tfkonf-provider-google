@@ -157,7 +157,7 @@ export interface GoogleNetworkServicesEdgeCacheServiceArgs {
 }
 
 export class google_network_services_edge_cache_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkServicesEdgeCacheServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkServicesEdgeCacheServiceArgs) {
     const meta = {log_config:{isBlock:true},routing:{isBlock:true,host_rule:{isBlock:true},path_matcher:{isBlock:true,route_rule:{isBlock:true,header_action:{isBlock:true,request_header_to_add:{isBlock:true},request_header_to_remove:{isBlock:true},response_header_to_add:{isBlock:true},response_header_to_remove:{isBlock:true}},match_rule:{isBlock:true,header_match:{isBlock:true},query_parameter_match:{isBlock:true}},route_action:{isBlock:true,cdn_policy:{isBlock:true,add_signatures:{isBlock:true},cache_key_policy:{isBlock:true},signed_token_options:{isBlock:true}},cors_policy:{isBlock:true},url_rewrite:{isBlock:true}},url_redirect:{isBlock:true}}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_network_services_edge_cache_service", resourceName);
   }

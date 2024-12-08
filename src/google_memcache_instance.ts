@@ -46,7 +46,7 @@ export interface GoogleMemcacheInstanceArgs {
 }
 
 export class google_memcache_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleMemcacheInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleMemcacheInstanceArgs) {
     const meta = {maintenance_policy:{isBlock:true,weekly_maintenance_window:{isBlock:true,start_time:{isBlock:true}}},memcache_parameters:{isBlock:true},node_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_memcache_instance", resourceName);
   }

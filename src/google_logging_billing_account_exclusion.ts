@@ -9,7 +9,7 @@ export interface GoogleLoggingBillingAccountExclusionArgs {
 }
 
 export class google_logging_billing_account_exclusion extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleLoggingBillingAccountExclusionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleLoggingBillingAccountExclusionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_logging_billing_account_exclusion", resourceName);
   }

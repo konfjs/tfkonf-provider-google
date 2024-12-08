@@ -39,7 +39,7 @@ export interface GoogleManagedKafkaClusterArgs {
 }
 
 export class google_managed_kafka_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleManagedKafkaClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleManagedKafkaClusterArgs) {
     const meta = {capacity_config:{isBlock:true},gcp_config:{isBlock:true,access_config:{isBlock:true,network_configs:{isBlock:true}}},rebalance_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_managed_kafka_cluster", resourceName);
   }

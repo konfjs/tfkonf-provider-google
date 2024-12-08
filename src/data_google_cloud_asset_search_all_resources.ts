@@ -7,7 +7,7 @@ export interface DataGoogleCloudAssetSearchAllResourcesArgs {
 }
 
 export class data_google_cloud_asset_search_all_resources extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleCloudAssetSearchAllResourcesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleCloudAssetSearchAllResourcesArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_cloud_asset_search_all_resources", resourceName);
   }

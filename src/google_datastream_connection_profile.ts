@@ -83,7 +83,7 @@ export interface GoogleDatastreamConnectionProfileArgs {
 }
 
 export class google_datastream_connection_profile extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDatastreamConnectionProfileArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDatastreamConnectionProfileArgs) {
     const meta = {bigquery_profile:{isBlock:true},forward_ssh_connectivity:{isBlock:true},gcs_profile:{isBlock:true},mysql_profile:{isBlock:true,ssl_config:{isBlock:true}},oracle_profile:{isBlock:true},postgresql_profile:{isBlock:true},private_connectivity:{isBlock:true},sql_server_profile:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_datastream_connection_profile", resourceName);
   }

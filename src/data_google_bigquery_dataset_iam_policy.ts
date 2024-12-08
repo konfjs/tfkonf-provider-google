@@ -5,7 +5,7 @@ export interface DataGoogleBigqueryDatasetIamPolicyArgs {
 }
 
 export class data_google_bigquery_dataset_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleBigqueryDatasetIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleBigqueryDatasetIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_bigquery_dataset_iam_policy", resourceName);
   }

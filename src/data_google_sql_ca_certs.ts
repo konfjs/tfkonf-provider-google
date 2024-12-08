@@ -5,7 +5,7 @@ export interface DataGoogleSqlCaCertsArgs {
 }
 
 export class data_google_sql_ca_certs extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleSqlCaCertsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleSqlCaCertsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_sql_ca_certs", resourceName);
   }

@@ -12,7 +12,7 @@ export interface GoogleApigeeEnvKeystoreArgs {
 }
 
 export class google_apigee_env_keystore extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleApigeeEnvKeystoreArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleApigeeEnvKeystoreArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_apigee_env_keystore", resourceName);
   }

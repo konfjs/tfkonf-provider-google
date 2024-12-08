@@ -4,7 +4,7 @@ export interface DataGoogleComposerImageVersionsArgs {
 }
 
 export class data_google_composer_image_versions extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComposerImageVersionsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComposerImageVersionsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_composer_image_versions", resourceName);
   }

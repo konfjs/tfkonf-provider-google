@@ -5,7 +5,7 @@ export interface DataGoogleCloudIdentityGroupsArgs {
 }
 
 export class data_google_cloud_identity_groups extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleCloudIdentityGroupsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleCloudIdentityGroupsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_cloud_identity_groups", resourceName);
   }

@@ -15,7 +15,7 @@ export interface GoogleStorageManagedFolderIamBindingArgs {
 }
 
 export class google_storage_managed_folder_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleStorageManagedFolderIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleStorageManagedFolderIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_storage_managed_folder_iam_binding", resourceName);
   }

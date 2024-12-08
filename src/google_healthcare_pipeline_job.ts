@@ -61,7 +61,7 @@ export interface GoogleHealthcarePipelineJobArgs {
 }
 
 export class google_healthcare_pipeline_job extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleHealthcarePipelineJobArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleHealthcarePipelineJobArgs) {
     const meta = {backfill_pipeline_job:{isBlock:true},mapping_pipeline_job:{isBlock:true,fhir_streaming_source:{isBlock:true},mapping_config:{isBlock:true,whistle_config_source:{isBlock:true}}},reconciliation_pipeline_job:{isBlock:true,merge_config:{isBlock:true,whistle_config_source:{isBlock:true}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_healthcare_pipeline_job", resourceName);
   }

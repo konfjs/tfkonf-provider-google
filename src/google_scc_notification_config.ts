@@ -20,7 +20,7 @@ export interface GoogleSccNotificationConfigArgs {
 }
 
 export class google_scc_notification_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSccNotificationConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSccNotificationConfigArgs) {
     const meta = {streaming_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_scc_notification_config", resourceName);
   }

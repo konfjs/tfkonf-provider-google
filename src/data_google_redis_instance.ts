@@ -7,7 +7,7 @@ export interface DataGoogleRedisInstanceArgs {
 }
 
 export class data_google_redis_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleRedisInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleRedisInstanceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_redis_instance", resourceName);
   }

@@ -15,7 +15,7 @@ export interface GoogleComputeRouterNatAddressArgs {
 }
 
 export class google_compute_router_nat_address extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeRouterNatAddressArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeRouterNatAddressArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_router_nat_address", resourceName);
   }

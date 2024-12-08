@@ -5,7 +5,7 @@ export interface DataGoogleIapWebTypeAppEngineIamPolicyArgs {
 }
 
 export class data_google_iap_web_type_app_engine_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleIapWebTypeAppEngineIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleIapWebTypeAppEngineIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_iap_web_type_app_engine_iam_policy", resourceName);
   }

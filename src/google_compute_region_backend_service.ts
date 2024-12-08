@@ -138,7 +138,7 @@ export interface GoogleComputeRegionBackendServiceArgs {
 }
 
 export class google_compute_region_backend_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeRegionBackendServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeRegionBackendServiceArgs) {
     const meta = {backend:{isBlock:true},cdn_policy:{isBlock:true,cache_key_policy:{isBlock:true},negative_caching_policy:{isBlock:true}},circuit_breakers:{isBlock:true},consistent_hash:{isBlock:true,http_cookie:{isBlock:true,ttl:{isBlock:true}}},failover_policy:{isBlock:true},iap:{isBlock:true},log_config:{isBlock:true},outlier_detection:{isBlock:true,base_ejection_time:{isBlock:true},interval:{isBlock:true}},strong_session_affinity_cookie:{isBlock:true,ttl:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_region_backend_service", resourceName);
   }

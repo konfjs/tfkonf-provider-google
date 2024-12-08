@@ -6,7 +6,7 @@ export interface DataGooglePubsubSubscriptionArgs {
 }
 
 export class data_google_pubsub_subscription extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGooglePubsubSubscriptionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGooglePubsubSubscriptionArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_pubsub_subscription", resourceName);
   }

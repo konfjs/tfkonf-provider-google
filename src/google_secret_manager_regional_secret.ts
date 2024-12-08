@@ -34,7 +34,7 @@ export interface GoogleSecretManagerRegionalSecretArgs {
 }
 
 export class google_secret_manager_regional_secret extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSecretManagerRegionalSecretArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSecretManagerRegionalSecretArgs) {
     const meta = {customer_managed_encryption:{isBlock:true},rotation:{isBlock:true},timeouts:{isBlock:true},topics:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_secret_manager_regional_secret", resourceName);
   }

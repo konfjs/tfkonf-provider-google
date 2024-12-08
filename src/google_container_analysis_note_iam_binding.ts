@@ -14,7 +14,7 @@ export interface GoogleContainerAnalysisNoteIamBindingArgs {
 }
 
 export class google_container_analysis_note_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleContainerAnalysisNoteIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleContainerAnalysisNoteIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_container_analysis_note_iam_binding", resourceName);
   }

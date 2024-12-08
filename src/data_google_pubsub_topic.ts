@@ -6,7 +6,7 @@ export interface DataGooglePubsubTopicArgs {
 }
 
 export class data_google_pubsub_topic extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGooglePubsubTopicArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGooglePubsubTopicArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_pubsub_topic", resourceName);
   }

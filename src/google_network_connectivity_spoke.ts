@@ -57,7 +57,7 @@ export interface GoogleNetworkConnectivitySpokeArgs {
 }
 
 export class google_network_connectivity_spoke extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleNetworkConnectivitySpokeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleNetworkConnectivitySpokeArgs) {
     const meta = {linked_interconnect_attachments:{isBlock:true},linked_producer_vpc_network:{isBlock:true},linked_router_appliance_instances:{isBlock:true,instances:{isBlock:true}},linked_vpc_network:{isBlock:true},linked_vpn_tunnels:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_network_connectivity_spoke", resourceName);
   }

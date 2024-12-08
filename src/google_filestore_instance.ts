@@ -56,7 +56,7 @@ export interface GoogleFilestoreInstanceArgs {
 }
 
 export class google_filestore_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleFilestoreInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleFilestoreInstanceArgs) {
     const meta = {file_shares:{isBlock:true,nfs_export_options:{isBlock:true}},networks:{isBlock:true},performance_config:{isBlock:true,fixed_iops:{isBlock:true},iops_per_tb:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_filestore_instance", resourceName);
   }

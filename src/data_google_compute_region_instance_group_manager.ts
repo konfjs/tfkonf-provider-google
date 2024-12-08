@@ -8,7 +8,7 @@ export interface DataGoogleComputeRegionInstanceGroupManagerArgs {
 }
 
 export class data_google_compute_region_instance_group_manager extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeRegionInstanceGroupManagerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeRegionInstanceGroupManagerArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_region_instance_group_manager", resourceName);
   }

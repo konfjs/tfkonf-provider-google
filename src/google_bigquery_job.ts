@@ -142,7 +142,7 @@ export interface GoogleBigqueryJobArgs {
 }
 
 export class google_bigquery_job extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleBigqueryJobArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleBigqueryJobArgs) {
     const meta = {copy:{isBlock:true,destination_encryption_configuration:{isBlock:true},destination_table:{isBlock:true},source_tables:{isBlock:true}},extract:{isBlock:true,source_model:{isBlock:true},source_table:{isBlock:true}},load:{isBlock:true,destination_encryption_configuration:{isBlock:true},destination_table:{isBlock:true},parquet_options:{isBlock:true},time_partitioning:{isBlock:true}},query:{isBlock:true,default_dataset:{isBlock:true},destination_encryption_configuration:{isBlock:true},destination_table:{isBlock:true},script_options:{isBlock:true},user_defined_function_resources:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_bigquery_job", resourceName);
   }

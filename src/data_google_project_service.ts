@@ -6,7 +6,7 @@ export interface DataGoogleProjectServiceArgs {
 }
 
 export class data_google_project_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleProjectServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleProjectServiceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_project_service", resourceName);
   }

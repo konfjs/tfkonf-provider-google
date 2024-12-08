@@ -83,7 +83,7 @@ export interface GoogleComputeRegionInstanceGroupManagerArgs {
 }
 
 export class google_compute_region_instance_group_manager extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeRegionInstanceGroupManagerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeRegionInstanceGroupManagerArgs) {
     const meta = {all_instances_config:{isBlock:true},auto_healing_policies:{isBlock:true},instance_lifecycle_policy:{isBlock:true},named_port:{isBlock:true},stateful_disk:{isBlock:true},stateful_external_ip:{isBlock:true},stateful_internal_ip:{isBlock:true},timeouts:{isBlock:true},update_policy:{isBlock:true},version:{isBlock:true,target_size:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "google_compute_region_instance_group_manager", resourceName);
   }

@@ -8,7 +8,7 @@ export interface DataGoogleContainerAttachedInstallManifestArgs {
 }
 
 export class data_google_container_attached_install_manifest extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleContainerAttachedInstallManifestArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleContainerAttachedInstallManifestArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_container_attached_install_manifest", resourceName);
   }

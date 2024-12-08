@@ -5,7 +5,7 @@ export interface DataGoogleIapTunnelDestGroupIamPolicyArgs {
 }
 
 export class data_google_iap_tunnel_dest_group_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleIapTunnelDestGroupIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleIapTunnelDestGroupIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_iap_tunnel_dest_group_iam_policy", resourceName);
   }

@@ -14,7 +14,7 @@ export interface GoogleHealthcareDicomStoreIamBindingArgs {
 }
 
 export class google_healthcare_dicom_store_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleHealthcareDicomStoreIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleHealthcareDicomStoreIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_healthcare_dicom_store_iam_binding", resourceName);
   }

@@ -14,7 +14,7 @@ export interface GoogleDataCatalogEntryGroupIamMemberArgs {
 }
 
 export class google_data_catalog_entry_group_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataCatalogEntryGroupIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataCatalogEntryGroupIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_data_catalog_entry_group_iam_member", resourceName);
   }

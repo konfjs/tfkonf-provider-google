@@ -46,7 +46,7 @@ export interface GoogleAssuredWorkloadsWorkloadArgs {
 }
 
 export class google_assured_workloads_workload extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleAssuredWorkloadsWorkloadArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleAssuredWorkloadsWorkloadArgs) {
     const meta = {kms_settings:{isBlock:true},partner_permissions:{isBlock:true},resource_settings:{isBlock:true},timeouts:{isBlock:true},workload_options:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_assured_workloads_workload", resourceName);
   }

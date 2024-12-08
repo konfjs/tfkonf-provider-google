@@ -12,7 +12,7 @@ export interface GoogleSiteVerificationOwnerArgs {
 }
 
 export class google_site_verification_owner extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSiteVerificationOwnerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSiteVerificationOwnerArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_site_verification_owner", resourceName);
   }

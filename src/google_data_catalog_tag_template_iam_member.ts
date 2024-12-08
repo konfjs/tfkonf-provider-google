@@ -14,7 +14,7 @@ export interface GoogleDataCatalogTagTemplateIamMemberArgs {
 }
 
 export class google_data_catalog_tag_template_iam_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataCatalogTagTemplateIamMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataCatalogTagTemplateIamMemberArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_data_catalog_tag_template_iam_member", resourceName);
   }

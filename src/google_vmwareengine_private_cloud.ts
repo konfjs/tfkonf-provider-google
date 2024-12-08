@@ -73,7 +73,7 @@ export interface GoogleVmwareenginePrivateCloudArgs {
 }
 
 export class google_vmwareengine_private_cloud extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleVmwareenginePrivateCloudArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleVmwareenginePrivateCloudArgs) {
     const meta = {management_cluster:{isBlock:true,autoscaling_settings:{isBlock:true,autoscaling_policies:{isBlock:true,consumed_memory_thresholds:{isBlock:true},cpu_thresholds:{isBlock:true},storage_thresholds:{isBlock:true}}},node_type_configs:{isBlock:true},stretched_cluster_config:{isBlock:true}},network_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_vmwareengine_private_cloud", resourceName);
   }

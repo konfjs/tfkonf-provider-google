@@ -7,7 +7,7 @@ export interface DataGoogleCloudbuildTriggerArgs {
 }
 
 export class data_google_cloudbuild_trigger extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleCloudbuildTriggerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleCloudbuildTriggerArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_cloudbuild_trigger", resourceName);
   }

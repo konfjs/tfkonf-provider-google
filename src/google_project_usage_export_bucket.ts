@@ -12,7 +12,7 @@ export interface GoogleProjectUsageExportBucketArgs {
 }
 
 export class google_project_usage_export_bucket extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleProjectUsageExportBucketArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleProjectUsageExportBucketArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_project_usage_export_bucket", resourceName);
   }

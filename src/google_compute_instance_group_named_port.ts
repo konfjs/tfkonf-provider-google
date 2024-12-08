@@ -13,7 +13,7 @@ export interface GoogleComputeInstanceGroupNamedPortArgs {
 }
 
 export class google_compute_instance_group_named_port extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeInstanceGroupNamedPortArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeInstanceGroupNamedPortArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_instance_group_named_port", resourceName);
   }

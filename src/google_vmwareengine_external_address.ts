@@ -15,7 +15,7 @@ export interface GoogleVmwareengineExternalAddressArgs {
 }
 
 export class google_vmwareengine_external_address extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleVmwareengineExternalAddressArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleVmwareengineExternalAddressArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_vmwareengine_external_address", resourceName);
   }

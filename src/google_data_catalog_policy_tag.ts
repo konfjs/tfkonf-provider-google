@@ -15,7 +15,7 @@ export interface GoogleDataCatalogPolicyTagArgs {
 }
 
 export class google_data_catalog_policy_tag extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataCatalogPolicyTagArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataCatalogPolicyTagArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_data_catalog_policy_tag", resourceName);
   }

@@ -18,7 +18,7 @@ export interface GoogleMonitoringCustomServiceArgs {
 }
 
 export class google_monitoring_custom_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleMonitoringCustomServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleMonitoringCustomServiceArgs) {
     const meta = {telemetry:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_monitoring_custom_service", resourceName);
   }

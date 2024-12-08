@@ -177,7 +177,7 @@ export interface GoogleAccessContextManagerServicePerimetersArgs {
 }
 
 export class google_access_context_manager_service_perimeters extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleAccessContextManagerServicePerimetersArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleAccessContextManagerServicePerimetersArgs) {
     const meta = {service_perimeters:{isBlock:true,spec:{isBlock:true,egress_policies:{isBlock:true,egress_from:{isBlock:true,sources:{isBlock:true}},egress_to:{isBlock:true,operations:{isBlock:true,method_selectors:{isBlock:true}}}},ingress_policies:{isBlock:true,ingress_from:{isBlock:true,sources:{isBlock:true}},ingress_to:{isBlock:true,operations:{isBlock:true,method_selectors:{isBlock:true}}}},vpc_accessible_services:{isBlock:true}},status:{isBlock:true,egress_policies:{isBlock:true,egress_from:{isBlock:true,sources:{isBlock:true}},egress_to:{isBlock:true,operations:{isBlock:true,method_selectors:{isBlock:true}}}},ingress_policies:{isBlock:true,ingress_from:{isBlock:true,sources:{isBlock:true}},ingress_to:{isBlock:true,operations:{isBlock:true,method_selectors:{isBlock:true}}}},vpc_accessible_services:{isBlock:true}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_access_context_manager_service_perimeters", resourceName);
   }

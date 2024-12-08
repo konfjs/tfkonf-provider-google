@@ -20,7 +20,7 @@ export interface GoogleComputeHttpHealthCheckArgs {
 }
 
 export class google_compute_http_health_check extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleComputeHttpHealthCheckArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleComputeHttpHealthCheckArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_compute_http_health_check", resourceName);
   }

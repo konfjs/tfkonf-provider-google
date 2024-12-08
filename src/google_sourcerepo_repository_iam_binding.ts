@@ -14,7 +14,7 @@ export interface GoogleSourcerepoRepositoryIamBindingArgs {
 }
 
 export class google_sourcerepo_repository_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleSourcerepoRepositoryIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleSourcerepoRepositoryIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_sourcerepo_repository_iam_binding", resourceName);
   }

@@ -6,7 +6,7 @@ export interface GoogleDataCatalogTaxonomyIamPolicyArgs {
 }
 
 export class google_data_catalog_taxonomy_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleDataCatalogTaxonomyIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleDataCatalogTaxonomyIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_data_catalog_taxonomy_iam_policy", resourceName);
   }

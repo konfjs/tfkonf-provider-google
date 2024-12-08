@@ -14,7 +14,7 @@ export interface GoogleCloudbuildv2ConnectionIamBindingArgs {
 }
 
 export class google_cloudbuildv2_connection_iam_binding extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleCloudbuildv2ConnectionIamBindingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleCloudbuildv2ConnectionIamBindingArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_cloudbuildv2_connection_iam_binding", resourceName);
   }

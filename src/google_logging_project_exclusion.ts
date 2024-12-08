@@ -8,7 +8,7 @@ export interface GoogleLoggingProjectExclusionArgs {
 }
 
 export class google_logging_project_exclusion extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleLoggingProjectExclusionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleLoggingProjectExclusionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "google_logging_project_exclusion", resourceName);
   }

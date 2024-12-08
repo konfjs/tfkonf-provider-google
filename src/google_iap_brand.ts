@@ -12,7 +12,7 @@ export interface GoogleIapBrandArgs {
 }
 
 export class google_iap_brand extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GoogleIapBrandArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GoogleIapBrandArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_iap_brand", resourceName);
   }

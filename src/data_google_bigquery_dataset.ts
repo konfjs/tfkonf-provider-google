@@ -6,7 +6,7 @@ export interface DataGoogleBigqueryDatasetArgs {
 }
 
 export class data_google_bigquery_dataset extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleBigqueryDatasetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleBigqueryDatasetArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_bigquery_dataset", resourceName);
   }

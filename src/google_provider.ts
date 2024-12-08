@@ -171,7 +171,7 @@ export interface GoogleProviderArgs {
 }
 
 export class google_provider extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, args: GoogleProviderArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, readonly args: GoogleProviderArgs) {
     const meta = {batching:{isBlock:true}};
     super(terraformConfig, "provider", args, meta, "google");
   }

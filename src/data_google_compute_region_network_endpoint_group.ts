@@ -8,7 +8,7 @@ export interface DataGoogleComputeRegionNetworkEndpointGroupArgs {
 }
 
 export class data_google_compute_region_network_endpoint_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleComputeRegionNetworkEndpointGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleComputeRegionNetworkEndpointGroupArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_compute_region_network_endpoint_group", resourceName);
   }

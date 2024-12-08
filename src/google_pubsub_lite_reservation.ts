@@ -14,7 +14,7 @@ export interface GooglePubsubLiteReservationArgs {
 }
 
 export class google_pubsub_lite_reservation extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: GooglePubsubLiteReservationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: GooglePubsubLiteReservationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "google_pubsub_lite_reservation", resourceName);
   }

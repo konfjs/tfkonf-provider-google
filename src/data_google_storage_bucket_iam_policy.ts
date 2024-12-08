@@ -5,7 +5,7 @@ export interface DataGoogleStorageBucketIamPolicyArgs {
 }
 
 export class data_google_storage_bucket_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataGoogleStorageBucketIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataGoogleStorageBucketIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "google_storage_bucket_iam_policy", resourceName);
   }
